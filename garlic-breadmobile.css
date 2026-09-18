@@ -1,0 +1,272 @@
+@media (max-width:768px) {
+
+    .garlic-page {
+        width: 100%;
+        padding: 18px 10px 100px;
+    }
+
+
+    /* HERO */
+
+    .garlic-hero {
+        width: 100%;
+
+        min-height: auto;
+
+        margin: 10px auto 35px;
+
+        padding: 25px 18px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 22px;
+
+        border-radius: 24px;
+    }
+
+
+    .garlic-hero-content {
+        width: 100%;
+    }
+
+
+    .garlic-badge {
+        font-size: 10px;
+
+        padding: 7px 12px;
+
+        margin-bottom: 13px;
+    }
+
+
+    .garlic-hero h1 {
+        font-size: 30px;
+        line-height: 1.12;
+
+        margin-bottom: 10px;
+    }
+
+
+    .garlic-hero p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+
+    .garlic-hero-image {
+        width: 100%;
+        height: 210px;
+
+        border-radius: 20px;
+
+        transform: none;
+    }
+
+
+    /* HEADING */
+
+    .garlic-heading {
+        width: 100%;
+
+        margin-bottom: 22px;
+
+        text-align: left;
+
+        padding: 0 5px;
+    }
+
+
+    .garlic-heading span {
+        font-size: 12px;
+        letter-spacing: 1.5px;
+    }
+
+
+    .garlic-heading h2 {
+        margin: 5px 0;
+
+        font-size: 27px;
+        line-height: 1.2;
+    }
+
+
+    .garlic-heading p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+
+    /* ONE ITEM PER ROW */
+
+    .garlic-grid {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+
+    /* CARD */
+
+    .garlic-card {
+        width: 100%;
+
+        border-radius: 20px;
+    }
+
+
+    .garlic-image {
+        height: 240px;
+    }
+
+
+    .garlic-price {
+        top: 12px;
+        right: 12px;
+
+        padding: 8px 13px;
+
+        font-size: 15px;
+    }
+
+
+    .garlic-info {
+        padding: 18px;
+    }
+
+
+    .garlic-title-row h3 {
+        font-size: 19px;
+        line-height: 1.3;
+    }
+
+
+    .garlic-price-mobile {
+        display: block;
+
+        font-size: 16px;
+        font-weight: 900;
+
+        color: #8d3d17;
+    }
+
+
+    .garlic-info > p {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+
+    /* QUANTITY */
+
+    .garlic-buy-row {
+        margin-top: 17px;
+    }
+
+
+    .quantity-label {
+        font-size: 12px;
+    }
+
+
+    .garlic-qty {
+        gap: 9px;
+        padding: 4px 6px;
+    }
+
+
+    .garlic-qty button {
+        width: 31px;
+        height: 31px;
+
+        font-size: 18px;
+    }
+
+
+    .garlic-qty span {
+        font-size: 13px;
+    }
+
+
+    /* BUTTONS */
+
+    .garlic-actions {
+        gap: 9px;
+
+        margin-top: 16px;
+    }
+
+
+    .garlic-actions button {
+        height: 44px;
+
+        border-radius: 12px;
+
+        font-size: 12px;
+    }
+
+}
+
+
+/* SMALL PHONES */
+
+@media (max-width:380px) {
+
+    .garlic-page {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+
+    .garlic-hero {
+        padding: 22px 15px;
+    }
+
+
+    .garlic-hero h1 {
+        font-size: 27px;
+    }
+
+
+    .garlic-hero p {
+        font-size: 12px;
+    }
+
+
+    .garlic-hero-image {
+        height: 190px;
+    }
+
+
+    .garlic-heading h2 {
+        font-size: 24px;
+    }
+
+
+    .garlic-info {
+        padding: 16px;
+    }
+
+
+    .garlic-title-row h3 {
+        font-size: 18px;
+    }
+
+
+    .garlic-info > p {
+        font-size: 11px;
+    }
+
+
+    .garlic-actions button {
+        height: 42px;
+
+        font-size: 11px;
+    }
+
+}

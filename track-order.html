@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Track your 11:11 Pizza Cafe order in real time."
+    >
+
+    <meta
+        name="theme-color"
+        content="#ff5a1f"
+    >
+
+    <title>Track Order | 11:11 Pizza Cafe</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- Common Navbar CSS -->
+    <link
+        rel="stylesheet"
+        href="desktop.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="mobile.css"
+    >
+
+    <!-- Track Order CSS -->
+    <link
+        rel="stylesheet"
+        href="track-order.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="track-ordermobile.css"
+    >
+</head>
+
+<body>
+
+    <!-- =====================================================
+         COMMON NAVBAR
+         ===================================================== -->
+
+    <div id="navbar"></div>
+
+
+    <!-- =====================================================
+         TRACK ORDER PAGE
+         ===================================================== -->
+
+    <main class="track-page">
+
+        <!-- =================================================
+             PAGE HEADER
+             ================================================= -->
+
+        <section class="track-hero">
+
+            <div class="track-hero-badge">
+                <i class="fa-solid fa-location-dot"></i>
+                LIVE ORDER TRACKING
+            </div>
+
+            <h1>
+                Track Your Order
+            </h1>
+
+            <p>
+                Follow your order from our kitchen
+                to your doorstep.
+            </p>
+
+        </section>
+
+
+        <!-- =================================================
+             ORDER SEARCH
+             ================================================= -->
+
+        <section class="track-search-card">
+
+            <div class="track-search-heading">
+
+                <div class="track-search-icon">
+                    <i class="fa-solid fa-receipt"></i>
+                </div>
+
+                <div>
+                    <span>
+                        ORDER TRACKING
+                    </span>
+
+                    <h2>
+                        Enter Your Order ID
+                    </h2>
+
+                    <p>
+                        Enter the order ID you received
+                        after placing your order.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <form
+                class="track-search-form"
+                id="trackOrderForm"
+            >
+
+                <div class="track-input-wrap">
+
+                    <i class="fa-solid fa-hashtag"></i>
+
+                    <input
+                        type="text"
+                        id="trackOrderInput"
+                        name="orderId"
+                        placeholder="Enter Order ID"
+                        autocomplete="off"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="track-search-btn"
+                    id="trackOrderButton"
+                >
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span>Track Order</span>
+                </button>
+
+            </form>
+
+
+            <p
+                class="track-search-message"
+                id="trackSearchMessage"
+                aria-live="polite"
+            ></p>
+
+        </section>
+
+
+        <!-- =================================================
+             ORDER CONTENT
+             Hidden until order is found
+             ================================================= -->
+
+        <section
+            class="track-content"
+            id="trackContent"
+            hidden
+        >
+
+
+            <!-- =============================================
+                 ORDER TOP CARD
+                 ============================================= -->
+
+            <div class="track-order-top-card">
+
+                <div class="track-order-main-info">
+
+                    <div class="track-order-icon">
+                        <i class="fa-solid fa-box-open"></i>
+                    </div>
+
+                    <div>
+
+                        <span class="track-small-label">
+                            ORDER ID
+                        </span>
+
+                        <h2 id="trackOrderId">
+                            —
+                        </h2>
+
+                        <p id="trackOrderDate">
+                            —
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="track-current-status"
+                    id="trackCurrentStatus"
+                >
+
+                    <span class="status-dot"></span>
+
+                    <span id="trackStatusText">
+                        Order Placed
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =============================================
+                 MAIN TRACK GRID
+                 ============================================= -->
+
+            <div class="track-grid">
+
+
+                <!-- =========================================
+                     LEFT COLUMN
+                     ========================================= -->
+
+                <div class="track-left-column">
+
+
+                    <!-- =====================================
+                         ORDER TIMELINE
+                         ===================================== -->
+
+                    <section class="track-card timeline-card">
+
+                        <div class="track-card-heading">
+
+                            <div class="track-card-title-icon">
+                                <i class="fa-solid fa-route"></i>
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    ORDER JOURNEY
+                                </span>
+
+                                <h2>
+                                    Track Your Order
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            class="order-timeline"
+                            id="orderTimeline"
+                        >
+
+                            <!-- Order Placed -->
+
+                            <div
+                                class="timeline-step"
+                                data-status="order_created"
+                            >
+
+                                <div class="timeline-icon">
+                                    <i class="fa-solid fa-receipt"></i>
+                                </div>
+
+                                <div class="timeline-info">
+
+                                    <h3>
+                                        Order Placed
+                                    </h3>
+
+                                    <p>
+                                        Your order has been received.
+                                    </p>
+
+                                    <time
+                                        id="timelineOrderCreated"
+                                    >
+                                        —
+                                    </time>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- Confirmed -->
+
+                            <div
+                                class="timeline-step"
+                                data-status="confirmed"
+                            >
+
+                                <div class="timeline-icon">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                </div>
+
+                                <div class="timeline-info">
+
+                                    <h3>
+                                        Order Confirmed
+                                    </h3>
+
+                                    <p>
+                                        Your order has been confirmed.
+                                    </p>
+
+                                    <time
+                                        id="timelineConfirmed"
+                                    >
+                                        —
+                                    </time>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- Preparing -->
+
+                            <div
+                                class="timeline-step"
+                                data-status="preparing"
+                            >
+
+                                <div class="timeline-icon">
+                                    <i class="fa-solid fa-fire-burner"></i>
+                                </div>
+
+                                <div class="timeline-info">
+
+                                    <h3>
+                                        Preparing Your Food
+                                    </h3>
+
+                                    <p>
+                                        Our kitchen is preparing
+                                        your order fresh.
+                                    </p>
+
+                                    <time
+                                        id="timelinePreparing"
+                                    >
+                                        —
+                                    </time>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- Out For Delivery -->
+
+                            <div
+                                class="timeline-step"
+                                data-status="out_for_delivery"
+                            >
+
+                                <div class="timeline-icon">
+                                    <i class="fa-solid fa-motorcycle"></i>
+                                </div>
+
+                                <div class="timeline-info">
+
+                                    <h3>
+                                        Out for Delivery
+                                    </h3>
+
+                                    <p>
+                                        Your order is on the way.
+                                    </p>
+
+                                    <time
+                                        id="timelineOutForDelivery"
+                                    >
+                                        —
+                                    </time>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- Delivered -->
+
+                            <div
+                                class="timeline-step"
+                                data-status="delivered"
+                            >
+
+                                <div class="timeline-icon">
+                                    <i class="fa-solid fa-house-circle-check"></i>
+                                </div>
+
+                                <div class="timeline-info">
+
+                                    <h3>
+                                        Delivered
+                                    </h3>
+
+                                    <p>
+                                        Your order has been delivered.
+                                    </p>
+
+                                    <time
+                                        id="timelineDelivered"
+                                    >
+                                        —
+                                    </time>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =====================================
+                         ORDER ITEMS
+                         ===================================== -->
+
+                    <section class="track-card">
+
+                        <div class="track-card-heading">
+
+                            <div class="track-card-title-icon">
+                                <i class="fa-solid fa-basket-shopping"></i>
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    YOUR FOOD
+                                </span>
+
+                                <h2>
+                                    Order Items
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            class="track-items"
+                            id="trackItems"
+                        >
+
+                            <!-- Items inserted by JS -->
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =====================================
+                         DELIVERY ADDRESS
+                         ===================================== -->
+
+                    <section class="track-card delivery-address-card">
+
+                        <div class="track-card-heading">
+
+                            <div class="track-card-title-icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    DELIVERY
+                                </span>
+
+                                <h2>
+                                    Delivery Address
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="delivery-address-box">
+
+                            <div class="address-icon">
+                                <i class="fa-solid fa-house"></i>
+                            </div>
+
+                            <div>
+
+                                <h3 id="trackCustomerName">
+                                    —
+                                </h3>
+
+                                <p id="trackDeliveryAddress">
+                                    —
+                                </p>
+
+                                <p
+                                    id="trackLandmark"
+                                    class="track-landmark"
+                                >
+                                    —
+                                </p>
+
+                                <p
+                                    id="trackPhone"
+                                    class="track-phone"
+                                >
+                                    —
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+
+                <!-- =========================================
+                     RIGHT COLUMN
+                     ========================================= -->
+
+                <div class="track-right-column">
+
+
+                    <!-- =====================================
+                         CURRENT DELIVERY STATUS
+                         ===================================== -->
+
+                    <section class="track-card live-status-card">
+
+                        <div class="track-card-heading">
+
+                            <div class="track-card-title-icon">
+                                <i class="fa-solid fa-signal"></i>
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    CURRENT STATUS
+                                </span>
+
+                                <h2 id="liveStatusHeading">
+                                    Order Placed
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="live-status-content">
+
+                            <div
+                                class="live-status-icon"
+                                id="liveStatusIcon"
+                            >
+                                <i class="fa-solid fa-receipt"></i>
+                            </div>
+
+                            <h3 id="liveStatusTitle">
+                                We've received your order
+                            </h3>
+
+                            <p id="liveStatusDescription">
+                                Your order has been successfully
+                                received by 11:11 Pizza Cafe.
+                            </p>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =====================================
+                         ESTIMATED DELIVERY
+                         ===================================== -->
+
+                    <section class="track-card estimated-card">
+
+                        <div class="track-card-heading">
+
+                            <div class="track-card-title-icon">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    DELIVERY
+                                </span>
+
+                                <h2>
+                                    Estimated Delivery
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="estimated-delivery-box">
+
+                            <div class="estimated-icon">
+                                <i class="fa-solid fa-motorcycle"></i>
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    EXPECTED TIME
+                                </span>
+
+                                <strong id="estimatedDelivery">
+                                    40 Minutes
+                                </strong>
+
+                                <p>
+                                    Fresh & hot at your doorstep.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="delivery-distance">
+
+                            <div>
+
+                                <i class="fa-solid fa-location-crosshairs"></i>
+
+                                <span>
+                                    Delivery Distance
+                                </span>
+
+                            </div>
+
+                            <strong id="trackDistance">
+                                —
+                            </strong>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =====================================
+                         PAYMENT STATUS
+                         ===================================== -->
+
+                    <section class="track-card payment-status-card">
+
+                        <div class="track-card-heading">
+
+                            <div class="track-card-title-icon">
+                                <i class="fa-solid fa-credit-card"></i>
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    PAYMENT
+                                </span>
+
+                                <h2>
+                                    Payment Status
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="payment-status-box">
+
+                            <div class="payment-method-icon">
+                                <i
+                                    class="fa-solid fa-wallet"
+                                    id="paymentMethodIcon"
+                                ></i>
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    PAYMENT METHOD
+                                </span>
+
+                                <strong id="trackPaymentMethod">
+                                    —
+                                </strong>
+
+                                <p id="trackPaymentStatus">
+                                    Payment Pending
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =====================================
+                         PRICE SUMMARY
+                         ===================================== -->
+
+                    <section class="track-card price-card">
+
+                        <div class="track-card-heading">
+
+                            <div class="track-card-title-icon">
+                                <i class="fa-solid fa-indian-rupee-sign"></i>
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    BILL DETAILS
+                                </span>
+
+                                <h2>
+                                    Order Total
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="track-price-list">
+
+                            <div>
+                                <span>
+                                    Subtotal
+                                </span>
+
+                                <strong id="trackSubtotal">
+                                    ₹0
+                                </strong>
+                            </div>
+
+
+                            <div>
+                                <span>
+                                    Discount
+                                </span>
+
+                                <strong id="trackDiscount">
+                                    ₹0
+                                </strong>
+                            </div>
+
+
+                            <div>
+                                <span>
+                                    Delivery Charge
+                                </span>
+
+                                <strong id="trackDeliveryCharge">
+                                    ₹0
+                                </strong>
+                            </div>
+
+
+                            <div
+                                id="trackExtraFeeRow"
+                            >
+                                <span>
+                                    Extra Fee
+                                </span>
+
+                                <strong id="trackExtraFee">
+                                    ₹0
+                                </strong>
+                            </div>
+
+
+                            <div class="track-total-row">
+
+                                <span>
+                                    Grand Total
+                                </span>
+
+                                <strong id="trackTotal">
+                                    ₹0
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =====================================
+                         ACTION BUTTONS
+                         ===================================== -->
+
+                    <div class="track-actions">
+
+                        <a
+                            href="menu.html"
+                            class="track-menu-btn"
+                        >
+                            <i class="fa-solid fa-utensils"></i>
+                            <span>Order More</span>
+                        </a>
+
+
+                        <a
+                            href="index.html"
+                            class="track-home-btn"
+                        >
+                            <i class="fa-solid fa-house"></i>
+                            <span>Home</span>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =============================================
+                 REFRESH / INFO
+                 ============================================= -->
+
+            <div class="track-refresh-area">
+
+                <button
+                    type="button"
+                    class="refresh-track-btn"
+                    id="refreshTrackButton"
+                >
+                    <i class="fa-solid fa-rotate"></i>
+                    <span>Refresh Order Status</span>
+                </button>
+
+
+                <p>
+                    Order status updates automatically
+                    when new information is available.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             NO ORDER FOUND
+             ================================================= -->
+
+        <section
+            class="track-empty-state"
+            id="trackEmptyState"
+            hidden
+        >
+
+            <div class="empty-track-icon">
+                <i class="fa-solid fa-box-open"></i>
+            </div>
+
+            <h2>
+                Order Not Found
+            </h2>
+
+            <p>
+                We couldn't find an order with that ID.
+                Please check the order ID and try again.
+            </p>
+
+            <button
+                type="button"
+                id="tryAgainButton"
+                class="try-again-btn"
+            >
+                <i class="fa-solid fa-arrow-left"></i>
+                Try Again
+            </button>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =====================================================
+         TRACK ORDER JS
+         ===================================================== -->
+
+    <script src="track-order.js"></script>
+
+</body>
+</html>

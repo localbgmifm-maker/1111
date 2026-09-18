@@ -1,0 +1,417 @@
+.garlic-page {
+    width: 100%;
+    padding: 35px 20px 80px;
+}
+
+
+/* HERO */
+
+.garlic-hero {
+    max-width: 1200px;
+    min-height: 390px;
+
+    margin: 0 auto 60px;
+    padding: 50px 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+
+    border-radius: 32px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,244,220,.97),
+            rgba(239,207,164,.95)
+        );
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.14);
+
+    overflow: hidden;
+}
+
+
+.garlic-hero-content {
+    width: 55%;
+}
+
+
+.garlic-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 15px;
+
+    border-radius: 50px;
+
+    background: rgba(255,255,255,.65);
+
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+
+    margin-bottom: 18px;
+}
+
+
+.garlic-hero h1 {
+    margin: 0 0 15px;
+
+    font-size: clamp(42px,5vw,64px);
+    line-height: 1.05;
+    font-weight: 900;
+
+    color: #21150f;
+}
+
+
+.garlic-hero h1 span {
+    display: block;
+}
+
+
+.garlic-hero p {
+    max-width: 520px;
+
+    margin: 0;
+
+    font-size: 17px;
+    line-height: 1.7;
+
+    color: #5d4638;
+}
+
+
+.garlic-hero-image {
+    width: 370px;
+    height: 300px;
+
+    flex-shrink: 0;
+
+    border-radius: 30px;
+    overflow: hidden;
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.22);
+
+    transform: rotate(2deg);
+}
+
+
+.garlic-hero-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* HEADING */
+
+.garlic-heading {
+    max-width: 1200px;
+
+    margin: 0 auto 35px;
+
+    text-align: center;
+}
+
+
+.garlic-heading span {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    color: #a44d20;
+}
+
+
+.garlic-heading h2 {
+    margin: 8px 0;
+
+    font-size: 38px;
+    font-weight: 900;
+
+    color: #21150f;
+}
+
+
+.garlic-heading p {
+    margin: 0;
+
+    font-size: 15px;
+
+    color: #76645a;
+}
+
+
+/* GRID */
+
+.garlic-grid {
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+
+/* CARD */
+
+.garlic-card {
+    background: rgba(255,255,255,.92);
+
+    border: 1px solid rgba(0,0,0,.06);
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.10);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+
+.garlic-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 22px 50px rgba(0,0,0,.16);
+}
+
+
+/* IMAGE */
+
+.garlic-image {
+    height: 330px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+.garlic-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform .35s ease;
+}
+
+
+.garlic-card:hover .garlic-image img {
+    transform: scale(1.05);
+}
+
+
+.garlic-price {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    padding: 9px 14px;
+
+    border-radius: 50px;
+
+    background: rgba(255,255,255,.95);
+
+    color: #8d3d17;
+
+    font-size: 17px;
+    font-weight: 900;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.15);
+}
+
+
+/* INFO */
+
+.garlic-info {
+    padding: 24px;
+}
+
+
+.garlic-title-row {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+
+.garlic-title-row h3 {
+    margin: 0;
+
+    font-size: 23px;
+    font-weight: 900;
+
+    color: #21150f;
+}
+
+
+.garlic-price-mobile {
+    display: none;
+}
+
+
+.garlic-info > p {
+    margin: 9px 0 0;
+
+    font-size: 14px;
+    line-height: 1.6;
+
+    color: #75645b;
+}
+
+
+/* QUANTITY */
+
+.garlic-buy-row {
+    margin-top: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.quantity-label {
+    font-size: 13px;
+    font-weight: 800;
+
+    color: #4d3b31;
+}
+
+
+.garlic-qty {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 5px 8px;
+
+    border-radius: 50px;
+
+    background: #f4eee9;
+}
+
+
+.garlic-qty button {
+    width: 32px;
+    height: 32px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: white;
+
+    font-size: 19px;
+    font-weight: 800;
+
+    color: #7e3817;
+
+    cursor: pointer;
+}
+
+
+.garlic-qty span {
+    min-width: 18px;
+
+    text-align: center;
+
+    font-size: 14px;
+    font-weight: 900;
+}
+
+
+/* BUTTONS */
+
+.garlic-actions {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+    margin-top: 18px;
+}
+
+
+.garlic-actions button {
+    height: 45px;
+
+    border: none;
+    border-radius: 13px;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: transform .2s ease;
+}
+
+
+.garlic-actions button:hover {
+    transform: translateY(-2px);
+}
+
+
+.garlic-add-btn {
+    background: #f2e7de;
+    color: #713615;
+}
+
+
+.garlic-buy-btn {
+    background: #8d3d17;
+    color: white;
+
+    box-shadow:
+        0 8px 18px rgba(141,61,23,.22);
+}
+
+
+/* TABLET */
+
+@media (min-width:769px) and (max-width:1000px) {
+
+    .garlic-page {
+        padding: 25px 12px 70px;
+    }
+
+    .garlic-hero {
+        padding: 40px;
+        min-height: 350px;
+        gap: 25px;
+    }
+
+    .garlic-hero-image {
+        width: 300px;
+        height: 250px;
+    }
+
+    .garlic-grid {
+        max-width: 650px;
+    }
+
+}

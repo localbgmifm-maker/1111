@@ -1,0 +1,1179 @@
+/* =========================================================
+   11:11 PIZZA CAFE
+   ORDER SUCCESS — DESKTOP
+   CLEAN / NO EXTRA SPACE
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.order-success-page {
+    width: 100%;
+    max-width: 1180px;
+
+    margin: 0 auto;
+
+    padding: 140px 24px 40px;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.success-header {
+    width: 100%;
+
+    text-align: center;
+
+    margin: 0 0 24px;
+}
+
+.success-icon {
+    width: 58px;
+    height: 58px;
+
+    margin: 0 auto 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    border: 1px solid rgba(255, 255, 255, 0.95);
+
+    color: #20ad68;
+
+    font-size: 23px;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.07),
+        inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+.success-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    margin-bottom: 6px;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    color: #888;
+}
+
+.success-header h1 {
+    margin: 0;
+
+    font-size: 34px;
+    line-height: 1.15;
+
+    font-weight: 900;
+
+    color: #181818;
+}
+
+.success-header p {
+    margin: 8px auto 0;
+
+    max-width: 520px;
+
+    font-size: 13px;
+    line-height: 1.5;
+
+    color: #777;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.success-container {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.55fr)
+        minmax(320px, 0.85fr);
+
+    gap: 20px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   LEFT
+   ========================================================= */
+
+.success-left {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+}
+
+
+/* =========================================================
+   RIGHT
+   ========================================================= */
+
+.success-right {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 14px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   COMMON CARD
+   ========================================================= */
+
+.success-card,
+.delivery-estimate-card {
+    width: 100%;
+
+    border-radius: 22px;
+
+    background: rgba(255, 255, 255, 0.78);
+
+    border: 1px solid rgba(255, 255, 255, 0.92);
+
+    box-shadow:
+        0 15px 38px rgba(0, 0, 0, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.95);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+.success-card {
+    padding: 20px;
+}
+
+
+/* =========================================================
+   CARD HEADING
+   ========================================================= */
+
+.card-heading {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.card-heading-icon {
+    width: 46px;
+    height: 46px;
+    min-width: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: #fff1df;
+
+    color: #ed9500;
+
+    font-size: 18px;
+}
+
+.delivery-heading-icon {
+    background: #edf8f2;
+    color: #20a866;
+}
+
+.card-heading span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 1.4px;
+
+    color: #999;
+}
+
+.card-heading h2 {
+    margin: 0;
+
+    font-size: 20px;
+    line-height: 1.2;
+
+    color: #1e1e1e;
+}
+
+
+/* =========================================================
+   ORDER ID
+   ========================================================= */
+
+.order-id-box {
+    width: 100%;
+
+    margin-top: 16px;
+
+    padding: 12px 13px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-radius: 14px;
+
+    background: rgba(247, 247, 247, 0.82);
+
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.order-id-box span {
+    display: block;
+
+    margin-bottom: 3px;
+
+    font-size: 8px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    color: #999;
+}
+
+.order-id-box strong {
+    display: block;
+
+    font-size: 14px;
+
+    color: #222;
+}
+
+.copy-order-id {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+    border-radius: 11px;
+
+    background: #fff;
+
+    color: #555;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   ITEMS
+   ========================================================= */
+
+.success-items {
+    width: 100%;
+
+    margin-top: 14px;
+}
+
+
+/* =========================================================
+   PRICE
+   ========================================================= */
+
+.success-price-box {
+    width: 100%;
+
+    margin-top: 14px;
+
+    padding-top: 12px;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.success-price-row,
+.success-total-row {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 6px 0;
+}
+
+.success-price-row span {
+    font-size: 12px;
+    color: #777;
+}
+
+.success-price-row strong {
+    font-size: 12px;
+    color: #333;
+}
+
+.success-total-row {
+    margin-top: 5px;
+
+    padding-top: 12px;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.success-total-row span {
+    font-size: 14px;
+    font-weight: 800;
+
+    color: #222;
+}
+
+.success-total-row strong {
+    font-size: 18px;
+    font-weight: 900;
+
+    color: #20a866;
+}
+
+
+/* =========================================================
+   DELIVERY DETAILS
+   ========================================================= */
+
+.delivery-details {
+    width: 100%;
+
+    margin-top: 15px;
+}
+
+.delivery-detail-row {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    margin-top: 11px;
+}
+
+.delivery-detail-row:first-child {
+    margin-top: 0;
+}
+
+.detail-icon {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background: #f6f6f6;
+
+    color: #777;
+
+    font-size: 14px;
+}
+
+.delivery-detail-row > div:last-child {
+    min-width: 0;
+    flex: 1;
+}
+
+.delivery-detail-row span {
+    display: block;
+
+    font-size: 8px;
+    font-weight: 700;
+
+    color: #999;
+}
+
+.delivery-detail-row strong {
+    display: block;
+
+    margin-top: 2px;
+
+    font-size: 12px;
+    line-height: 1.4;
+
+    color: #222;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.status-card {
+    width: 100%;
+}
+
+.status-top {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.status-icon {
+    width: 46px;
+    height: 46px;
+    min-width: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: #fff2df;
+
+    color: #ed9500;
+
+    font-size: 18px;
+}
+
+.status-top span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 1.4px;
+
+    color: #999;
+}
+
+.status-top h2 {
+    margin: 0;
+
+    font-size: 20px;
+    line-height: 1.2;
+
+    color: #202020;
+}
+
+
+/* =========================================================
+   DESKTOP TIMELINE
+   ========================================================= */
+
+.status-timeline {
+    margin-top: 17px;
+}
+
+.status-step {
+    display: flex;
+    align-items: center;
+
+    min-height: 50px;
+}
+
+.timeline-icon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f2f2f2;
+
+    color: #c5c5c5;
+
+    font-size: 14px;
+}
+
+.status-step.active .timeline-icon {
+    background: #20ad68;
+    color: #fff;
+}
+
+.timeline-content {
+    margin-left: 11px;
+}
+
+.timeline-content strong {
+    display: block;
+
+    font-size: 12px;
+
+    color: #aaa;
+}
+
+.status-step.active .timeline-content strong {
+    color: #222;
+}
+
+.timeline-content span {
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 9px;
+
+    color: #c2c2c2;
+}
+
+.status-step.active .timeline-content span {
+    color: #888;
+}
+
+.timeline-line {
+    width: 2px;
+    height: 16px;
+
+    margin-left: 19px;
+
+    background: #e2e2e2;
+}
+
+
+/* =========================================================
+   PAYMENT
+   ========================================================= */
+
+.payment-status-card {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.payment-status-icon {
+    width: 46px;
+    height: 46px;
+    min-width: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: #edf6ff;
+
+    color: #438ed1;
+
+    font-size: 18px;
+}
+
+.payment-status-card > div:last-child {
+    min-width: 0;
+    flex: 1;
+}
+
+.payment-status-card > div:last-child > span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 1.4px;
+
+    color: #999;
+}
+
+.payment-status-card h3 {
+    margin: 0;
+
+    font-size: 15px;
+
+    color: #222;
+}
+
+.payment-status-card p {
+    margin: 4px 0 0;
+
+    font-size: 10px;
+    line-height: 1.4;
+
+    color: #888;
+}
+
+
+/* =========================================================
+   DELIVERY ESTIMATE
+   ========================================================= */
+
+.delivery-estimate-card {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 17px;
+}
+
+.estimate-icon {
+    width: 46px;
+    height: 46px;
+    min-width: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: #fff0eb;
+
+    color: #ff6847;
+
+    font-size: 19px;
+}
+
+.estimate-content {
+    min-width: 0;
+    flex: 1;
+}
+
+.estimate-content > span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 1.4px;
+
+    color: #999;
+}
+
+.estimate-content > strong {
+    display: block;
+
+    font-size: 16px;
+
+    color: #222;
+}
+
+.estimate-content > p {
+    margin: 4px 0 0;
+
+    font-size: 10px;
+    line-height: 1.4;
+
+    color: #888;
+}
+
+
+/* =========================================================
+   ACTIONS
+   ========================================================= */
+
+.success-actions {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+.track-order-btn,
+.home-btn {
+    width: 100%;
+
+    min-height: 49px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    border-radius: 15px;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+.track-order-btn {
+    border: 0;
+
+    background: #202020;
+
+    color: #fff;
+}
+
+.home-btn {
+    background: rgba(255, 255, 255, 0.8);
+
+    color: #222;
+
+    border: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .success-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .order-success-page {
+        width: 100%;
+
+        max-width: 100%;
+
+        margin: 0;
+
+        padding: 10px 10px 20px;
+    }
+
+    .success-container {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .success-left,
+    .success-right {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .success-right {
+        order: 2;
+    }
+
+    .success-left {
+        order: 1;
+    }
+
+}
+/* =========================================================
+   ORDER SUCCESS - ORDER ITEM IMAGE
+   DESKTOP + ALL SCREEN SIZES
+   ========================================================= */
+
+#successItems img {
+    width: 82px !important;
+    height: 82px !important;
+
+    min-width: 82px !important;
+    max-width: 82px !important;
+
+    min-height: 82px !important;
+    max-height: 82px !important;
+
+    object-fit: cover !important;
+    display: block !important;
+
+    border-radius: 16px !important;
+    flex: 0 0 82px !important;
+}
+
+
+/* Prevent parent item from stretching image */
+#successItems,
+#successItems > *,
+#successItems .success-item,
+#successItems .order-item {
+    min-width: 0 !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 768px) {
+
+    #successItems img {
+        width: 72px !important;
+        height: 72px !important;
+
+        min-width: 72px !important;
+        max-width: 72px !important;
+
+        min-height: 72px !important;
+        max-height: 72px !important;
+
+        flex: 0 0 72px !important;
+
+        border-radius: 14px !important;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONE
+   ========================================================= */
+
+@media screen and (max-width: 380px) {
+
+    #successItems img {
+        width: 64px !important;
+        height: 64px !important;
+
+        min-width: 64px !important;
+        max-width: 64px !important;
+
+        min-height: 64px !important;
+        max-height: 64px !important;
+
+        flex: 0 0 64px !important;
+
+        border-radius: 12px !important;
+    }
+}
+/* =========================================================
+   11:11 PIZZA CAFE
+   VIP COLORFUL ORDER ITEM IMAGE
+   DESKTOP + MOBILE
+   ========================================================= */
+
+#successItems img {
+    width: 82px !important;
+    height: 82px !important;
+
+    min-width: 82px !important;
+    max-width: 82px !important;
+    min-height: 82px !important;
+    max-height: 82px !important;
+
+    display: block !important;
+    object-fit: cover !important;
+
+    border-radius: 18px !important;
+
+    /* VIP COLORFUL BORDER */
+    border: 3px solid transparent !important;
+    background:
+        linear-gradient(#fff, #fff) padding-box,
+        linear-gradient(
+            135deg,
+            #ff6b35,
+            #ff3d81,
+            #8b5cf6,
+            #06b6d4,
+            #22c55e
+        ) border-box !important;
+
+    /* VIP GLOW */
+    box-shadow:
+        0 8px 22px rgba(255, 75, 75, 0.18),
+        0 5px 14px rgba(139, 92, 246, 0.15) !important;
+
+    flex: 0 0 82px !important;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease !important;
+}
+
+
+/* IMAGE HOVER */
+#successItems img:hover {
+    transform: scale(1.04) !important;
+
+    box-shadow:
+        0 12px 28px rgba(255, 75, 75, 0.25),
+        0 8px 20px rgba(139, 92, 246, 0.22) !important;
+}
+
+
+/* =========================================================
+   MOBILE VIP IMAGE
+   ========================================================= */
+
+@media screen and (max-width: 768px) {
+
+    #successItems img {
+        width: 72px !important;
+        height: 72px !important;
+
+        min-width: 72px !important;
+        max-width: 72px !important;
+        min-height: 72px !important;
+        max-height: 72px !important;
+
+        flex: 0 0 72px !important;
+
+        border-radius: 15px !important;
+        border-width: 2px !important;
+
+        box-shadow:
+            0 6px 18px rgba(255, 75, 75, 0.16),
+            0 4px 12px rgba(139, 92, 246, 0.14) !important;
+    }
+
+    #successItems img:hover {
+        transform: none !important;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media screen and (max-width: 380px) {
+
+    #successItems img {
+        width: 64px !important;
+        height: 64px !important;
+
+        min-width: 64px !important;
+        max-width: 64px !important;
+        min-height: 64px !important;
+        max-height: 64px !important;
+
+        flex: 0 0 64px !important;
+
+        border-radius: 13px !important;
+    }
+}
+/* =========================================================
+   11:11 PIZZA CAFE
+   VIP COLORFUL BUTTONS
+   DESKTOP
+   ========================================================= */
+
+.track-order-btn,
+.home-btn,
+.copy-order-id {
+    position: relative !important;
+    overflow: hidden !important;
+    isolation: isolate !important;
+    border: none !important;
+    cursor: pointer !important;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        filter 0.25s ease !important;
+}
+
+
+/* =========================================================
+   TRACK YOUR ORDER
+   ========================================================= */
+
+.track-order-btn {
+    background: linear-gradient(
+        135deg,
+        #ff512f 0%,
+        #ff3d81 35%,
+        #8b5cf6 70%,
+        #6366f1 100%
+    ) !important;
+
+    color: #ffffff !important;
+
+    box-shadow:
+        0 10px 25px rgba(255, 81, 47, 0.25),
+        0 7px 20px rgba(139, 92, 246, 0.22) !important;
+}
+
+.track-order-btn i {
+    color: #ffffff !important;
+}
+
+.track-order-btn:hover {
+    transform: translateY(-3px) !important;
+
+    box-shadow:
+        0 15px 32px rgba(255, 81, 47, 0.32),
+        0 10px 28px rgba(139, 92, 246, 0.30) !important;
+
+    filter: brightness(1.05) !important;
+}
+
+.track-order-btn:active {
+    transform: scale(0.98) !important;
+}
+
+
+/* =========================================================
+   BACK TO HOME
+   ========================================================= */
+
+.home-btn {
+    background: linear-gradient(
+        135deg,
+        #06b6d4 0%,
+        #3b82f6 40%,
+        #6366f1 70%,
+        #8b5cf6 100%
+    ) !important;
+
+    color: #ffffff !important;
+
+    box-shadow:
+        0 9px 23px rgba(6, 182, 212, 0.22),
+        0 6px 18px rgba(99, 102, 241, 0.20) !important;
+
+    text-decoration: none !important;
+}
+
+.home-btn i {
+    color: #ffffff !important;
+}
+
+.home-btn:hover {
+    transform: translateY(-3px) !important;
+
+    box-shadow:
+        0 14px 30px rgba(6, 182, 212, 0.30),
+        0 9px 25px rgba(99, 102, 241, 0.28) !important;
+
+    filter: brightness(1.05) !important;
+}
+
+.home-btn:active {
+    transform: scale(0.98) !important;
+}
+
+
+/* =========================================================
+   COPY ORDER ID
+   ========================================================= */
+
+.copy-order-id {
+    background: linear-gradient(
+        135deg,
+        #f97316,
+        #ec4899,
+        #8b5cf6
+    ) !important;
+
+    color: #ffffff !important;
+
+    box-shadow:
+        0 6px 16px rgba(236, 72, 153, 0.20),
+        0 4px 12px rgba(139, 92, 246, 0.16) !important;
+}
+
+.copy-order-id i {
+    color: #ffffff !important;
+}
+
+.copy-order-id:hover {
+    transform: scale(1.07) !important;
+
+    box-shadow:
+        0 9px 20px rgba(236, 72, 153, 0.28),
+        0 6px 16px rgba(139, 92, 246, 0.24) !important;
+}
+
+.copy-order-id:active {
+    transform: scale(0.94) !important;
+}
+
+
+/* =========================================================
+   COLORFUL SHINE EFFECT
+   ========================================================= */
+
+.track-order-btn::before,
+.home-btn::before,
+.copy-order-id::before {
+    content: "" !important;
+
+    position: absolute !important;
+
+    top: -60% !important;
+    left: -80% !important;
+
+    width: 45% !important;
+    height: 220% !important;
+
+    background: rgba(255, 255, 255, 0.22) !important;
+
+    transform: rotate(25deg) !important;
+
+    transition: left 0.55s ease !important;
+
+    z-index: -1 !important;
+}
+
+.track-order-btn:hover::before,
+.home-btn:hover::before,
+.copy-order-id:hover::before {
+    left: 140% !important;
+}
+
+
+/* =========================================================
+   FOCUS
+   ========================================================= */
+
+.track-order-btn:focus-visible,
+.home-btn:focus-visible,
+.copy-order-id:focus-visible {
+    outline: 3px solid rgba(139, 92, 246, 0.30) !important;
+    outline-offset: 3px !important;
+}

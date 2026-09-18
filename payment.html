@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Payment | 11:11 Pizza Cafe</title>
+
+    <meta
+        name="description"
+        content="Secure payment for 11:11 Pizza Cafe."
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- Existing common CSS -->
+    <link rel="stylesheet" href="desktop.css">
+    <link rel="stylesheet" href="mobile.css">
+
+    <!-- Payment CSS -->
+    <link rel="stylesheet" href="payment.css">
+    <link rel="stylesheet" href="paymentmobile.css">
+</head>
+
+<body>
+
+    <!-- =================================================
+         EXISTING SHARED NAVBAR
+         navbar.html WILL BE LOADED HERE
+         ================================================= -->
+
+    <div id="navbar"></div>
+
+
+    <!-- =================================================
+         PAYMENT PAGE
+         ================================================= -->
+
+    <main class="payment-page">
+
+
+        <!-- =================================================
+             PAYMENT HEADER
+             ================================================= -->
+
+        <section class="payment-header">
+
+            <div class="payment-badge">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <span>
+                    SECURE PAYMENT
+                </span>
+
+            </div>
+
+
+            <h1>
+                Complete Your Payment
+            </h1>
+
+
+            <p>
+                Choose your preferred payment method
+                and pay securely.
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PAYMENT MAIN CONTAINER
+             ================================================= -->
+
+        <section class="payment-container">
+
+
+            <!-- =================================================
+                 LEFT — PAYMENT METHODS
+                 ================================================= -->
+
+            <section class="payment-method-section">
+
+                <div class="payment-card">
+
+
+                    <!-- CARD HEADING -->
+
+                    <div class="payment-card-heading">
+
+                        <div class="payment-heading-icon">
+
+                            <i class="fa-solid fa-credit-card"></i>
+
+                        </div>
+
+
+                        <div class="payment-heading-text">
+
+                            <span>
+                                PAYMENT METHOD
+                            </span>
+
+                            <h2>
+                                Select Payment
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         PAYMENT METHODS
+                         ================================================= -->
+
+                    <div class="payment-methods">
+
+
+                        <!-- UPI QR -->
+
+                        <button
+                            type="button"
+                            class="payment-method"
+                            data-method="upi-qr"
+                        >
+
+                            <div class="method-icon method-upi-qr">
+
+                                <i class="fa-solid fa-qrcode"></i>
+
+                            </div>
+
+
+                            <div class="method-content">
+
+                                <strong>
+                                    UPI QR
+                                </strong>
+
+                                <span>
+                                    Scan QR and pay the exact amount
+                                </span>
+
+                            </div>
+
+
+                            <div class="method-arrow">
+
+                                <i class="fa-solid fa-chevron-right"></i>
+
+                            </div>
+
+                        </button>
+
+
+
+                        <!-- UPI ID -->
+
+                        <button
+                            type="button"
+                            class="payment-method"
+                            data-method="upi"
+                        >
+
+                            <div class="method-icon method-upi">
+
+                                <i class="fa-solid fa-mobile-screen-button"></i>
+
+                            </div>
+
+
+                            <div class="method-content">
+
+                                <strong>
+                                    UPI ID
+                                </strong>
+
+                                <span>
+                                    Pay using your UPI ID
+                                </span>
+
+                            </div>
+
+
+                            <div class="method-arrow">
+
+                                <i class="fa-solid fa-chevron-right"></i>
+
+                            </div>
+
+                        </button>
+
+
+
+                        <!-- CARD -->
+
+                        <button
+                            type="button"
+                            class="payment-method"
+                            data-method="card"
+                        >
+
+                            <div class="method-icon method-card">
+
+                                <i class="fa-solid fa-credit-card"></i>
+
+                            </div>
+
+
+                            <div class="method-content">
+
+                                <strong>
+                                    Credit / Debit Card
+                                </strong>
+
+                                <span>
+                                    Visa, Mastercard, RuPay and supported cards
+                                </span>
+
+                            </div>
+
+
+                            <div class="method-arrow">
+
+                                <i class="fa-solid fa-chevron-right"></i>
+
+                            </div>
+
+                        </button>
+
+
+
+                        <!-- NET BANKING -->
+
+                        <button
+                            type="button"
+                            class="payment-method"
+                            data-method="netbanking"
+                        >
+
+                            <div class="method-icon method-netbanking">
+
+                                <i class="fa-solid fa-building-columns"></i>
+
+                            </div>
+
+
+                            <div class="method-content">
+
+                                <strong>
+                                    Net Banking
+                                </strong>
+
+                                <span>
+                                    Pay directly through your bank
+                                </span>
+
+                            </div>
+
+
+                            <div class="method-arrow">
+
+                                <i class="fa-solid fa-chevron-right"></i>
+
+                            </div>
+
+                        </button>
+
+
+
+                        <!-- WALLET -->
+
+                        <button
+                            type="button"
+                            class="payment-method"
+                            data-method="wallet"
+                        >
+
+                            <div class="method-icon method-wallet">
+
+                                <i class="fa-solid fa-wallet"></i>
+
+                            </div>
+
+
+                            <div class="method-content">
+
+                                <strong>
+                                    Wallet
+                                </strong>
+
+                                <span>
+                                    Use a supported digital wallet
+                                </span>
+
+                            </div>
+
+
+                            <div class="method-arrow">
+
+                                <i class="fa-solid fa-chevron-right"></i>
+
+                            </div>
+
+                        </button>
+
+
+
+                        <!-- COD -->
+
+                        <button
+                            type="button"
+                            class="payment-method"
+                            data-method="cod"
+                        >
+
+                            <div class="method-icon method-cod">
+
+                                <i class="fa-solid fa-money-bill-wave"></i>
+
+                            </div>
+
+
+                            <div class="method-content">
+
+                                <strong>
+                                    Cash on Delivery
+                                </strong>
+
+                                <span>
+                                    Pay when your order is delivered
+                                </span>
+
+                            </div>
+
+
+                            <div class="method-arrow">
+
+                                <i class="fa-solid fa-chevron-right"></i>
+
+                            </div>
+
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         PAYMENT DETAILS
+                         ================================================= -->
+
+                    <div
+                        class="payment-details"
+                        id="paymentDetails"
+                    >
+
+                        <div class="payment-details-empty">
+
+                            <div class="details-empty-icon">
+
+                                <i class="fa-solid fa-lock"></i>
+
+                            </div>
+
+
+                            <h3>
+                                Select a Payment Method
+                            </h3>
+
+
+                            <p>
+                                Choose a payment method above
+                                to continue.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 RIGHT — ORDER SUMMARY
+                 ================================================= -->
+
+            <aside class="payment-summary-section">
+
+
+                <div class="payment-card order-summary-card">
+
+
+                    <!-- SUMMARY HEADING -->
+
+                    <div class="summary-heading">
+
+                        <div>
+
+                            <span>
+                                YOUR ORDER
+                            </span>
+
+                            <h2>
+                                Order Summary
+                            </h2>
+
+                        </div>
+
+
+                        <a
+                            href="cart.html"
+                            class="edit-cart"
+                        >
+
+                            <i class="fa-solid fa-pen"></i>
+
+                            <span>
+                                Edit
+                            </span>
+
+                        </a>
+
+                    </div>
+
+
+
+                    <!-- ORDER ITEMS -->
+
+                    <div
+                        class="order-items"
+                        id="orderItems"
+                    >
+                    </div>
+
+
+
+                    <!-- =================================================
+                         PRICE BREAKDOWN
+                         ================================================= -->
+
+                    <div class="price-breakdown">
+
+
+                        <!-- SUBTOTAL -->
+
+                        <div class="price-row">
+
+                            <span>
+                                Subtotal
+                            </span>
+
+                            <strong id="paymentSubtotal">
+                                ₹0
+                            </strong>
+
+                        </div>
+
+
+
+                        <!-- DISCOUNT -->
+
+                        <div class="price-row discount-row">
+
+                            <span>
+                                Discount
+                            </span>
+
+                            <strong id="paymentDiscount">
+                                −₹0
+                            </strong>
+
+                        </div>
+
+
+
+                        <!-- DELIVERY -->
+
+                        <div class="price-row">
+
+                            <span>
+                                Delivery
+                            </span>
+
+                            <strong id="paymentDelivery">
+                                ₹0
+                            </strong>
+
+                        </div>
+
+
+
+                        <!-- EXTRA FEE -->
+
+                        <div
+                            class="price-row"
+                            id="extraFeeRow"
+                        >
+
+                            <span>
+                                Extra Fee
+                            </span>
+
+                            <strong id="paymentExtraFee">
+                                ₹0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         TOTAL
+                         ================================================= -->
+
+                    <div class="payment-total">
+
+                        <span>
+                            Total Payable
+                        </span>
+
+                        <strong id="paymentTotal">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         SELECTED PAYMENT METHOD
+                         ================================================= -->
+
+                    <div class="selected-method">
+
+                        <span>
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                            Selected Method
+
+                        </span>
+
+
+                        <strong id="selectedMethod">
+                            Not selected
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         PAY BUTTON
+                         ================================================= -->
+
+                    <button
+                        type="button"
+                        class="pay-button"
+                        id="payButton"
+                        disabled
+                    >
+
+                        <span>
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            Continue Securely
+
+                        </span>
+
+
+                        <strong id="payButtonAmount">
+                            ₹0
+                        </strong>
+
+                    </button>
+
+
+
+                    <!-- =================================================
+                         SECURITY NOTE
+                         ================================================= -->
+
+                    <div class="payment-security-note">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+
+                        <p>
+                            Your payment is processed through
+                            a secure payment gateway. We never
+                            store your UPI PIN, card PIN or OTP.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     DELIVERY NOTE
+                     ================================================= -->
+
+                <div class="payment-delivery-card">
+
+                    <div class="delivery-icon">
+
+                        <i class="fa-solid fa-motorcycle"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Fast Local Delivery
+                        </strong>
+
+
+                        <p>
+                            Your order will be prepared after
+                            successful payment confirmation.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =================================================
+         PAYMENT JAVASCRIPT
+         ================================================= -->
+
+    <script src="payment.js"></script>
+
+</body>
+</html>

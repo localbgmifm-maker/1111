@@ -1,0 +1,348 @@
+/* =========================================================
+   11:11 PIZZA CAFE
+   LOGIN / OTP - MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    /* =====================================================
+       PAGE
+       ===================================================== */
+
+    .login-page {
+        min-height: calc(100vh - 130px);
+
+        padding:
+            25px 12px-
+            105px;
+
+        align-items: flex-start;
+    }
+
+    /* =====================================================
+       CARD
+       ===================================================== */
+
+    .login-card {
+        width: 100%;
+        max-width: 440px;
+
+        padding:
+            28px 18px
+            23px;
+
+        border-radius: 25px;
+
+        background: rgba(255, 255, 255, 0.78);
+
+        backdrop-filter: blur(22px);
+        -webkit-backdrop-filter: blur(22px);
+
+        box-shadow:
+            0 20px 55px rgba(49, 31, 74, 0.12),
+            inset 0 1px 0 rgba(255, 255, 255, 0.95);
+    }
+
+    /* =====================================================
+       BRAND
+       ===================================================== */
+
+    .login-brand {
+        gap: 12px;
+
+        margin-bottom: 31px;
+    }
+
+    .login-brand-icon {
+        width: 62px;
+        height: 62px;
+
+        border-radius: 19px;
+
+        font-size: 26px;
+    }
+
+    .login-brand-small {
+        margin-bottom: 3px;
+
+        font-size: 13px;
+    }
+
+    .login-brand h1 {
+        font-size: 26px;
+
+        letter-spacing: -0.7px;
+    }
+
+    /* =====================================================
+       LABEL
+       ===================================================== */
+
+    .login-label {
+        gap: 6px;
+
+        margin-bottom: 12px;
+
+        font-size: 10px;
+
+        letter-spacing: 1.6px;
+    }
+
+    .login-label i {
+        font-size: 11px;
+    }
+
+    /* =====================================================
+       HEADING
+       ===================================================== */
+
+    .login-heading h2 {
+        font-size: 26px;
+    }
+
+    .login-heading p {
+        margin:
+            10px auto
+            25px;
+
+        max-width: 320px;
+
+        font-size: 13px;
+        line-height: 1.55;
+    }
+
+    /* =====================================================
+       LABEL
+       ===================================================== */
+
+    #phoneForm > label,
+    #otpForm > label {
+        margin-bottom: 7px;
+
+        font-size: 13px;
+    }
+
+    /* =====================================================
+       PHONE INPUT
+       ===================================================== */
+
+    .phone-input {
+        gap: 7px;
+    }
+
+    .country-code {
+        width: 72px;
+        height: 52px;
+
+        border-radius: 15px;
+
+        font-size: 15px;
+    }
+
+    .phone-input input {
+        height: 52px;
+
+        padding:
+            0 13px;
+
+        border-radius: 15px;
+
+        font-size: 14px;
+    }
+
+    /* =====================================================
+       ERROR
+       ===================================================== */
+
+    .login-error {
+        min-height: 18px;
+
+        margin-top: 6px;
+
+        font-size: 11px;
+    }
+
+    /* =====================================================
+       BUTTON
+       ===================================================== */
+
+    .login-primary-btn {
+        height: 52px;
+
+        margin-top: 4px;
+
+        border-radius: 15px;
+
+        gap: 9px;
+
+        font-size: 14px;
+    }
+
+    .login-primary-btn i {
+        font-size: 13px;
+    }
+
+    /* =====================================================
+       INFO
+       ===================================================== */
+
+    .login-info {
+        margin-top: 14px;
+
+        gap: 6px;
+
+        font-size: 11px;
+    }
+
+    .login-info i {
+        font-size: 13px;
+    }
+
+    /* =====================================================
+       OTP
+       ===================================================== */
+
+    .otp-inputs {
+        gap: 6px;
+
+        margin-top: 10px;
+    }
+
+    .otp-input {
+        width: 43px;
+        height: 51px;
+
+        border-radius: 13px;
+
+        font-size: 18px;
+    }
+
+    /* =====================================================
+       OTP ACTIONS
+       ===================================================== */
+
+    .otp-actions {
+        margin-top: 12px;
+
+        gap: 8px;
+    }
+
+    .text-btn {
+        font-size: 11px;
+    }
+
+    .resend-timer {
+        margin-top: 3px;
+
+        font-size: 10px;
+    }
+
+    /* =====================================================
+       SUCCESS
+       ===================================================== */
+
+    .success-icon {
+        width: 65px;
+        height: 65px;
+
+        margin-bottom: 16px;
+
+        font-size: 25px;
+    }
+
+    #successStep h2 {
+        font-size: 25px;
+    }
+
+    #successStep p {
+        margin:
+            8px 0
+            20px;
+
+        font-size: 13px;
+    }
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+
+    .login-footer {
+        margin-top: 19px;
+
+        font-size: 10px;
+    }
+
+    .login-footer i {
+        font-size: 11px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .login-page {
+        padding-left: 9px;
+        padding-right: 9px;
+    }
+
+    .login-card {
+        padding:
+            25px 14px
+            21px;
+    }
+
+    .login-brand {
+        gap: 10px;
+    }
+
+    .login-brand-icon {
+        width: 56px;
+        height: 56px;
+
+        border-radius: 17px;
+
+        font-size: 23px;
+    }
+
+    .login-brand-small {
+        font-size: 11px;
+    }
+
+    .login-brand h1 {
+        font-size: 23px;
+    }
+
+    .login-heading h2 {
+        font-size: 24px;
+    }
+
+    .phone-input {
+        gap: 6px;
+    }
+
+    .country-code {
+        width: 67px;
+    }
+
+    .phone-input input {
+        padding-left: 11px;
+        padding-right: 9px;
+
+        font-size: 13px;
+    }
+
+    .otp-inputs {
+        gap: 4px;
+    }
+
+    .otp-input {
+        width: 40px;
+        height: 48px;
+    }
+
+}

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Cart | 11:11 Pizza Cafe</title>
+
+
+    <!-- =========================================
+         MAIN WEBSITE CSS
+    ========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="desktop.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="mobile.css"
+    >
+
+
+    <!-- =========================================
+         CART CSS
+    ========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="cartdesktop.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="cartmobile.css"
+    >
+
+
+    <!-- =========================================
+         FONT AWESOME
+    ========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         COMMON NAVBAR
+    ========================================== -->
+
+    <div id="navbar"></div>
+
+
+
+    <!-- =========================================
+         CART PAGE
+    ========================================== -->
+
+    <main class="cart-page">
+
+
+        <!-- =====================================
+             CART HEADER
+        ====================================== -->
+
+        <section class="cart-header">
+
+            <div class="cart-header-icon">
+                🛒
+            </div>
+
+
+            <div>
+
+                <span class="cart-small-title">
+                    11:11 PIZZA CAFE
+                </span>
+
+
+                <h1>
+                    Your Cart
+                </h1>
+
+
+                <p>
+                    Check your items before moving to checkout.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             CART MAIN
+        ====================================== -->
+
+        <section class="cart-layout">
+
+
+            <!-- =================================
+                 LEFT SIDE
+            ================================== -->
+
+            <div class="cart-items-section">
+
+
+                <div class="cart-section-title">
+
+                    <h2>
+                        Your Items
+                    </h2>
+
+
+                    <span id="cartItemCount">
+                        0 Items
+                    </span>
+
+                </div>
+
+
+                <!-- Cart products will appear here -->
+
+                <div id="cartItems"></div>
+
+
+            </div>
+
+
+
+            <!-- =================================
+                 RIGHT SIDE
+            ================================== -->
+
+            <aside class="cart-summary">
+
+
+                <h2>
+                    Order Summary
+                </h2>
+
+
+                <!-- SUBTOTAL -->
+
+                <div class="summary-row">
+
+                    <span>
+                        Subtotal
+                    </span>
+
+                    <strong id="subtotal">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <!-- DISCOUNT -->
+
+                <div class="summary-row">
+
+                    <span>
+                        Discount
+                    </span>
+
+                    <strong id="discount">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <!-- DELIVERY -->
+
+                <div class="summary-row">
+
+                    <span>
+                        Delivery
+                    </span>
+
+                    <strong id="deliveryCharge">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <!-- DIVIDER -->
+
+                <div class="summary-divider"></div>
+
+
+                <!-- GRAND TOTAL -->
+
+                <div class="summary-total">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong id="grandTotal">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+
+                <!-- =================================
+                     DELIVERY INFO
+                ================================== -->
+
+                <div class="cart-delivery-info">
+
+
+                    <div class="delivery-icon">
+                        🛵
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Delivery Available
+                        </strong>
+
+
+                        <p>
+                            Within 5 KM
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================
+                     CHECKOUT
+                ================================== -->
+
+                <button
+                    type="button"
+                    class="checkout-button"
+                    id="checkoutButton"
+                    disabled
+                >
+
+                    <span>
+                        Proceed to Checkout
+                    </span>
+
+                    <span>
+                        →
+                    </span>
+
+                </button>
+
+
+
+                <!-- =================================
+                     CONTINUE SHOPPING
+                ================================== -->
+
+                <button
+                    type="button"
+                    class="continue-shopping"
+                    id="continueShopping"
+                >
+
+                    ← Continue Shopping
+
+                </button>
+
+
+            </aside>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         LOAD COMMON NAVBAR
+    ========================================== -->
+
+    <script>
+
+        fetch("navbar.html")
+
+            .then(function (response) {
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "Navbar file not found"
+                    );
+
+                }
+
+                return response.text();
+
+            })
+
+            .then(function (data) {
+
+                const navbar =
+                    document.getElementById("navbar");
+
+
+                if (navbar) {
+
+                    navbar.innerHTML = data;
+
+                }
+
+
+                /*
+                    Existing navbar function.
+                    Only runs if available.
+                */
+
+                if (
+                    typeof initNavbar === "function"
+                ) {
+
+                    initNavbar();
+
+                }
+
+
+                /*
+                    Update cart count
+                    after navbar loads.
+                */
+
+                if (
+                    typeof updateCartCount === "function"
+                ) {
+
+                    updateCartCount();
+
+                }
+
+            })
+
+            .catch(function (error) {
+
+                console.error(
+                    "Navbar Error:",
+                    error
+                );
+
+            });
+
+    </script>
+
+
+
+    <!-- =========================================
+         CART JAVASCRIPT
+         LOAD ONLY ONCE
+    ========================================== -->
+
+    <script src="cart.js"></script>
+
+
+
+    <!-- =========================================
+         CONTINUE SHOPPING
+    ========================================== -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const continueButton =
+                    document.getElementById(
+                        "continueShopping"
+                    );
+
+
+                if (continueButton) {
+
+                    continueButton.addEventListener(
+                        "click",
+                        function () {
+
+                            window.location.href =
+                                "index.html";
+
+                        }
+                    );
+
+                }
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

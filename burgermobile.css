@@ -1,0 +1,576 @@
+/* =========================================================
+   11:11 PIZZA CAFE
+   BURGER MOBILE CSS
+   PREMIUM — EXTRA CLEAR TEXT
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* =====================================================
+       GLOBAL
+       ===================================================== */
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    html {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        overflow-x: hidden;
+
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+    }
+
+    /* =====================================================
+       BURGER PAGE
+       ===================================================== */
+
+    .burger-page {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 12px 100px;
+        margin: 0 auto;
+    }
+
+    /* =====================================================
+       HERO
+       ===================================================== */
+
+    .burger-hero {
+        width: 100%;
+        min-height: 170px;
+
+        margin: 0 0 20px;
+        padding: 22px 17px;
+
+        border-radius: 22px;
+        overflow: hidden;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    .burger-hero-content {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .burger-label {
+        display: block;
+
+        margin: 0 0 7px;
+
+        font-size: 12px;
+        line-height: 1.2;
+        font-weight: 950;
+        letter-spacing: 1.4px;
+
+        opacity: 1 !important;
+    }
+
+    .burger-hero h1 {
+        margin: 0;
+
+        font-size: 29px;
+        line-height: 1.08;
+        font-weight: 950;
+        letter-spacing: -0.4px;
+
+        opacity: 1 !important;
+
+        text-shadow: none;
+    }
+
+    .burger-hero-image {
+        width: 43%;
+        max-width: 175px;
+        flex-shrink: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .burger-hero-image img {
+        width: 100%;
+        height: auto;
+
+        display: block;
+
+        object-fit: contain;
+
+        opacity: 1 !important;
+        filter: none !important;
+    }
+
+    /* =====================================================
+       SECTION
+       ===================================================== */
+
+    .burger-section {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .burger-section-heading {
+        width: 100%;
+
+        margin: 0 0 15px;
+
+        font-size: 23px;
+        line-height: 1.15;
+        font-weight: 950;
+        letter-spacing: -0.2px;
+
+        opacity: 1 !important;
+
+        text-shadow: none;
+    }
+
+    /* =====================================================
+       GRID
+       ===================================================== */
+
+    .burger-grid {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: 1fr;
+
+        gap: 17px;
+    }
+
+    /* =====================================================
+       BURGER CARD
+       ===================================================== */
+
+    .burger-card {
+        width: 100%;
+        min-width: 0;
+
+        overflow: hidden;
+
+        border-radius: 19px;
+
+        opacity: 1 !important;
+    }
+
+    /* =====================================================
+       IMAGE
+       ===================================================== */
+
+    .burger-image-wrap {
+        width: 100%;
+        height: 215px;
+
+        overflow: hidden;
+    }
+
+    .burger-image-wrap img {
+        width: 100%;
+        height: 100%;
+
+        display: block;
+
+        object-fit: cover;
+
+        opacity: 1 !important;
+        filter: none !important;
+    }
+
+    /* =====================================================
+       CARD CONTENT
+       ===================================================== */
+
+    .burger-card-content {
+        width: 100%;
+        padding: 15px 14px 15px;
+    }
+
+    /* =====================================================
+       BURGER NAME — EXTRA CLEAR
+       ===================================================== */
+
+    .burger-card h2,
+    .burger-card h3,
+    .burger-card .burger-name {
+        display: block;
+
+        width: 100%;
+
+        margin: 0 0 7px;
+
+        font-size: 21px;
+        line-height: 1.18;
+        font-weight: 950;
+        letter-spacing: -0.25px;
+
+        opacity: 1 !important;
+
+        filter: none !important;
+        mix-blend-mode: normal !important;
+        -webkit-text-fill-color: currentColor;
+
+        text-shadow: none;
+    }
+
+    /* =====================================================
+       DESCRIPTION — CLEAR
+       ===================================================== */
+
+    .burger-description {
+        display: block;
+
+        width: 100%;
+
+        margin: 0 0 11px;
+
+        font-size: 14px;
+        line-height: 1.5;
+
+        font-weight: 650;
+        letter-spacing: 0;
+
+        opacity: 1 !important;
+
+        filter: none !important;
+        mix-blend-mode: normal !important;
+        -webkit-text-fill-color: currentColor;
+
+        text-shadow: none;
+    }
+
+    /* =====================================================
+       PRICE — EXTRA CLEAR
+       ===================================================== */
+
+    .burger-price {
+        display: block;
+
+        width: 100%;
+
+        margin: 0 0 13px;
+
+        font-size: 23px;
+        line-height: 1;
+
+        font-weight: 950;
+        letter-spacing: 0;
+
+        opacity: 1 !important;
+
+        filter: none !important;
+        mix-blend-mode: normal !important;
+        -webkit-text-fill-color: currentColor;
+
+        text-shadow: none;
+    }
+
+    /* =====================================================
+       BUY ROW
+       ===================================================== */
+
+    .burger-buy-row {
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 10px;
+
+        margin: 0 0 12px;
+    }
+
+    /* =====================================================
+       QUANTITY
+       ===================================================== */
+
+    .quantity-box {
+        flex-shrink: 0;
+
+        min-height: 40px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 10px;
+
+        overflow: hidden;
+    }
+
+    .quantity-box button {
+        width: 38px;
+        height: 40px;
+
+        padding: 0;
+        margin: 0;
+
+        border: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 19px;
+        line-height: 1;
+
+        font-weight: 950;
+
+        opacity: 1 !important;
+
+        cursor: pointer;
+    }
+
+    .quantity {
+        min-width: 40px;
+        height: 40px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 15px;
+        line-height: 1;
+
+        font-weight: 950;
+
+        opacity: 1 !important;
+
+        filter: none !important;
+        -webkit-text-fill-color: currentColor;
+    }
+
+    /* =====================================================
+       ACTION BUTTON AREA
+       ===================================================== */
+
+    .burger-actions {
+        width: 100%;
+        min-width: 0;
+
+        margin: 0;
+
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+        gap: 8px;
+
+        align-items: stretch;
+    }
+
+    /* =====================================================
+       ADD TO CART + BUY NOW
+       ===================================================== */
+
+    .burger-actions .add-cart-btn,
+    .burger-actions .buy-now-btn,
+    .add-cart-btn,
+    .buy-now-btn {
+
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+
+        height: 44px;
+        min-height: 44px;
+        max-height: 44px;
+
+        margin: 0;
+        padding: 0 7px;
+
+        border: 0;
+        border-radius: 11px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        gap: 6px;
+
+        font-family: inherit;
+
+        font-size: 12px;
+        line-height: 1;
+
+        font-weight: 950;
+        letter-spacing: 0;
+
+        white-space: nowrap;
+        overflow: hidden;
+
+        opacity: 1 !important;
+
+        filter: none !important;
+        mix-blend-mode: normal !important;
+
+        -webkit-text-fill-color: #ffffff;
+
+        text-shadow: none;
+
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* =====================================================
+       BUTTON ICONS
+       ===================================================== */
+
+    .burger-actions .add-cart-btn i,
+    .burger-actions .buy-now-btn i,
+    .add-cart-btn i,
+    .buy-now-btn i {
+
+        flex-shrink: 0;
+
+        width: auto;
+        height: auto;
+
+        margin: 0;
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 14px;
+        line-height: 1;
+
+        opacity: 1 !important;
+
+        filter: none !important;
+        -webkit-text-fill-color: #ffffff;
+    }
+
+    /* =====================================================
+       BUTTON TEXT
+       ===================================================== */
+
+    .burger-actions .add-cart-btn span,
+    .burger-actions .buy-now-btn span {
+
+        display: inline-block;
+
+        max-width: 100%;
+
+        font-size: 12px;
+        line-height: 1;
+
+        font-weight: 950;
+
+        opacity: 1 !important;
+
+        filter: none !important;
+        mix-blend-mode: normal !important;
+
+        -webkit-text-fill-color: #ffffff;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* =====================================================
+       ACTIVE
+       ===================================================== */
+
+    .add-cart-btn:active,
+    .buy-now-btn:active {
+        transform: scale(0.97);
+    }
+
+    /* =====================================================
+       SMALL MOBILE
+       ===================================================== */
+
+    @media (max-width: 380px) {
+
+        .burger-page {
+            padding-left: 9px;
+            padding-right: 9px;
+        }
+
+        .burger-hero {
+            padding: 19px 14px;
+        }
+
+        .burger-hero h1 {
+            font-size: 26px;
+        }
+
+        .burger-section-heading {
+            font-size: 21px;
+        }
+
+        .burger-image-wrap {
+            height: 195px;
+        }
+
+        .burger-card-content {
+            padding: 13px 12px;
+        }
+
+        .burger-card h2,
+        .burger-card h3,
+        .burger-card .burger-name {
+            font-size: 19px;
+        }
+
+        .burger-description {
+            font-size: 13px;
+            line-height: 1.48;
+        }
+
+        .burger-price {
+            font-size: 21px;
+        }
+
+        .burger-actions {
+            gap: 6px;
+        }
+
+        .burger-actions .add-cart-btn,
+        .burger-actions .buy-now-btn,
+        .add-cart-btn,
+        .buy-now-btn {
+
+            height: 42px;
+            min-height: 42px;
+            max-height: 42px;
+
+            padding: 0 5px;
+
+            border-radius: 10px;
+
+            font-size: 11px;
+        }
+
+        .burger-actions .add-cart-btn i,
+        .burger-actions .buy-now-btn i,
+        .add-cart-btn i,
+        .buy-now-btn i {
+            font-size: 13px;
+        }
+
+        .burger-actions .add-cart-btn span,
+        .burger-actions .buy-now-btn span {
+            font-size: 11px;
+        }
+    }
+}

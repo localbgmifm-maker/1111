@@ -1,0 +1,522 @@
+/* =========================================================
+   11:11 PIZZA CAFE
+   ORDER SUCCESS MOBILE
+   FINAL — ZERO EXTRA BOTTOM SPACE
+   ========================================================= */
+
+@media screen and (max-width: 900px) {
+
+    * {
+        box-sizing: border-box !important;
+    }
+
+    html {
+        margin: 0 !important;
+        padding: 0 !important;
+        height: auto !important;
+        min-height: 0 !important;
+    }
+
+    body {
+        margin: 0 !important;
+        padding: 132px 0 0 0 !important;
+
+        height: auto !important;
+        min-height: 0 !important;
+
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+    }
+
+
+    /* =====================================================
+       PAGE
+       ===================================================== */
+
+    .order-success-page {
+        display: block !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        height: auto !important;
+        min-height: 0 !important;
+
+        margin: 0 !important;
+
+        padding: 6px 10px 0 !important;
+    }
+
+
+    /* =====================================================
+       HEADER
+       ===================================================== */
+
+    .success-header {
+        width: 100% !important;
+
+        margin: 0 0 10px !important;
+        padding: 0 !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+
+        gap: 4px !important;
+
+        text-align: center !important;
+    }
+
+    .success-icon {
+        width: 46px !important;
+        height: 46px !important;
+
+        margin: 0 !important;
+    }
+
+    .success-badge {
+        margin: 0 !important;
+    }
+
+    .success-header h1 {
+        margin: 0 !important;
+        font-size: 21px !important;
+        line-height: 1.15 !important;
+    }
+
+    .success-header p {
+        margin: 0 !important;
+        font-size: 10px !important;
+        line-height: 1.35 !important;
+    }
+
+
+    /* =====================================================
+       MAIN CONTAINER
+       ===================================================== */
+
+    .success-container {
+        display: flex !important;
+        flex-direction: column !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        height: auto !important;
+        min-height: 0 !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        gap: 8px !important;
+    }
+
+
+    /* =====================================================
+       LEFT
+       ===================================================== */
+
+    .success-left {
+        display: flex !important;
+        flex-direction: column !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        height: auto !important;
+        min-height: 0 !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        gap: 8px !important;
+
+        order: 1 !important;
+    }
+
+
+    /* =====================================================
+       RIGHT
+       ===================================================== */
+
+    .success-right {
+        display: flex !important;
+        flex-direction: column !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        height: auto !important;
+        min-height: 0 !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        gap: 8px !important;
+
+        order: 2 !important;
+    }
+
+
+    /* =====================================================
+       ALL CARDS
+       ===================================================== */
+
+    .success-card,
+    .confirmation-card,
+    .delivery-card,
+    .status-card,
+    .payment-status-card,
+    .delivery-estimate-card {
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        height: auto !important;
+        min-height: 0 !important;
+
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+
+    /* =====================================================
+       RIGHT SIDE — ONE BELOW ANOTHER
+       ===================================================== */
+
+    .success-right > .status-card {
+        order: 1 !important;
+    }
+
+    .success-right > .payment-status-card {
+        order: 2 !important;
+    }
+
+    .success-right > .delivery-estimate-card {
+        order: 3 !important;
+    }
+
+    .success-right > .success-actions {
+        order: 4 !important;
+    }
+
+
+    /* =====================================================
+       ORDER CONFIRMED
+       ===================================================== */
+
+    .success-right > .status-card {
+        display: block !important;
+
+        padding: 13px !important;
+
+        margin: 0 !important;
+    }
+
+
+    /* =====================================================
+       TIMELINE
+       ===================================================== */
+
+    .status-timeline {
+        display: block !important;
+
+        width: 100% !important;
+
+        margin: 10px 0 0 !important;
+        padding: 0 !important;
+    }
+
+    .status-step {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .timeline-line {
+        margin: 5px 0 !important;
+    }
+
+
+    /* =====================================================
+       PAYMENT
+       ===================================================== */
+
+    .success-right > .payment-status-card {
+        display: flex !important;
+        flex-direction: row !important;
+
+        align-items: center !important;
+
+        gap: 10px !important;
+
+        padding: 13px !important;
+
+        margin: 0 !important;
+    }
+
+    .payment-status-icon {
+        width: 42px !important;
+        min-width: 42px !important;
+
+        height: 42px !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .payment-status-card > div:last-child {
+        min-width: 0 !important;
+        flex: 1 !important;
+    }
+
+
+    /* =====================================================
+       ESTIMATED DELIVERY
+       ===================================================== */
+
+    .success-right > .delivery-estimate-card {
+        display: flex !important;
+        flex-direction: row !important;
+
+        align-items: center !important;
+
+        gap: 10px !important;
+
+        padding: 13px !important;
+
+        margin: 0 !important;
+    }
+
+    .estimate-icon {
+        width: 42px !important;
+        min-width: 42px !important;
+
+        height: 42px !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .estimate-content {
+        min-width: 0 !important;
+        flex: 1 !important;
+    }
+
+
+    /* =====================================================
+       BUTTONS
+       ===================================================== */
+
+    .success-right > .success-actions {
+        display: flex !important;
+        flex-direction: column !important;
+
+        width: 100% !important;
+
+        height: auto !important;
+        min-height: 0 !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        gap: 7px !important;
+    }
+
+    .track-order-btn,
+    .home-btn {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 0 !important;
+
+        flex: none !important;
+    }
+
+    .track-order-btn {
+        height: 49px !important;
+        min-height: 49px !important;
+    }
+
+    .home-btn {
+        height: 43px !important;
+        min-height: 43px !important;
+    }
+
+
+    /* =====================================================
+       ORDER ITEMS
+       ===================================================== */
+
+    #successItems {
+        width: 100% !important;
+
+        height: auto !important;
+        min-height: 0 !important;
+
+        margin: 9px 0 0 !important;
+        padding: 0 !important;
+    }
+
+    #successItems img {
+        width: 72px !important;
+        height: 72px !important;
+
+        min-width: 72px !important;
+        max-width: 72px !important;
+
+        min-height: 72px !important;
+        max-height: 72px !important;
+
+        object-fit: cover !important;
+
+        border-radius: 15px !important;
+    }
+
+
+    /* =====================================================
+       ORDER ID
+       ===================================================== */
+
+    .order-id-box {
+        margin: 9px 0 0 !important;
+    }
+
+
+    /* =====================================================
+       PRICE
+       ===================================================== */
+
+    .success-price-box {
+        margin: 9px 0 0 !important;
+    }
+
+
+    /* =====================================================
+       DELIVERY DETAILS
+       ===================================================== */
+
+    .delivery-details {
+        height: auto !important;
+        min-height: 0 !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .delivery-detail-row {
+        margin-top: 9px !important;
+        margin-bottom: 0 !important;
+    }
+
+
+    /* =====================================================
+       NAVBAR
+       ===================================================== */
+
+    .navbar {
+        position: fixed !important;
+
+        top: 8px !important;
+        left: 8px !important;
+        right: 8px !important;
+
+        width: auto !important;
+        height: 57px !important;
+
+        z-index: 5000 !important;
+    }
+
+
+    /* =====================================================
+       SEARCH
+       ===================================================== */
+
+    .mobile-search-box {
+        position: fixed !important;
+
+        top: 73px !important;
+        left: 8px !important;
+        right: 8px !important;
+
+        width: auto !important;
+
+        z-index: 4999 !important;
+    }
+
+
+    /* =====================================================
+       BOTTOM NAV
+       IMPORTANT:
+       IT DOES NOT CREATE PAGE SPACE
+       ===================================================== */
+
+    .mobile-bottom-nav {
+        position: fixed !important;
+
+        left: 8px !important;
+        right: 8px !important;
+        bottom: 8px !important;
+
+        width: auto !important;
+
+        z-index: 5000 !important;
+    }
+
+
+    /* =====================================================
+       REMOVE LAST-ELEMENT SPACE
+       ===================================================== */
+
+    .order-success-page > *:last-child,
+    .success-container > *:last-child,
+    .success-right > *:last-child,
+    .success-actions:last-child {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media screen and (max-width: 380px) {
+
+    body {
+        padding-top: 132px !important;
+    }
+
+    .order-success-page {
+        padding: 5px 8px 0 !important;
+    }
+
+    .success-header {
+        margin-bottom: 8px !important;
+    }
+
+    .success-container,
+    .success-left,
+    .success-right {
+        gap: 7px !important;
+    }
+
+    .success-right > .status-card,
+    .success-right > .payment-status-card,
+    .success-right > .delivery-estimate-card {
+        padding: 11px !important;
+    }
+
+    #successItems img {
+        width: 64px !important;
+        height: 64px !important;
+
+        min-width: 64px !important;
+        max-width: 64px !important;
+
+        min-height: 64px !important;
+        max-height: 64px !important;
+    }
+}

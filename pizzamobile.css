@@ -1,0 +1,1508 @@
+/* =========================================================
+   11:11 PIZZA CAFE
+   PIZZA MOBILE CSS
+   PREMIUM COLORFUL EDITION
+   PRICE / SIZE VISIBILITY FIX
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* =====================================================
+       MAIN PAGE
+    ===================================================== */
+
+    .pizza-page {
+        width: 100%;
+        padding: 12px 10px 115px;
+        margin: 0;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .pizza-hero {
+        width: 100%;
+        min-height: auto;
+
+        margin: 10px 0 30px;
+        padding: 22px 16px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+
+        border-radius: 24px;
+        overflow: hidden;
+        box-sizing: border-box;
+        position: relative;
+
+        background:
+            linear-gradient(
+                135deg,
+                #ff512f 0%,
+                #f09819 38%,
+                #ff416c 72%,
+                #8e2de2 100%
+            );
+
+        color: #fff;
+
+        box-shadow:
+            0 18px 45px
+            rgba(255,81,47,.22);
+    }
+
+
+    .pizza-hero::before {
+        content: "";
+
+        position: absolute;
+
+        width: 170px;
+        height: 170px;
+
+        top: -80px;
+        right: -50px;
+
+        border-radius: 50%;
+
+        background:
+            rgba(255,255,255,.16);
+
+        filter: blur(5px);
+
+        pointer-events: none;
+    }
+
+
+    .pizza-hero::after {
+        content: "";
+
+        position: absolute;
+
+        width: 130px;
+        height: 130px;
+
+        bottom: -70px;
+        left: -35px;
+
+        border-radius: 50%;
+
+        background:
+            rgba(255,255,255,.12);
+
+        filter: blur(5px);
+
+        pointer-events: none;
+    }
+
+
+    /* =====================================================
+       HERO CONTENT
+    ===================================================== */
+
+    .pizza-hero-content {
+        width: 100%;
+        position: relative;
+        z-index: 2;
+    }
+
+
+    .pizza-label {
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 6px;
+
+        padding: 8px 11px;
+
+        border-radius: 999px;
+
+        background:
+            rgba(255,255,255,.16);
+
+        border:
+            1px solid
+            rgba(255,255,255,.30);
+
+        backdrop-filter:
+            blur(14px);
+
+        -webkit-backdrop-filter:
+            blur(14px);
+
+        font-size: 10px;
+
+        font-weight: 950;
+
+        letter-spacing: .7px;
+    }
+
+
+    .pizza-label i {
+        font-size: 11px;
+    }
+
+
+    .pizza-hero h1 {
+        margin: 14px 0 9px;
+
+        font-size: 31px;
+
+        line-height: 1.06;
+
+        letter-spacing: -.9px;
+
+        font-weight: 950;
+    }
+
+
+    .pizza-hero h1 span {
+        display: inline;
+
+        background:
+            linear-gradient(
+                90deg,
+                #fff,
+                #ffe4d2
+            );
+
+        -webkit-background-clip: text;
+        background-clip: text;
+
+        -webkit-text-fill-color: transparent;
+    }
+
+
+    .pizza-hero p {
+        margin: 0;
+
+        font-size: 13px;
+
+        line-height: 1.58;
+
+        color:
+            rgba(255,255,255,.88);
+    }
+
+
+    /* =====================================================
+       HERO IMAGE
+    ===================================================== */
+
+    .pizza-hero-image {
+        width: 100%;
+
+        height: 215px;
+
+        position: relative;
+
+        z-index: 2;
+
+        border-radius: 21px;
+
+        overflow: hidden;
+
+        border:
+            1px solid
+            rgba(255,255,255,.32);
+
+        box-shadow:
+            0 16px 35px
+            rgba(0,0,0,.25);
+    }
+
+
+    .pizza-hero-image img {
+        width: 100%;
+        height: 100%;
+
+        display: block;
+
+        object-fit: cover;
+    }
+
+
+    /* =====================================================
+       SECTION HEADING
+    ===================================================== */
+
+    .pizza-section-heading {
+        margin-bottom: 20px;
+    }
+
+
+    .pizza-section-heading span {
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 6px;
+
+        padding: 7px 11px;
+
+        border-radius: 999px;
+
+        font-size: 10px;
+
+        font-weight: 950;
+
+        letter-spacing: .8px;
+
+        color: #ff512f;
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(255,81,47,.12),
+                rgba(142,45,226,.10)
+            );
+
+        border:
+            1px solid
+            rgba(255,81,47,.16);
+    }
+
+
+    .pizza-section-heading h2 {
+        margin: 8px 0 5px;
+
+        font-size: 29px;
+
+        line-height: 1.1;
+
+        letter-spacing: -.5px;
+
+        font-weight: 950;
+
+        background:
+            linear-gradient(
+                90deg,
+                #ff512f,
+                #f09819,
+                #ff416c,
+                #8e2de2
+            );
+
+        -webkit-background-clip: text;
+        background-clip: text;
+
+        -webkit-text-fill-color: transparent;
+    }
+
+
+    .pizza-section-heading p {
+        margin: 0;
+
+        font-size: 12px;
+
+        line-height: 1.5;
+
+        opacity: .68;
+    }
+
+
+    /* =====================================================
+       PIZZA GRID
+    ===================================================== */
+
+    .pizza-grid {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns:
+            minmax(0, 1fr);
+
+        gap: 18px;
+    }
+
+
+    /* =====================================================
+       PIZZA CARD
+    ===================================================== */
+
+    .pizza-card {
+        width: 100%;
+
+        position: relative;
+
+        overflow: hidden;
+
+        border-radius: 21px;
+
+        box-sizing: border-box;
+
+        background:
+            linear-gradient(
+                145deg,
+                rgba(255,255,255,.97),
+                rgba(255,245,241,.84)
+            );
+
+        border:
+            1px solid
+            rgba(255,255,255,.85);
+
+        box-shadow:
+            0 15px 38px
+            rgba(0,0,0,.10);
+
+        backdrop-filter:
+            blur(18px);
+
+        -webkit-backdrop-filter:
+            blur(18px);
+    }
+
+
+    .pizza-card::before {
+        content: "";
+
+        position: absolute;
+
+        top: 0;
+        left: 0;
+        right: 0;
+
+        height: 4px;
+
+        z-index: 3;
+
+        background:
+            linear-gradient(
+                90deg,
+                #ff512f,
+                #f09819,
+                #ff416c,
+                #8e2de2
+            );
+    }
+
+
+    /* =====================================================
+       PIZZA IMAGE
+    ===================================================== */
+
+    .pizza-image-wrap {
+        width: 100%;
+
+        height: 225px;
+
+        position: relative;
+
+        overflow: hidden;
+
+        background:
+            linear-gradient(
+                135deg,
+                #fff1eb,
+                #f5e9ff
+            );
+    }
+
+
+    .pizza-image-wrap::after {
+        content: "";
+
+        position: absolute;
+
+        inset: 0;
+
+        background:
+            linear-gradient(
+                180deg,
+                transparent 55%,
+                rgba(0,0,0,.12)
+            );
+
+        pointer-events: none;
+    }
+
+
+    .pizza-image-wrap img {
+        width: 100%;
+        height: 100%;
+
+        display: block;
+
+        object-fit: cover;
+
+        transition:
+            transform .35s ease;
+    }
+
+
+    /* =====================================================
+       CARD CONTENT
+    ===================================================== */
+
+    .pizza-card-content {
+        width: 100%;
+
+        padding: 17px;
+
+        box-sizing: border-box;
+    }
+
+
+    .pizza-card h3 {
+        margin:
+            0 0 8px;
+
+        font-size: 22px;
+
+        line-height: 1.2;
+
+        font-weight: 950;
+
+        color: #181818;
+    }
+
+
+    .pizza-description {
+        min-height: auto;
+
+        margin:
+            0 0 13px;
+
+        font-size: 12.5px;
+
+        line-height: 1.58;
+
+        color: #555;
+
+        opacity: .82;
+    }
+
+
+    /* =====================================================
+       BASE PRICE
+    ===================================================== */
+
+    .pizza-price {
+        display: inline-flex;
+
+        align-items: center;
+
+        padding:
+            7px 11px;
+
+        border-radius: 11px;
+
+        font-size: 24px;
+
+        line-height: 1;
+
+        font-weight: 950;
+
+        color: #ff3d22;
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(255,81,47,.12),
+                rgba(240,152,25,.10)
+            );
+
+        border:
+            1px solid
+            rgba(255,81,47,.14);
+    }
+
+
+    /* =====================================================
+       CHOOSE SIZE
+       CLEAR PRICE FIX
+    ===================================================== */
+
+    .pizza-size-row,
+    .size-selector,
+    .pizza-size-selector,
+    .choose-size {
+        width: 100%;
+
+        margin-top: 15px;
+
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 8px;
+
+        box-sizing: border-box;
+    }
+
+
+    /* ALL COMMON SIZE BUTTON TYPES */
+
+    .size-btn,
+    .pizza-size-btn,
+    .size-option,
+    .pizza-size-option,
+    .size-card {
+        min-width: 0;
+
+        min-height: 42px;
+
+        padding:
+            7px 11px;
+
+        border-radius: 11px;
+
+        border:
+            1px solid
+            rgba(255,81,47,.18);
+
+        background:
+            #ffffff;
+
+        color: #222222 !important;
+
+        opacity: 1 !important;
+
+        display: inline-flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 5px;
+
+        box-sizing: border-box;
+
+        font-size: 11px;
+
+        line-height: 1.15;
+
+        font-weight: 900;
+
+        text-shadow: none;
+
+        box-shadow:
+            0 4px 12px
+            rgba(0,0,0,.06);
+
+        cursor: pointer;
+    }
+
+
+    /* SIZE BUTTON TEXT */
+
+    .size-btn *,
+    .pizza-size-btn *,
+    .size-option *,
+    .pizza-size-option *,
+    .size-card * {
+        color: inherit !important;
+
+        opacity: 1 !important;
+
+        text-shadow: none;
+    }
+
+
+    /* SIZE NAME */
+
+    .size-btn .size-name,
+    .pizza-size-btn .size-name,
+    .size-option .size-name,
+    .pizza-size-option .size-name,
+    .size-card .size-name {
+        color: #222 !important;
+
+        font-weight: 950;
+
+        white-space: nowrap;
+    }
+
+
+    /* PRICE INSIDE SIZE */
+
+    .size-btn .price,
+    .size-btn .size-price,
+    .size-btn .pizza-price,
+    .pizza-size-btn .price,
+    .pizza-size-btn .size-price,
+    .pizza-size-btn .pizza-price,
+    .size-option .price,
+    .size-option .size-price,
+    .pizza-size-option .price,
+    .pizza-size-option .size-price,
+    .size-card .price,
+    .size-card .size-price {
+        color: #e83b20 !important;
+
+        opacity: 1 !important;
+
+        font-size: 11px;
+
+        font-weight: 950;
+
+        white-space: nowrap;
+
+        text-shadow: none;
+    }
+
+
+    /* ACTIVE SIZE */
+
+    .size-btn.active,
+    .pizza-size-btn.active,
+    .size-option.active,
+    .pizza-size-option.active,
+    .size-card.active,
+    .size-btn.selected,
+    .pizza-size-btn.selected,
+    .size-option.selected,
+    .pizza-size-option.selected,
+    .size-card.selected {
+        color: #fff !important;
+
+        border-color: transparent;
+
+        background:
+            linear-gradient(
+                135deg,
+                #ff512f,
+                #f09819
+            );
+
+        box-shadow:
+            0 7px 16px
+            rgba(255,81,47,.22);
+    }
+
+
+    /* ACTIVE SIZE TEXT */
+
+    .size-btn.active *,
+    .pizza-size-btn.active *,
+    .size-option.active *,
+    .pizza-size-option.active *,
+    .size-card.active *,
+    .size-btn.selected *,
+    .pizza-size-btn.selected *,
+    .size-option.selected *,
+    .pizza-size-option.selected *,
+    .size-card.selected * {
+        color: #fff !important;
+
+        opacity: 1 !important;
+    }
+
+
+    /* ACTIVE PRICE */
+
+    .size-btn.active .price,
+    .size-btn.active .size-price,
+    .pizza-size-btn.active .price,
+    .pizza-size-btn.active .size-price,
+    .size-option.active .price,
+    .size-option.active .size-price,
+    .pizza-size-option.active .price,
+    .pizza-size-option.active .size-price,
+    .size-card.active .price,
+    .size-card.active .size-price {
+        color: #fff !important;
+
+        font-weight: 950;
+    }
+
+
+    /* =====================================================
+       ADDONS
+    ===================================================== */
+
+    .pizza-addons {
+        width: 100%;
+
+        margin-top: 13px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 7px;
+    }
+
+
+    .addon-row {
+        width: 100%;
+
+        min-height: 39px;
+
+        padding:
+            7px 10px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 8px;
+
+        box-sizing: border-box;
+
+        border-radius: 10px;
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(255,81,47,.06),
+                rgba(142,45,226,.05)
+            );
+
+        border:
+            1px solid
+            rgba(255,81,47,.10);
+
+        font-size: 11px;
+
+        font-weight: 700;
+    }
+
+
+    .addon-row input {
+        accent-color: #ff512f;
+
+        flex-shrink: 0;
+    }
+
+
+    /* =====================================================
+       QUANTITY
+    ===================================================== */
+
+    .pizza-buy-row {
+        width: 100%;
+
+        margin-top: 16px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: flex-start;
+    }
+
+
+    .quantity-box {
+        display: flex;
+
+        align-items: center;
+
+        gap: 7px;
+
+        padding:
+            5px 6px;
+
+        border-radius: 12px;
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(255,81,47,.09),
+                rgba(142,45,226,.08)
+            );
+
+        border:
+            1px solid
+            rgba(255,81,47,.12);
+    }
+
+
+    .quantity-box button {
+        width: 31px;
+        height: 31px;
+
+        border: 0;
+
+        border-radius: 9px;
+
+        cursor: pointer;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        color: #fff;
+
+        background:
+            linear-gradient(
+                135deg,
+                #ff512f,
+                #f09819
+            );
+
+        font-size: 16px;
+
+        font-weight: 950;
+    }
+
+
+    .quantity {
+        min-width: 20px;
+
+        text-align: center;
+
+        font-size: 13px;
+
+        font-weight: 950;
+
+        color: #222;
+    }
+
+
+    /* =====================================================
+       ACTION BUTTONS
+       EXACT 50 / 50
+    ===================================================== */
+
+    .pizza-actions {
+        width: 100%;
+
+        margin-top: 12px;
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 8px;
+
+        box-sizing: border-box;
+    }
+
+
+    .add-cart-btn,
+    .buy-now-btn {
+        width: 100%;
+
+        min-width: 0;
+
+        height: 44px;
+
+        min-height: 44px;
+
+        margin: 0;
+
+        padding:
+            0 7px;
+
+        border: 0;
+
+        border-radius: 11px;
+
+        cursor: pointer;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 6px;
+
+        box-sizing: border-box;
+
+        font-size: 11px;
+
+        line-height: 1;
+
+        font-weight: 950;
+
+        white-space: nowrap;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+    }
+
+
+    .add-cart-btn {
+        color: #fff;
+
+        background:
+            linear-gradient(
+                135deg,
+                #ff512f,
+                #f09819
+            );
+
+        box-shadow:
+            0 6px 15px
+            rgba(255,81,47,.20);
+    }
+
+
+    .buy-now-btn {
+        color: #fff;
+
+        background:
+            linear-gradient(
+                135deg,
+                #ff416c,
+                #8e2de2
+            );
+
+        box-shadow:
+            0 6px 15px
+            rgba(142,45,226,.18);
+    }
+
+
+    .add-cart-btn i,
+    .buy-now-btn i {
+        flex-shrink: 0;
+
+        font-size: 11px;
+    }
+
+
+    /* =====================================================
+       SMALL PHONES
+    ===================================================== */
+
+    @media (max-width: 380px) {
+
+        .pizza-page {
+            padding:
+                10px 8px 115px;
+        }
+
+
+        .pizza-hero {
+            padding:
+                20px 14px;
+
+            gap: 17px;
+
+            border-radius: 22px;
+        }
+
+
+        .pizza-label {
+            font-size: 9px;
+
+            padding:
+                7px 10px;
+        }
+
+
+        .pizza-hero h1 {
+            font-size: 28px;
+        }
+
+
+        .pizza-hero p {
+            font-size: 12px;
+        }
+
+
+        .pizza-hero-image {
+            height: 200px;
+
+            border-radius: 19px;
+        }
+
+
+        .pizza-section-heading h2 {
+            font-size: 26px;
+        }
+
+
+        .pizza-section-heading p {
+            font-size: 11.5px;
+        }
+
+
+        .pizza-grid {
+            grid-template-columns: 1fr;
+
+            gap: 15px;
+        }
+
+
+        .pizza-card {
+            border-radius: 19px;
+        }
+
+
+        .pizza-image-wrap {
+            height: 205px;
+        }
+
+
+        .pizza-card-content {
+            padding: 14px;
+        }
+
+
+        .pizza-card h3 {
+            font-size: 20px;
+        }
+
+
+        .pizza-description {
+            font-size: 11.5px;
+        }
+
+
+        .pizza-price {
+            font-size: 22px;
+
+            padding:
+                6px 10px;
+        }
+
+
+        /* =================================================
+           SIZE — SMALL PHONE
+        ================================================= */
+
+        .pizza-size-row,
+        .size-selector,
+        .pizza-size-selector,
+        .choose-size {
+            gap: 6px;
+
+            margin-top: 13px;
+        }
+
+
+        .size-btn,
+        .pizza-size-btn,
+        .size-option,
+        .pizza-size-option,
+        .size-card {
+            min-height: 40px;
+
+            padding:
+                6px 9px;
+
+            border-radius: 10px;
+
+            font-size: 10px;
+
+            gap: 4px;
+        }
+
+
+        .size-btn .price,
+        .size-btn .size-price,
+        .pizza-size-btn .price,
+        .pizza-size-btn .size-price,
+        .size-option .price,
+        .size-option .size-price,
+        .pizza-size-option .price,
+        .pizza-size-option .size-price,
+        .size-card .price,
+        .size-card .size-price {
+            font-size: 10px;
+
+            font-weight: 950;
+        }
+
+
+        .addon-row {
+            min-height: 37px;
+
+            font-size: 10px;
+        }
+
+
+        .quantity-box {
+            gap: 6px;
+
+            padding:
+                4px 5px;
+        }
+
+
+        .quantity-box button {
+            width: 29px;
+
+            height: 29px;
+
+            font-size: 15px;
+        }
+
+
+        .quantity {
+            font-size: 12px;
+        }
+
+
+        /* =================================================
+           ACTION BUTTONS
+        ================================================= */
+
+        .pizza-actions {
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 7px;
+
+            margin-top: 11px;
+        }
+
+
+        .add-cart-btn,
+        .buy-now-btn {
+            width: 100%;
+
+            height: 42px;
+
+            min-height: 42px;
+
+            padding:
+                0 5px;
+
+            border-radius: 10px;
+
+            font-size: 10px;
+
+            gap: 5px;
+        }
+
+
+        .add-cart-btn i,
+        .buy-now-btn i {
+            font-size: 10px;
+        }
+
+    }
+
+}
+/* =========================================================
+   FINAL FIX — PIZZA CHOOSE SIZE PRICE
+   FORCE CLEAR / SHARP TEXT
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* Size container */
+    .pizza-size-row,
+    .size-selector,
+    .pizza-size-selector,
+    .choose-size {
+
+        opacity: 1 !important;
+        filter: none !important;
+
+        background: transparent !important;
+
+        color: #111111 !important;
+
+        text-shadow: none !important;
+    }
+
+
+    /* Every size button */
+    .size-btn,
+    .pizza-size-btn,
+    .size-option,
+    .pizza-size-option,
+    .size-card {
+
+        opacity: 1 !important;
+        filter: none !important;
+
+        color: #111111 !important;
+
+        background: #ffffff !important;
+
+        border: 2px solid #ff512f !important;
+
+        box-shadow:
+            0 3px 10px rgba(0,0,0,.12) !important;
+
+        text-shadow: none !important;
+
+        -webkit-text-fill-color: #111111 !important;
+    }
+
+
+    /* Size name */
+    .size-btn .size-name,
+    .pizza-size-btn .size-name,
+    .size-option .size-name,
+    .pizza-size-option .size-name,
+    .size-card .size-name {
+
+        opacity: 1 !important;
+
+        color: #111111 !important;
+
+        -webkit-text-fill-color: #111111 !important;
+
+        font-size: 12px !important;
+
+        font-weight: 950 !important;
+
+        text-shadow: none !important;
+    }
+
+
+    /* PRICE — MAIN FIX */
+    .size-btn .price,
+    .size-btn .size-price,
+    .size-btn .pizza-price,
+
+    .pizza-size-btn .price,
+    .pizza-size-btn .size-price,
+    .pizza-size-btn .pizza-price,
+
+    .size-option .price,
+    .size-option .size-price,
+
+    .pizza-size-option .price,
+    .pizza-size-option .size-price,
+
+    .size-card .price,
+    .size-card .size-price {
+
+        display: inline-block !important;
+
+        opacity: 1 !important;
+
+        visibility: visible !important;
+
+        filter: none !important;
+
+        color: #d92716 !important;
+
+        -webkit-text-fill-color: #d92716 !important;
+
+        background: transparent !important;
+
+        font-size: 12px !important;
+
+        font-weight: 950 !important;
+
+        line-height: 1.2 !important;
+
+        text-shadow:
+            none !important;
+
+        mix-blend-mode: normal !important;
+
+        transform: none !important;
+    }
+
+
+    /* Any span inside size button */
+    .size-btn span,
+    .pizza-size-btn span,
+    .size-option span,
+    .pizza-size-option span,
+    .size-card span {
+
+        opacity: 1 !important;
+
+        visibility: visible !important;
+
+        color: #111111 !important;
+
+        -webkit-text-fill-color: #111111 !important;
+
+        text-shadow: none !important;
+
+        filter: none !important;
+    }
+
+
+    /* Price span gets red */
+    .size-btn span.price,
+    .size-btn span.size-price,
+
+    .pizza-size-btn span.price,
+    .pizza-size-btn span.size-price,
+
+    .size-option span.price,
+    .size-option span.size-price,
+
+    .pizza-size-option span.price,
+    .pizza-size-option span.size-price,
+
+    .size-card span.price,
+    .size-card span.size-price {
+
+        color: #d92716 !important;
+
+        -webkit-text-fill-color: #d92716 !important;
+
+        opacity: 1 !important;
+    }
+
+
+    /* =====================================================
+       ACTIVE SIZE
+    ===================================================== */
+
+    .size-btn.active,
+    .pizza-size-btn.active,
+    .size-option.active,
+    .pizza-size-option.active,
+    .size-card.active,
+
+    .size-btn.selected,
+    .pizza-size-btn.selected,
+    .size-option.selected,
+    .pizza-size-option.selected,
+    .size-card.selected {
+
+        background:
+            linear-gradient(
+                135deg,
+                #ff512f,
+                #e91e63
+            ) !important;
+
+        border-color: transparent !important;
+
+        color: #ffffff !important;
+
+        opacity: 1 !important;
+
+        filter: none !important;
+    }
+
+
+    /* Active size text */
+    .size-btn.active .size-name,
+    .pizza-size-btn.active .size-name,
+    .size-option.active .size-name,
+    .pizza-size-option.active .size-name,
+    .size-card.active .size-name,
+
+    .size-btn.selected .size-name,
+    .pizza-size-btn.selected .size-name,
+    .size-option.selected .size-name,
+    .pizza-size-option.selected .size-name,
+    .size-card.selected .size-name {
+
+        color: #ffffff !important;
+
+        -webkit-text-fill-color: #ffffff !important;
+
+        opacity: 1 !important;
+    }
+
+
+    /* Active PRICE */
+    .size-btn.active .price,
+    .size-btn.active .size-price,
+    .size-btn.active .pizza-price,
+
+    .pizza-size-btn.active .price,
+    .pizza-size-btn.active .size-price,
+    .pizza-size-btn.active .pizza-price,
+
+    .size-option.active .price,
+    .size-option.active .size-price,
+
+    .pizza-size-option.active .price,
+    .pizza-size-option.active .size-price,
+
+    .size-card.active .price,
+    .size-card.active .size-price,
+
+    .size-btn.selected .price,
+    .size-btn.selected .size-price,
+
+    .pizza-size-btn.selected .price,
+    .pizza-size-btn.selected .size-price,
+
+    .size-option.selected .price,
+    .size-option.selected .size-price,
+
+    .pizza-size-option.selected .price,
+    .pizza-size-option.selected .size-price,
+
+    .size-card.selected .price,
+    .size-card.selected .size-price {
+
+        color: #ffffff !important;
+
+        -webkit-text-fill-color: #ffffff !important;
+
+        opacity: 1 !important;
+
+        text-shadow:
+            0 1px 2px rgba(0,0,0,.25) !important;
+    }
+
+
+    /* =====================================================
+       EXTRA — IF PRICE IS DIRECT TEXT INSIDE BUTTON
+       Example: "S ₹139"
+    ===================================================== */
+
+    .size-btn,
+    .pizza-size-btn,
+    .size-option,
+    .pizza-size-option,
+    .size-card {
+
+        font-family:
+            Arial,
+            Helvetica,
+            sans-serif !important;
+
+        -webkit-font-smoothing:
+            antialiased !important;
+
+        text-rendering:
+            geometricPrecision !important;
+    }
+
+
+    /* =====================================================
+       SMALL PHONES
+    ===================================================== */
+
+    @media (max-width: 380px) {
+
+        .size-btn,
+        .pizza-size-btn,
+        .size-option,
+        .pizza-size-option,
+        .size-card {
+
+            min-height: 42px !important;
+
+            padding:
+                7px 10px !important;
+
+            font-size: 11px !important;
+        }
+
+
+        .size-btn .price,
+        .size-btn .size-price,
+        .pizza-size-btn .price,
+        .pizza-size-btn .size-price,
+        .size-option .price,
+        .size-option .size-price,
+        .pizza-size-option .price,
+        .pizza-size-option .size-price,
+        .size-card .price,
+        .size-card .size-price {
+
+            font-size: 11px !important;
+
+            font-weight: 950 !important;
+        }
+    }
+
+}

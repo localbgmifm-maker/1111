@@ -1,0 +1,2120 @@
+/* =========================================================
+   11:11 PIZZA CAFE
+   MOBILE CSS — COMPLETE PREMIUM / CLEAN / TEXT CLEAR
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* =====================================================
+       GLOBAL
+       ===================================================== */
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    html {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        width: 100%;
+        max-width: 100%;
+        min-height: 100vh;
+
+        margin: 0 !important;
+
+        padding-top: 105px !important;
+        padding-bottom: 88px !important;
+
+        overflow-x: hidden;
+
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+        font: inherit;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+    }
+
+
+    /* =====================================================
+       NAVBAR RESERVED SPACE
+       ===================================================== */
+
+    #navbar {
+        position: relative !important;
+
+        width: 100% !important;
+        height: 105px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        display: block !important;
+
+        z-index: 99990 !important;
+
+        transform: none !important;
+    }
+
+
+    /* =====================================================
+       PREMIUM TOP NAVBAR
+       ===================================================== */
+
+    #navbar > .navbar {
+        position: fixed !important;
+
+        top: 8px !important;
+        left: 8px !important;
+        right: 8px !important;
+
+        width: auto !important;
+        height: 50px !important;
+
+        margin: 0 !important;
+        padding: 0 8px 0 14px !important;
+
+        display: flex !important;
+
+        flex-direction: row !important;
+
+        align-items: center !important;
+        justify-content: space-between !important;
+
+        gap: 8px !important;
+
+        z-index: 99999 !important;
+
+        border: 1px solid rgba(255,255,255,.72) !important;
+
+        border-radius: 18px !important;
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(255,255,255,.64),
+                rgba(255,248,241,.36)
+            ) !important;
+
+        backdrop-filter:
+            blur(30px)
+            saturate(190%)
+            contrast(105%) !important;
+
+        -webkit-backdrop-filter:
+            blur(30px)
+            saturate(190%)
+            contrast(105%) !important;
+
+        box-shadow:
+            0 12px 35px rgba(30,18,10,.16),
+            0 3px 10px rgba(255,255,255,.22),
+            inset 0 1px 0 rgba(255,255,255,.96),
+            inset 0 -1px 0 rgba(255,255,255,.18) !important;
+
+        overflow: hidden !important;
+
+        isolation: isolate !important;
+    }
+
+
+    /* =====================================================
+       NAVBAR TOP SHINE
+       ===================================================== */
+
+    #navbar > .navbar::before {
+        content: "";
+
+        position: absolute;
+
+        top: 0;
+        left: 8%;
+        right: 8%;
+
+        height: 1px;
+
+        border-radius: 50%;
+
+        background:
+            linear-gradient(
+                90deg,
+                transparent,
+                rgba(255,255,255,.98),
+                transparent
+            );
+
+        pointer-events: none;
+
+        z-index: 5;
+    }
+
+
+    #navbar > .navbar::after {
+        content: "";
+
+        position: absolute;
+
+        width: 120px;
+        height: 55px;
+
+        top: -28px;
+        left: 35%;
+
+        border-radius: 50%;
+
+        background: rgba(255,255,255,.28);
+
+        filter: blur(18px);
+
+        opacity: .65;
+
+        pointer-events: none;
+
+        z-index: 0;
+    }
+
+
+    /* =====================================================
+       LOGO — BIG & CLEAR
+       ===================================================== */
+
+    #navbar > .navbar .logo {
+        position: relative !important;
+
+        flex: 1 1 auto !important;
+
+        width: auto !important;
+        min-width: 0 !important;
+        max-width: calc(100% - 50px) !important;
+
+        height: auto !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        display: block !important;
+
+        color: #24160f !important;
+
+        font-size: 22px !important;
+
+        line-height: 1 !important;
+
+        font-weight: 900 !important;
+
+        letter-spacing: -.7px !important;
+
+        white-space: nowrap !important;
+
+        overflow: hidden !important;
+
+        text-overflow: ellipsis !important;
+
+        text-decoration: none !important;
+
+        text-shadow:
+            0 1px 2px rgba(255,255,255,.75) !important;
+
+        z-index: 4 !important;
+    }
+
+
+    /* =====================================================
+       DESKTOP SEARCH HIDDEN
+       ===================================================== */
+
+    #navbar > .navbar .desktop-search {
+        display: none !important;
+
+        visibility: hidden !important;
+
+        width: 0 !important;
+        height: 0 !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        overflow: hidden !important;
+    }
+
+
+    /* =====================================================
+       NAV LINKS
+       LOGIN ONLY
+       ===================================================== */
+
+    #navbar > .navbar .nav-links {
+        flex: 0 0 auto !important;
+
+        width: auto !important;
+
+        min-width: 40px !important;
+
+        height: 50px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        gap: 0 !important;
+
+        z-index: 4 !important;
+    }
+
+
+    #navbar > .navbar .nav-links .nav-item {
+        display: none !important;
+    }
+
+
+    /* =====================================================
+       LOGIN ICON
+       ===================================================== */
+
+    #navbar > .navbar .nav-links .login-btn {
+        position: relative !important;
+
+        flex: 0 0 40px !important;
+
+        width: 40px !important;
+        min-width: 40px !important;
+        max-width: 40px !important;
+
+        height: 40px !important;
+        min-height: 40px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        border: 1px solid rgba(255,255,255,.18) !important;
+
+        border-radius: 12px !important;
+
+        background:
+            linear-gradient(
+                145deg,
+                #342117,
+                #1e120d
+            ) !important;
+
+        color: #fff !important;
+
+        text-decoration: none !important;
+
+        box-shadow:
+            0 7px 17px rgba(36,22,15,.22),
+            inset 0 1px 0 rgba(255,255,255,.14) !important;
+
+        overflow: hidden !important;
+
+        z-index: 4 !important;
+    }
+
+
+    #navbar > .navbar .login-btn::before {
+        content: "";
+
+        position: absolute;
+
+        top: 0;
+        left: 8px;
+        right: 8px;
+
+        height: 1px;
+
+        background: rgba(255,255,255,.30);
+
+        border-radius: 50%;
+    }
+
+
+    #navbar > .navbar .login-btn span {
+        display: none !important;
+    }
+
+
+    #navbar > .navbar .login-btn i {
+        display: block !important;
+
+        font-size: 18px !important;
+
+        line-height: 1 !important;
+
+        color: #fff !important;
+    }
+
+
+    /* =====================================================
+       MOBILE SEARCH
+       ===================================================== */
+
+    #navbar > .mobile-search-box {
+        position: fixed !important;
+
+        top: 64px !important;
+
+        left: 8px !important;
+        right: 8px !important;
+
+        width: auto !important;
+
+        height: 41px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        display: block !important;
+
+        z-index: 99998 !important;
+    }
+
+
+    #navbar > .mobile-search-box form {
+        position: relative !important;
+
+        width: 100% !important;
+        height: 41px !important;
+
+        margin: 0 !important;
+        padding: 0 5px 0 13px !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+
+        gap: 8px !important;
+
+        border: 1px solid rgba(255,255,255,.76) !important;
+
+        border-radius: 14px !important;
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(255,255,255,.68),
+                rgba(255,250,246,.40)
+            ) !important;
+
+        backdrop-filter:
+            blur(27px)
+            saturate(185%) !important;
+
+        -webkit-backdrop-filter:
+            blur(27px)
+            saturate(185%) !important;
+
+        box-shadow:
+            0 8px 23px rgba(55,30,15,.11),
+            inset 0 1px 0 rgba(255,255,255,.96) !important;
+
+        overflow: hidden !important;
+    }
+
+
+    #navbar > .mobile-search-box form::before {
+        content: "";
+
+        position: absolute;
+
+        top: 0;
+        left: 12%;
+        right: 12%;
+
+        height: 1px;
+
+        background:
+            linear-gradient(
+                90deg,
+                transparent,
+                rgba(255,255,255,.95),
+                transparent
+            );
+
+        pointer-events: none;
+    }
+
+
+    #navbar > .mobile-search-box form > i {
+        flex: 0 0 auto !important;
+
+        display: block !important;
+
+        font-size: 16px !important;
+
+        color: #70503c !important;
+
+        line-height: 1 !important;
+    }
+
+
+    #navbar > .mobile-search-box input {
+        flex: 1 1 auto !important;
+
+        width: 100% !important;
+
+        min-width: 0 !important;
+
+        height: 100% !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        border: 0 !important;
+        outline: 0 !important;
+
+        background: transparent !important;
+
+        color: #24160f !important;
+
+        font-size: 14px !important;
+
+        font-weight: 700 !important;
+
+        line-height: 1 !important;
+
+        letter-spacing: .1px !important;
+    }
+
+
+    #navbar > .mobile-search-box input::placeholder {
+        color: #68564a !important;
+
+        opacity: .78 !important;
+
+        font-size: 13px !important;
+
+        font-weight: 600 !important;
+    }
+
+
+    #navbar > .mobile-search-box button {
+        flex: 0 0 33px !important;
+
+        width: 33px !important;
+        min-width: 33px !important;
+
+        height: 33px !important;
+        min-height: 33px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        border: 0 !important;
+
+        border-radius: 10px !important;
+
+        background:
+            linear-gradient(
+                145deg,
+                #302016,
+                #21130d
+            ) !important;
+
+        color: #fff !important;
+
+        box-shadow:
+            0 5px 12px rgba(36,22,15,.16) !important;
+    }
+
+
+    #navbar > .mobile-search-box button i {
+        font-size: 13px !important;
+
+        color: #fff !important;
+    }
+
+
+    /* =====================================================
+       MAIN CONTENT
+       ===================================================== */
+
+    main {
+        width: 100% !important;
+
+        margin: 0 !important;
+
+        padding: 0 !important;
+
+        overflow: visible !important;
+    }
+
+
+    main > *:first-child {
+        margin-top: 0 !important;
+    }
+
+
+    /* =====================================================
+       HERO
+       ===================================================== */
+
+    .hero {
+        width: calc(100% - 20px) !important;
+
+        min-height: 225px !important;
+
+        margin: 8px auto 0 !important;
+
+        padding: 18px 16px !important;
+
+        border-radius: 20px !important;
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        align-items: center !important;
+
+        justify-content: center !important;
+
+        text-align: center !important;
+
+        overflow: hidden !important;
+    }
+
+
+    .hero-content {
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        text-align: center !important;
+    }
+
+
+    .hero-label {
+        display: inline-flex !important;
+
+        align-items: center !important;
+
+        justify-content: center !important;
+
+        max-width: 100% !important;
+
+        padding: 5px 9px !important;
+
+        border-radius: 20px !important;
+
+        font-size: 10px !important;
+
+        line-height: 1.2 !important;
+
+        white-space: nowrap !important;
+    }
+
+
+    .hero-content h1 {
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        margin: 10px 0 8px !important;
+
+        padding: 0 !important;
+
+        font-size: 28px !important;
+
+        line-height: 1.12 !important;
+
+        font-weight: 900 !important;
+
+        letter-spacing: -.6px !important;
+
+        text-align: center !important;
+
+        white-space: normal !important;
+
+        overflow-wrap: normal !important;
+
+        word-break: normal !important;
+    }
+
+
+    .hero-content h1 strong {
+        display: block !important;
+
+        margin-top: 2px !important;
+
+        color: #ffb15c !important;
+
+        font-size: 28px !important;
+
+        line-height: 1.08 !important;
+
+        font-weight: 900 !important;
+
+        letter-spacing: -.6px !important;
+
+        white-space: nowrap !important;
+    }
+
+
+    .hero p {
+        width: 100% !important;
+
+        max-width: 330px !important;
+
+        margin: 0 auto 13px !important;
+
+        padding: 0 !important;
+
+        font-size: 13px !important;
+
+        line-height: 1.45 !important;
+
+        text-align: center !important;
+
+        overflow-wrap: normal !important;
+
+        word-break: normal !important;
+    }
+
+
+    .hero-buttons {
+        width: 100% !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+
+        justify-content: center !important;
+
+        gap: 7px !important;
+
+        flex-wrap: wrap !important;
+    }
+
+
+    .primary-btn,
+    .secondary-btn {
+        min-height: 38px !important;
+
+        padding: 0 13px !important;
+
+        border-radius: 11px !important;
+
+        font-size: 12px !important;
+
+        line-height: 1 !important;
+
+        display: inline-flex !important;
+
+        align-items: center !important;
+
+        justify-content: center !important;
+
+        text-align: center !important;
+
+        white-space: nowrap !important;
+    }
+
+
+    .hero-pizza,
+    .pizza-emoji {
+        display: none !important;
+    }
+
+
+    /* =====================================================
+       SECTION HEADINGS
+       ===================================================== */
+
+    .section-heading {
+        width: 100% !important;
+
+        margin: 0 0 12px !important;
+
+        padding: 0 !important;
+
+        text-align: center !important;
+    }
+
+
+    .section-heading span {
+        display: block !important;
+
+        font-size: 12px !important;
+
+        line-height: 1.25 !important;
+
+        font-weight: 900 !important;
+
+        letter-spacing: 1.6px !important;
+
+        white-space: normal !important;
+    }
+
+
+    .section-heading h2 {
+        width: 100% !important;
+
+        margin: 7px 0 5px !important;
+
+        padding: 0 !important;
+
+        font-size: 27px !important;
+
+        line-height: 1.15 !important;
+
+        font-weight: 900 !important;
+
+        letter-spacing: -.3px !important;
+
+        text-align: center !important;
+
+        white-space: normal !important;
+
+        overflow-wrap: normal !important;
+    }
+
+
+    .section-heading p {
+        width: 100% !important;
+
+        max-width: 340px !important;
+
+        margin: 0 auto !important;
+
+        padding: 0 !important;
+
+        font-size: 13px !important;
+
+        line-height: 1.4 !important;
+
+        text-align: center !important;
+
+        white-space: normal !important;
+    }
+
+
+    /* =====================================================
+       CATEGORIES
+       ===================================================== */
+
+    .categories-section {
+        width: calc(100% - 20px) !important;
+
+        margin: 18px auto 0 !important;
+
+        padding: 0 !important;
+    }
+
+
+    .categories-grid {
+        width: 100% !important;
+
+        display: grid !important;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+
+        gap: 8px !important;
+
+        align-items: stretch !important;
+    }
+
+
+    .category-card {
+        width: 100% !important;
+
+        min-width: 0 !important;
+
+        min-height: 100px !important;
+
+        padding: 11px 7px !important;
+
+        border-radius: 15px !important;
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        align-items: center !important;
+
+        justify-content: center !important;
+
+        text-align: center !important;
+
+        overflow: hidden !important;
+    }
+
+
+    .category-icon {
+        flex-shrink: 0 !important;
+
+        margin: 0 0 5px !important;
+
+        font-size: 27px !important;
+
+        line-height: 1 !important;
+    }
+
+
+    .category-card h3 {
+        width: 100% !important;
+
+        margin: 0 0 4px !important;
+
+        padding: 0 !important;
+
+        font-size: 16px !important;
+
+        line-height: 1.15 !important;
+
+        font-weight: 900 !important;
+
+        text-align: center !important;
+
+        white-space: normal !important;
+
+        overflow-wrap: normal !important;
+    }
+
+
+    .category-card p {
+        width: 100% !important;
+
+        margin: 0 !important;
+
+        padding: 0 !important;
+
+        font-size: 11px !important;
+
+        line-height: 1.3 !important;
+
+        text-align: center !important;
+
+        white-space: normal !important;
+    }
+
+
+    /* =====================================================
+       MENU / PRODUCT SECTION
+       ===================================================== */
+
+    .menu-section,
+    .products-section,
+    .menu-container,
+    .products-container {
+        width: calc(100% - 20px) !important;
+
+        max-width: 100% !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+
+    .menu-grid,
+    .products-grid,
+    .menu-items,
+    .product-grid {
+        width: 100% !important;
+
+        display: grid !important;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+
+        gap: 9px !important;
+
+        align-items: stretch !important;
+    }
+
+
+    /* =====================================================
+       PRODUCT CARD
+       ===================================================== */
+
+    .product-card,
+    .menu-card,
+    .food-card {
+        width: 100% !important;
+
+        min-width: 0 !important;
+
+        margin: 0 !important;
+
+        padding: 0 !important;
+
+        border-radius: 16px !important;
+
+        overflow: hidden !important;
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        text-align: left !important;
+    }
+
+
+    /* =====================================================
+       PRODUCT IMAGE
+       ===================================================== */
+
+    .product-card img,
+    .menu-card img,
+    .food-card img,
+    .product-image img,
+    .menu-image img {
+        width: 100% !important;
+
+        height: 125px !important;
+
+        min-height: 125px !important;
+
+        max-height: 125px !important;
+
+        display: block !important;
+
+        object-fit: cover !important;
+
+        object-position: center !important;
+    }
+
+
+    .product-image,
+    .menu-image {
+        width: 100% !important;
+
+        height: 125px !important;
+
+        min-height: 125px !important;
+
+        overflow: hidden !important;
+    }
+
+
+    /* =====================================================
+       PRODUCT CONTENT
+       ===================================================== */
+
+    .product-content,
+    .menu-card-content,
+    .food-card-content {
+        width: 100% !important;
+
+        min-width: 0 !important;
+
+        padding: 10px !important;
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        flex: 1 1 auto !important;
+    }
+
+
+    .product-card h3,
+    .menu-card h3,
+    .food-card h3,
+    .product-name {
+        width: 100% !important;
+
+        margin: 0 0 5px !important;
+
+        padding: 0 !important;
+
+        font-size: 15px !important;
+
+        line-height: 1.2 !important;
+
+        font-weight: 900 !important;
+
+        text-align: left !important;
+
+        white-space: normal !important;
+
+        overflow-wrap: normal !important;
+
+        word-break: normal !important;
+    }
+
+
+    .product-card p,
+    .menu-card p,
+    .food-card p,
+    .product-description {
+        width: 100% !important;
+
+        margin: 0 0 8px !important;
+
+        padding: 0 !important;
+
+        font-size: 11px !important;
+
+        line-height: 1.4 !important;
+
+        text-align: left !important;
+
+        white-space: normal !important;
+
+        overflow-wrap: normal !important;
+
+        word-break: normal !important;
+    }
+
+
+    /* =====================================================
+       PRODUCT PRICE
+       ===================================================== */
+
+    .product-price,
+    .menu-price,
+    .food-price,
+    .price {
+        display: block !important;
+
+        margin: 2px 0 8px !important;
+
+        font-size: 16px !important;
+
+        line-height: 1.15 !important;
+
+        font-weight: 900 !important;
+
+        white-space: nowrap !important;
+    }
+
+
+    /* =====================================================
+       PRODUCT BUTTONS
+       ===================================================== */
+
+    .product-card button,
+    .menu-card button,
+    .food-card button,
+    .add-cart-btn,
+    .buy-btn,
+    .add-btn {
+        width: 100% !important;
+
+        min-height: 36px !important;
+
+        margin-top: auto !important;
+
+        padding: 0 8px !important;
+
+        border-radius: 10px !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+
+        justify-content: center !important;
+
+        text-align: center !important;
+
+        font-size: 11px !important;
+
+        line-height: 1.1 !important;
+
+        font-weight: 800 !important;
+
+        white-space: nowrap !important;
+    }
+
+
+    /* =====================================================
+       SIZE / ADDON OPTIONS
+       ===================================================== */
+
+    .size-options,
+    .size-selector,
+    .addon-options,
+    .addons,
+    .product-options {
+        width: 100% !important;
+
+        display: flex !important;
+
+        flex-wrap: wrap !important;
+
+        align-items: center !important;
+
+        gap: 5px !important;
+
+        margin: 6px 0 !important;
+    }
+
+
+    .size-options button,
+    .size-selector button,
+    .addon-options button,
+    .addons button,
+    .product-options button {
+        min-height: 30px !important;
+
+        padding: 0 8px !important;
+
+        border-radius: 8px !important;
+
+        font-size: 10px !important;
+
+        line-height: 1 !important;
+
+        white-space: nowrap !important;
+    }
+
+
+    /* =====================================================
+       DELIVERY
+       ===================================================== */
+
+    .delivery-section {
+        width: calc(100% - 20px) !important;
+
+        margin: 18px auto 0 !important;
+
+        padding: 0 !important;
+    }
+
+
+    .delivery-card {
+        width: 100% !important;
+
+        padding: 18px 14px 10px !important;
+
+        border-radius: 20px !important;
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        overflow: hidden !important;
+    }
+
+
+    .delivery-content {
+        width: 100% !important;
+
+        min-width: 0 !important;
+    }
+
+
+    .delivery-badge {
+        display: inline-flex !important;
+
+        align-items: center !important;
+
+        justify-content: center !important;
+
+        padding: 6px 10px !important;
+
+        border-radius: 16px !important;
+
+        font-size: 10px !important;
+
+        line-height: 1.2 !important;
+
+        white-space: nowrap !important;
+    }
+
+
+    .delivery-content h2 {
+        width: 100% !important;
+
+        margin: 10px 0 7px !important;
+
+        padding: 0 !important;
+
+        font-size: 30px !important;
+
+        line-height: 1.08 !important;
+
+        font-weight: 900 !important;
+
+        letter-spacing: -.5px !important;
+
+        white-space: normal !important;
+
+        overflow-wrap: normal !important;
+    }
+
+
+    .delivery-content p {
+        width: 100% !important;
+
+        max-width: 350px !important;
+
+        margin: 0 !important;
+
+        padding: 0 !important;
+
+        font-size: 13px !important;
+
+        line-height: 1.45 !important;
+
+        white-space: normal !important;
+    }
+
+
+    .delivery-info {
+        width: 100% !important;
+
+        margin-top: 11px !important;
+
+        display: grid !important;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+
+        gap: 7px !important;
+    }
+
+
+    .delivery-info-box {
+        min-width: 0 !important;
+
+        padding: 9px 7px !important;
+
+        border-radius: 11px !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+
+        gap: 6px !important;
+
+        overflow: hidden !important;
+    }
+
+
+    .delivery-info-icon {
+        width: 30px !important;
+        height: 30px !important;
+
+        flex: 0 0 30px !important;
+
+        border-radius: 8px !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+
+        justify-content: center !important;
+    }
+
+
+    .delivery-info-icon i {
+        font-size: 13px !important;
+    }
+
+
+    .delivery-info-box strong {
+        display: block !important;
+
+        font-size: 11px !important;
+
+        line-height: 1.2 !important;
+
+        white-space: normal !important;
+    }
+
+
+    .delivery-info-box small {
+        display: block !important;
+
+        margin-top: 2px !important;
+
+        font-size: 9px !important;
+
+        line-height: 1.2 !important;
+
+        white-space: normal !important;
+    }
+
+
+    .delivery-order-btn {
+        width: 100% !important;
+
+        min-height: 45px !important;
+
+        margin-top: 10px !important;
+
+        border-radius: 11px !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+
+        justify-content: center !important;
+
+        gap: 6px !important;
+
+        font-size: 13px !important;
+
+        line-height: 1 !important;
+
+        white-space: nowrap !important;
+    }
+
+
+    /* =====================================================
+       DELIVERY VISUAL
+       ===================================================== */
+
+    .delivery-visual {
+        width: 100% !important;
+
+        height: 125px !important;
+
+        min-height: 125px !important;
+
+        margin: 0 !important;
+
+        padding: 0 !important;
+
+        position: relative !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+
+        justify-content: center !important;
+
+        overflow: hidden !important;
+    }
+
+
+    .delivery-glow {
+        transform: scale(.55) !important;
+    }
+
+
+    .delivery-circle {
+        width: 76px !important;
+
+        height: 76px !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+
+        justify-content: center !important;
+
+        border-radius: 50% !important;
+    }
+
+
+    .delivery-circle i {
+        font-size: 32px !important;
+    }
+
+
+    .delivery-visual img {
+        max-width: 76px !important;
+
+        max-height: 76px !important;
+
+        object-fit: contain !important;
+    }
+
+
+    .delivery-speed {
+        position: absolute !important;
+
+        top: 4px !important;
+
+        right: 5px !important;
+
+        padding: 5px 8px !important;
+
+        border-radius: 14px !important;
+
+        font-size: 9px !important;
+
+        line-height: 1.1 !important;
+
+        white-space: nowrap !important;
+    }
+
+
+    .delivery-time {
+        position: absolute !important;
+
+        left: 5px !important;
+
+        bottom: 4px !important;
+
+        width: 43px !important;
+
+        height: 43px !important;
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        align-items: center !important;
+
+        justify-content: center !important;
+
+        border-radius: 50% !important;
+    }
+
+
+    .delivery-time strong {
+        font-size: 16px !important;
+
+        line-height: 1 !important;
+    }
+
+
+    .delivery-time span {
+        margin-top: 2px !important;
+
+        font-size: 7px !important;
+
+        line-height: 1 !important;
+    }
+
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+
+    footer,
+    .footer {
+        width: 100% !important;
+
+        overflow: hidden !important;
+    }
+
+
+    footer h2,
+    footer h3,
+    footer h4,
+    .footer h2,
+    .footer h3,
+    .footer h4 {
+        line-height: 1.2 !important;
+
+        overflow-wrap: normal !important;
+
+        word-break: normal !important;
+    }
+
+
+    footer p,
+    footer span,
+    footer a,
+    .footer p,
+    .footer span,
+    .footer a {
+        line-height: 1.4 !important;
+
+        overflow-wrap: normal !important;
+
+        word-break: normal !important;
+    }
+
+
+    /* =====================================================
+       BOTTOM NAVIGATION
+       ===================================================== */
+
+    #navbar > .mobile-bottom-nav {
+        position: fixed !important;
+
+        left: 8px !important;
+        right: 8px !important;
+
+        bottom: 8px !important;
+
+        width: auto !important;
+
+        height: 64px !important;
+
+        margin: 0 !important;
+
+        padding: 4px !important;
+
+        display: grid !important;
+
+     grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+
+        align-items: center !important;
+
+        z-index: 100000 !important;
+
+        border: 1px solid rgba(255,255,255,.76) !important;
+
+        border-radius: 21px !important;
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(255,255,255,.64),
+                rgba(255,248,241,.35)
+            ) !important;
+
+        backdrop-filter:
+            blur(30px)
+            saturate(190%) !important;
+
+        -webkit-backdrop-filter:
+            blur(30px)
+            saturate(190%) !important;
+
+        box-shadow:
+            0 14px 38px rgba(48,24,10,.17),
+            0 3px 10px rgba(255,255,255,.18),
+            inset 0 1px 0 rgba(255,255,255,.96),
+            inset 0 -1px 0 rgba(255,255,255,.15) !important;
+
+        overflow: hidden !important;
+
+        isolation: isolate !important;
+    }
+
+
+    #navbar > .mobile-bottom-nav::before {
+        content: "";
+
+        position: absolute;
+
+        top: 0;
+
+        left: 8%;
+        right: 8%;
+
+        height: 1px;
+
+        background:
+            linear-gradient(
+                90deg,
+                transparent,
+                rgba(255,255,255,.98),
+                transparent
+            );
+
+        pointer-events: none;
+
+        z-index: 3;
+    }
+
+
+    /* =====================================================
+       BOTTOM NAV ITEMS
+       ===================================================== */
+
+    #navbar > .mobile-bottom-nav .bottom-nav-item {
+        position: relative !important;
+
+        width: 100% !important;
+
+        height: 54px !important;
+
+        margin: 0 !important;
+
+        padding: 0 !important;
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        align-items: center !important;
+
+        justify-content: center !important;
+
+        gap: 4px !important;
+
+        border: 0 !important;
+
+        border-radius: 15px !important;
+
+        background: transparent !important;
+
+        color: #4f392d !important;
+
+        text-decoration: none !important;
+
+        outline: none !important;
+
+        overflow: visible !important;
+    }
+
+
+    /* =====================================================
+       BOTTOM NAV ICONS — CLEAR
+       ===================================================== */
+
+    #navbar > .mobile-bottom-nav .bottom-nav-item > i {
+        display: block !important;
+
+        font-size: 20px !important;
+
+        line-height: 1 !important;
+
+        color: #4f392d !important;
+    }
+
+
+    /* =====================================================
+       BOTTOM NAV TEXT — BIG & CLEAR
+       ===================================================== */
+
+    #navbar > .mobile-bottom-nav .bottom-nav-item > span {
+        display: block !important;
+
+        font-size: 11px !important;
+
+        line-height: 1.1 !important;
+
+        font-weight: 900 !important;
+
+        letter-spacing: .1px !important;
+
+        color: #4f392d !important;
+
+        white-space: nowrap !important;
+
+        text-align: center !important;
+    }
+
+
+    /* =====================================================
+       ACTIVE NAV
+       ===================================================== */
+
+    #navbar > .mobile-bottom-nav .bottom-nav-item.active {
+        background:
+            linear-gradient(
+                145deg,
+                rgba(255,255,255,.82),
+                rgba(255,242,229,.55)
+            ) !important;
+
+        color: #24160f !important;
+
+        box-shadow:
+            0 5px 14px rgba(55,30,15,.08),
+            inset 0 1px 0 rgba(255,255,255,.95) !important;
+    }
+
+
+    #navbar > .mobile-bottom-nav .bottom-nav-item.active > i {
+        color: #24160f !important;
+    }
+
+
+    #navbar > .mobile-bottom-nav .bottom-nav-item.active > span {
+        color: #24160f !important;
+
+        font-weight: 950 !important;
+    }
+
+
+    /* =====================================================
+       CART ICON + BADGE
+       ===================================================== */
+
+    #navbar .bottom-cart-icon {
+        position: relative !important;
+
+        width: 27px !important;
+
+        height: 23px !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+
+        justify-content: center !important;
+    }
+
+
+    #navbar .bottom-cart-icon i {
+        font-size: 20px !important;
+
+        line-height: 1 !important;
+    }
+
+
+    #navbar .bottom-cart-icon b {
+        position: absolute !important;
+
+        top: -8px !important;
+
+        right: -10px !important;
+
+        min-width: 17px !important;
+
+        height: 17px !important;
+
+        padding: 0 4px !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+
+        justify-content: center !important;
+
+        border: 2px solid #fff !important;
+
+        border-radius: 20px !important;
+
+        background: #e84a20 !important;
+
+        color: #fff !important;
+
+        font-size: 8px !important;
+
+        font-weight: 900 !important;
+
+        line-height: 1 !important;
+    }
+
+
+    #navbar .bottom-cart-icon + span {
+        font-size: 11px !important;
+
+        font-weight: 900 !important;
+    }
+
+
+    /* =====================================================
+       SMALL PHONES
+       ===================================================== */
+
+    @media (max-width: 380px) {
+
+        body {
+            padding-top: 101px !important;
+
+            padding-bottom: 84px !important;
+        }
+
+
+        #navbar {
+            height: 101px !important;
+        }
+
+
+        #navbar > .navbar {
+            top: 7px !important;
+
+            height: 49px !important;
+
+            border-radius: 17px !important;
+        }
+
+
+        #navbar > .navbar .logo {
+            font-size: 20px !important;
+        }
+
+
+        #navbar > .navbar .nav-links {
+            height: 49px !important;
+        }
+
+
+        #navbar > .navbar .nav-links .login-btn {
+            width: 37px !important;
+
+            min-width: 37px !important;
+
+            max-width: 37px !important;
+
+            height: 37px !important;
+        }
+
+
+        #navbar > .navbar .login-btn i {
+            font-size: 17px !important;
+        }
+
+
+        #navbar > .mobile-search-box {
+            top: 62px !important;
+
+            height: 39px !important;
+        }
+
+
+        #navbar > .mobile-search-box form {
+            height: 39px !important;
+        }
+
+
+        #navbar > .mobile-search-box input {
+            font-size: 13px !important;
+        }
+
+
+        #navbar > .mobile-search-box input::placeholder {
+            font-size: 12px !important;
+        }
+
+
+        #navbar > .mobile-search-box button {
+            width: 32px !important;
+
+            min-width: 32px !important;
+
+            height: 32px !important;
+        }
+
+
+        /* HERO */
+
+        .hero {
+            min-height: 210px !important;
+
+            padding: 16px 14px !important;
+        }
+
+
+        .hero-content h1 {
+            font-size: 25px !important;
+
+            line-height: 1.1 !important;
+        }
+
+
+        .hero-content h1 strong {
+            font-size: 25px !important;
+
+            line-height: 1.08 !important;
+        }
+
+
+        .hero p {
+            max-width: 300px !important;
+
+            font-size: 12px !important;
+
+            line-height: 1.4 !important;
+        }
+
+
+        /* SECTION */
+
+        .section-heading h2 {
+            font-size: 25px !important;
+        }
+
+
+        .section-heading p {
+            font-size: 12px !important;
+        }
+
+
+        /* CATEGORY */
+
+        .category-card {
+            min-height: 96px !important;
+        }
+
+
+        .category-icon {
+            font-size: 25px !important;
+        }
+
+
+        .category-card h3 {
+            font-size: 15px !important;
+        }
+
+
+        .category-card p {
+            font-size: 10px !important;
+        }
+
+
+        /* PRODUCTS */
+
+        .product-card img,
+        .menu-card img,
+        .food-card img,
+        .product-image img,
+        .menu-image img {
+            height: 112px !important;
+
+            min-height: 112px !important;
+
+            max-height: 112px !important;
+        }
+
+
+        .product-image,
+        .menu-image {
+            height: 112px !important;
+
+            min-height: 112px !important;
+        }
+
+
+        .product-content,
+        .menu-card-content,
+        .food-card-content {
+            padding: 8px !important;
+        }
+
+
+        .product-card h3,
+        .menu-card h3,
+        .food-card h3,
+        .product-name {
+            font-size: 14px !important;
+        }
+
+
+        .product-card p,
+        .menu-card p,
+        .food-card p,
+        .product-description {
+            font-size: 10px !important;
+
+            line-height: 1.35 !important;
+        }
+
+
+        .product-price,
+        .menu-price,
+        .food-price,
+        .price {
+            font-size: 15px !important;
+        }
+
+
+        .product-card button,
+        .menu-card button,
+        .food-card button,
+        .add-cart-btn,
+        .buy-btn,
+        .add-btn {
+            min-height: 34px !important;
+
+            font-size: 10px !important;
+        }
+
+
+        /* DELIVERY */
+
+        .delivery-content h2 {
+            font-size: 28px !important;
+        }
+
+
+        .delivery-content p {
+            font-size: 12px !important;
+        }
+
+
+        .delivery-visual {
+            height: 110px !important;
+
+            min-height: 110px !important;
+        }
+
+
+        .delivery-circle {
+            width: 70px !important;
+
+            height: 70px !important;
+        }
+
+
+        .delivery-circle i {
+            font-size: 30px !important;
+        }
+
+
+        .delivery-visual img {
+            max-width: 70px !important;
+
+            max-height: 70px !important;
+        }
+
+
+        /* BOTTOM NAV */
+
+        #navbar > .mobile-bottom-nav {
+            left: 7px !important;
+
+            right: 7px !important;
+
+            bottom: 7px !important;
+
+            height: 62px !important;
+        }
+
+
+        #navbar > .mobile-bottom-nav .bottom-nav-item {
+            height: 52px !important;
+
+            gap: 3px !important;
+        }
+
+
+        #navbar > .mobile-bottom-nav .bottom-nav-item > i {
+            font-size: 18px !important;
+        }
+
+
+        #navbar > .mobile-bottom-nav .bottom-nav-item > span {
+            font-size: 10px !important;
+        }
+
+
+        #navbar .bottom-cart-icon {
+            width: 25px !important;
+
+            height: 22px !important;
+        }
+
+
+        #navbar .bottom-cart-icon i {
+            font-size: 18px !important;
+        }
+
+
+        #navbar .bottom-cart-icon + span {
+            font-size: 10px !important;
+        }
+    }
+}

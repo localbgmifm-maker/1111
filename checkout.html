@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Checkout - 11:11 Pizza Cafe</title>
+
+    <meta
+        name="description"
+        content="Complete your order at 11:11 Pizza Cafe."
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- Common Website CSS -->
+    <link rel="stylesheet" href="desktop.css">
+    <link rel="stylesheet" href="mobile.css">
+
+    <!-- Checkout CSS -->
+    <link rel="stylesheet" href="checkout.css">
+    <link rel="stylesheet" href="checkoutmobile.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         COMMON NAVBAR
+         ===================================================== -->
+
+    <div id="navbar"></div>
+
+
+    <!-- =====================================================
+         CHECKOUT PAGE
+         ===================================================== -->
+
+    <main class="checkout-page">
+
+
+        <!-- =================================================
+             HEADER
+             ================================================= -->
+
+        <section class="checkout-header">
+
+            <div class="checkout-badge">
+
+                <i class="fa-solid fa-lock"></i>
+
+                SECURE CHECKOUT
+
+            </div>
+
+
+            <h1>
+                Complete Your Order
+            </h1>
+
+
+            <p>
+                Enter your delivery details and choose your
+                preferred payment method.
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             MAIN CHECKOUT LAYOUT
+             ================================================= -->
+
+        <section class="checkout-layout">
+
+
+            <!-- =================================================
+                 LEFT
+                 ================================================= -->
+
+            <div class="checkout-left">
+
+
+                <div class="checkout-card">
+
+
+                    <!-- =========================================
+                         DELIVERY DETAILS TITLE
+                         ========================================= -->
+
+                    <div class="checkout-card-title">
+
+                        <div class="checkout-title-icon">
+
+                            <i class="fa-solid fa-user"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                DELIVERY DETAILS
+                            </span>
+
+                            <h2>
+                                Where should we deliver?
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =========================================
+                         FORM
+                         ========================================= -->
+
+                    <form
+                        id="checkoutForm"
+                        novalidate
+                    >
+
+
+                        <!-- NAME -->
+
+                        <div class="checkout-field">
+
+                            <label for="customerName">
+
+                                <i class="fa-solid fa-user"></i>
+
+                                Full Name
+
+                            </label>
+
+
+                            <input
+                                type="text"
+                                id="customerName"
+                                name="customerName"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <!-- PHONE -->
+
+                        <div class="checkout-field">
+
+                            <label for="customerPhone">
+
+                                <i class="fa-solid fa-phone"></i>
+
+                                Mobile Number
+
+                            </label>
+
+
+                            <input
+                                type="tel"
+                                id="customerPhone"
+                                name="customerPhone"
+                                placeholder="Enter 10-digit mobile number"
+                                inputmode="numeric"
+                                maxlength="10"
+                                autocomplete="tel"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <!-- ADDRESS -->
+
+                        <div class="checkout-field">
+
+                            <label for="deliveryAddress">
+
+                                <i class="fa-solid fa-location-dot"></i>
+
+                                Delivery Address
+
+                            </label>
+
+
+                            <textarea
+                                id="deliveryAddress"
+                                name="deliveryAddress"
+                                placeholder="House / Flat No., Street, Area, City..."
+                                rows="4"
+                                autocomplete="street-address"
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+
+                        <!-- LANDMARK -->
+
+                        <div class="checkout-field">
+
+                            <label for="landmark">
+
+                                <i class="fa-solid fa-map-pin"></i>
+
+                                Landmark
+
+                                <span class="optional">
+                                    Optional
+                                </span>
+
+                            </label>
+
+
+                            <input
+                                type="text"
+                                id="landmark"
+                                name="landmark"
+                                placeholder="Nearby landmark"
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+
+
+                        <!-- =====================================
+                             PAYMENT
+                             ===================================== -->
+
+                        <div class="payment-section">
+
+
+                            <div class="payment-section-heading">
+
+                                <div class="payment-heading-icon">
+
+                                    <i class="fa-solid fa-credit-card"></i>
+
+                                </div>
+
+
+                                <div>
+
+                                    <span>
+                                        PAYMENT
+                                    </span>
+
+                                    <h2>
+                                        Choose Payment Method
+                                    </h2>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="payment-options">
+
+
+                                <!-- ONLINE PAYMENT -->
+
+                                <label
+                                    class="payment-option"
+                                    for="onlinePayment"
+                                >
+
+                                    <input
+                                        type="radio"
+                                        id="onlinePayment"
+                                        name="paymentMethod"
+                                        value="online"
+                                        checked
+                                    >
+
+
+                                    <span class="payment-radio"></span>
+
+
+                                    <span class="payment-option-icon">
+
+                                        <i class="fa-solid fa-bolt"></i>
+
+                                    </span>
+
+
+                                    <span class="payment-option-content">
+
+                                        <strong>
+                                            Online Payment
+                                        </strong>
+
+                                        <small>
+                                            UPI, Card, Net Banking &
+                                            Wallet
+                                        </small>
+
+                                    </span>
+
+
+                                    <span class="payment-secure">
+
+                                        <i class="fa-solid fa-shield-halved"></i>
+
+                                    </span>
+
+                                </label>
+
+
+
+                                <!-- COD -->
+
+                                <label
+                                    class="payment-option"
+                                    for="codPayment"
+                                >
+
+                                    <input
+                                        type="radio"
+                                        id="codPayment"
+                                        name="paymentMethod"
+                                        value="cod"
+                                    >
+
+
+                                    <span class="payment-radio"></span>
+
+
+                                    <span class="payment-option-icon">
+
+                                        <i class="fa-solid fa-money-bill-wave"></i>
+
+                                    </span>
+
+
+                                    <span class="payment-option-content">
+
+                                        <strong>
+                                            Cash on Delivery
+                                        </strong>
+
+                                        <small>
+                                            Pay when your order arrives
+                                        </small>
+
+                                    </span>
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =====================================
+                             MOBILE CONTINUE BUTTON
+                             ===================================== -->
+
+                        <button
+                            type="submit"
+                            class="place-order-btn mobile-place-order-btn"
+                            id="placeOrderBtnMobile"
+                        >
+
+                            <span>
+
+                                <i class="fa-solid fa-lock"></i>
+
+                                Continue to Payment
+
+                            </span>
+
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </button>
+
+
+                    </form>
+
+
+
+                    <!-- =========================================
+                         LOCAL DELIVERY
+                         SABSE NEECHE
+                         ========================================= -->
+
+                    <div class="checkout-info-box">
+
+
+                        <div class="checkout-info-icon">
+
+                            <i class="fa-solid fa-motorcycle"></i>
+
+                        </div>
+
+
+                        <div class="checkout-info-content">
+
+                            <strong>
+                                Local Delivery
+                            </strong>
+
+
+                            <p>
+                                Your order will be delivered fresh
+                                and hot to your address.
+                            </p>
+
+
+                            <div class="checkout-info-meta">
+
+                                <span>
+
+                                    <i class="fa-solid fa-clock"></i>
+
+                                    Fast Delivery
+
+                                </span>
+
+
+                                <span>
+
+                                    <i class="fa-solid fa-house"></i>
+
+                                    Local Area
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 RIGHT — ORDER SUMMARY
+                 ================================================= -->
+
+            <div class="checkout-right">
+
+
+                <div class="checkout-card order-summary-card">
+
+
+                    <!-- SUMMARY HEADER -->
+
+                    <div class="summary-heading">
+
+
+                        <div>
+
+                            <span>
+                                YOUR ORDER
+                            </span>
+
+                            <h2>
+                                Order Summary
+                            </h2>
+
+                        </div>
+
+
+                        <a
+                            href="cart.html"
+                            class="edit-cart"
+                        >
+
+                            <i class="fa-solid fa-pen"></i>
+
+                            Edit
+
+                        </a>
+
+                    </div>
+
+
+
+                    <!-- CART ITEMS -->
+
+                    <div
+                        class="checkout-items"
+                        id="checkoutItems"
+                    >
+
+                        <!-- JavaScript inserts items -->
+
+                    </div>
+
+
+
+                    <!-- PRICE -->
+
+                    <div class="price-breakdown">
+
+
+                        <div class="price-row">
+
+                            <span>
+                                Subtotal
+                            </span>
+
+                            <strong id="checkoutSubtotal">
+                                ₹0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="price-row">
+
+                            <span>
+                                Discount
+                            </span>
+
+                            <strong
+                                id="checkoutDiscount"
+                                class="discount-price"
+                            >
+                                ₹0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="price-row">
+
+                            <span>
+                                Delivery
+                            </span>
+
+                            <strong id="checkoutDelivery">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="price-row">
+
+                            <span>
+                                Extra Fee
+                            </span>
+
+                            <strong id="checkoutExtraFee">
+                                ₹0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- GRAND TOTAL -->
+
+                    <div class="grand-total">
+
+
+                        <div>
+
+                            <span>
+                                Total Payable
+                            </span>
+
+                            <small>
+                                Inclusive of applicable charges
+                            </small>
+
+                        </div>
+
+
+                        <strong id="checkoutTotal">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- DESKTOP CONTINUE -->
+
+                    <button
+                        type="button"
+                        class="place-order-btn"
+                        id="placeOrderBtn"
+                    >
+
+                        <span>
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            Continue to Payment
+
+                        </span>
+
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+
+
+                    <!-- SECURITY -->
+
+                    <div class="secure-note">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                        <span>
+                            Your information is securely processed.
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         CHECKOUT JS
+         ===================================================== -->
+
+    <script src="checkout.js"></script>
+
+</body>
+
+</html>

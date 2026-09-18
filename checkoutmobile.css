@@ -1,0 +1,1008 @@
+/* =========================================================
+   11:11 PIZZA CAFE
+   CHECKOUT MOBILE CSS
+   CLEAN FULL REPLACEMENT
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    /* =========================
+       RESET
+       ========================= */
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box !important;
+    }
+
+    html,
+    body {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow-x: hidden !important;
+    }
+
+    body {
+        padding-top: 120px !important;
+        padding-bottom: 68px !important;
+    }
+
+
+    /* =========================
+       PAGE
+       ========================= */
+
+    .checkout-page {
+        width: calc(100% - 20px) !important;
+        max-width: 500px !important;
+
+        margin: 0 auto !important;
+        padding: 6px 0 8px !important;
+    }
+
+
+    /* =========================
+       HEADER
+       ========================= */
+
+    .checkout-header {
+        width: 100% !important;
+        margin: 0 0 12px !important;
+        padding: 0 !important;
+        text-align: center !important;
+    }
+
+    .checkout-badge {
+        display: inline-flex !important;
+
+        margin: 0 !important;
+        padding: 6px 11px !important;
+
+        border-radius: 999px !important;
+
+        font-size: 8px !important;
+        line-height: 1 !important;
+    }
+
+    .checkout-header h1 {
+        margin: 7px 0 4px !important;
+
+        font-size: 27px !important;
+        line-height: 1.08 !important;
+
+        letter-spacing: -.7px !important;
+    }
+
+    .checkout-header p {
+        margin: 0 !important;
+        padding: 0 8px !important;
+
+        font-size: 10px !important;
+        line-height: 1.4 !important;
+    }
+
+
+    /* =========================
+       LAYOUT
+       ========================= */
+
+    .checkout-layout {
+        width: 100% !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+
+        gap: 10px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .checkout-left,
+    .checkout-right {
+        width: 100% !important;
+        min-width: 0 !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+
+    /* =========================
+       CARDS
+       ========================= */
+
+    .checkout-card {
+        width: 100% !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        border-radius: 20px !important;
+
+        overflow: hidden !important;
+    }
+
+
+    /* =========================
+       CUSTOMER DETAILS
+       ========================= */
+
+    .checkout-card-title {
+        width: 100% !important;
+
+        display: flex !important;
+        align-items: center !important;
+
+        gap: 10px !important;
+
+        margin: 0 !important;
+
+        padding: 14px 14px 11px !important;
+    }
+
+    .checkout-title-icon {
+        width: 40px !important;
+        height: 40px !important;
+
+        flex: 0 0 40px !important;
+
+        display: grid !important;
+        place-items: center !important;
+
+        border-radius: 12px !important;
+
+        font-size: 14px !important;
+    }
+
+    .checkout-card-title span {
+        display: block !important;
+
+        font-size: 8px !important;
+        line-height: 1 !important;
+
+        letter-spacing: 1px !important;
+    }
+
+    .checkout-card-title h2 {
+        margin: 4px 0 0 !important;
+
+        font-size: 17px !important;
+        line-height: 1.15 !important;
+    }
+
+
+    /* =========================
+       FORM
+       ========================= */
+
+    #checkoutForm {
+        width: 100% !important;
+
+        margin: 0 !important;
+        padding: 0 14px 10px !important;
+    }
+
+    .checkout-field {
+        width: 100% !important;
+
+        margin: 0 0 10px !important;
+        padding: 0 !important;
+    }
+
+    .checkout-field:last-of-type {
+        margin-bottom: 7px !important;
+    }
+
+    .checkout-field label {
+        display: flex !important;
+        align-items: center !important;
+
+        margin: 0 0 4px !important;
+
+        font-size: 11px !important;
+        line-height: 1.2 !important;
+    }
+
+    .checkout-field label i {
+        font-size: 10px !important;
+    }
+
+    .checkout-field input,
+    .checkout-field textarea {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 0 !important;
+
+        border-radius: 11px !important;
+
+        padding: 10px 11px !important;
+
+        font-size: 12px !important;
+    }
+
+    .checkout-field input {
+        height: 42px !important;
+        min-height: 42px !important;
+    }
+
+    .checkout-field textarea {
+        height: 72px !important;
+        min-height: 72px !important;
+
+        resize: none !important;
+    }
+
+
+    /* =========================
+       PAYMENT
+       ========================= */
+
+    .payment-section {
+        width: 100% !important;
+
+        margin: 3px 0 0 !important;
+        padding: 8px 0 0 !important;
+
+        border-top: 1px solid rgba(0,0,0,.06) !important;
+    }
+
+    .payment-section-heading {
+        width: 100% !important;
+
+        display: flex !important;
+        align-items: center !important;
+
+        gap: 9px !important;
+
+        margin: 0 !important;
+        padding: 0 0 9px !important;
+    }
+
+    .payment-heading-icon {
+        width: 38px !important;
+        height: 38px !important;
+
+        flex: 0 0 38px !important;
+
+        display: grid !important;
+        place-items: center !important;
+
+        border-radius: 11px !important;
+
+        font-size: 13px !important;
+    }
+
+    .payment-section-heading span {
+        display: block !important;
+
+        font-size: 8px !important;
+        line-height: 1 !important;
+
+        letter-spacing: 1px !important;
+    }
+
+    .payment-section-heading h2 {
+        margin: 3px 0 0 !important;
+
+        font-size: 16px !important;
+        line-height: 1.15 !important;
+    }
+
+
+    /* =========================
+       PAYMENT OPTIONS
+       ========================= */
+
+    .payment-options {
+        width: 100% !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+
+        gap: 7px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .payment-option {
+        width: 100% !important;
+
+        min-height: 58px !important;
+        height: 58px !important;
+
+        display: flex !important;
+        align-items: center !important;
+
+        gap: 9px !important;
+
+        margin: 0 !important;
+
+        padding: 8px 10px !important;
+
+        border-radius: 14px !important;
+    }
+
+    .payment-radio {
+        width: 17px !important;
+        height: 17px !important;
+
+        flex: 0 0 17px !important;
+    }
+
+    .payment-option-icon {
+        width: 36px !important;
+        height: 36px !important;
+
+        flex: 0 0 36px !important;
+
+        display: grid !important;
+        place-items: center !important;
+
+        border-radius: 10px !important;
+    }
+
+    .payment-option-icon i {
+        font-size: 12px !important;
+    }
+
+    .payment-option-content {
+        min-width: 0 !important;
+        flex: 1 !important;
+    }
+
+    .payment-option-content strong {
+        display: block !important;
+
+        font-size: 11px !important;
+        line-height: 1.2 !important;
+    }
+
+    .payment-option-content small {
+        display: block !important;
+
+        margin-top: 3px !important;
+
+        font-size: 8px !important;
+        line-height: 1.2 !important;
+    }
+
+    .payment-secure {
+        font-size: 10px !important;
+    }
+
+
+    /* =========================
+       LOCAL DELIVERY
+       ALWAYS LAST
+       ========================= */
+
+    .checkout-left {
+        display: flex !important;
+        flex-direction: column !important;
+
+        gap: 0 !important;
+    }
+
+    .checkout-left > .checkout-card {
+        order: 1 !important;
+    }
+
+    .checkout-left > .checkout-info-box {
+        order: 2 !important;
+    }
+
+    .checkout-info-box {
+        width: calc(100% - 12px) !important;
+
+        min-height: 58px !important;
+
+        display: flex !important;
+        align-items: center !important;
+
+        gap: 9px !important;
+
+        margin: 5px 6px 0 !important;
+        padding: 9px 10px !important;
+
+        border-radius: 14px !important;
+
+        overflow: hidden !important;
+    }
+
+    .checkout-info-icon {
+        width: 36px !important;
+        height: 36px !important;
+
+        flex: 0 0 36px !important;
+
+        display: grid !important;
+        place-items: center !important;
+
+        border-radius: 10px !important;
+
+        font-size: 14px !important;
+    }
+
+    .checkout-info-content {
+        flex: 1 !important;
+        min-width: 0 !important;
+    }
+
+    .checkout-info-content strong {
+        display: block !important;
+
+        margin: 0 !important;
+
+        font-size: 11px !important;
+        line-height: 1.15 !important;
+    }
+
+    .checkout-info-content p {
+        margin: 3px 0 5px !important;
+
+        font-size: 8px !important;
+        line-height: 1.25 !important;
+    }
+
+    .checkout-info-meta {
+        display: flex !important;
+        align-items: center !important;
+
+        gap: 9px !important;
+
+        flex-wrap: wrap !important;
+    }
+
+    .checkout-info-meta span {
+        display: inline-flex !important;
+        align-items: center !important;
+
+        gap: 3px !important;
+
+        font-size: 8px !important;
+        line-height: 1 !important;
+    }
+
+    .checkout-info-meta i {
+        font-size: 8px !important;
+    }
+
+
+    /* =========================
+       ORDER SUMMARY
+       ========================= */
+
+    .order-summary-card {
+        width: 100% !important;
+
+        position: static !important;
+
+        margin: 0 !important;
+    }
+
+    .summary-heading {
+        width: 100% !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+
+        gap: 8px !important;
+
+        margin: 0 !important;
+
+        padding: 13px 13px 9px !important;
+    }
+
+    .summary-heading h2 {
+        font-size: 17px !important;
+    }
+
+    .summary-heading > div > span {
+        font-size: 8px !important;
+    }
+
+    .edit-cart {
+        flex-shrink: 0 !important;
+
+        padding: 7px 9px !important;
+
+        border-radius: 9px !important;
+
+        font-size: 9px !important;
+    }
+
+
+    /* =========================
+       ORDER ITEMS
+       ========================= */
+
+    .checkout-items {
+        width: 100% !important;
+
+        margin: 0 !important;
+        padding: 2px 11px !important;
+    }
+
+    .checkout-item {
+        width: 100% !important;
+
+        display: flex !important;
+        align-items: center !important;
+
+        gap: 8px !important;
+
+        margin: 0 !important;
+        padding: 8px 2px !important;
+    }
+
+    .checkout-item-image {
+        width: 46px !important;
+        height: 46px !important;
+
+        flex: 0 0 46px !important;
+
+        border-radius: 11px !important;
+
+        overflow: hidden !important;
+    }
+
+    .checkout-item-info {
+        min-width: 0 !important;
+        flex: 1 !important;
+    }
+
+    .checkout-item-info h3 {
+        margin: 0 0 3px !important;
+
+        font-size: 10px !important;
+        line-height: 1.2 !important;
+    }
+
+    .checkout-item-size,
+    .checkout-item-addons,
+    .checkout-item-qty {
+        font-size: 8px !important;
+        line-height: 1.3 !important;
+    }
+
+    .checkout-item-price {
+        flex-shrink: 0 !important;
+    }
+
+    .checkout-item-price strong {
+        font-size: 11px !important;
+    }
+
+    .checkout-item-price small {
+        font-size: 7px !important;
+    }
+
+
+    /* =========================
+       PRICE
+       ========================= */
+
+    .price-breakdown {
+        width: calc(100% - 22px) !important;
+
+        margin: 3px 11px 0 !important;
+        padding: 7px 0 !important;
+    }
+
+    .price-row {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+
+        padding: 3px 0 !important;
+
+        font-size: 10px !important;
+    }
+
+    .price-row strong {
+        font-size: 10px !important;
+    }
+
+
+    /* =========================
+       GRAND TOTAL
+       ========================= */
+
+    .grand-total {
+        width: calc(100% - 22px) !important;
+
+        margin: 0 11px 7px !important;
+        padding: 10px 11px !important;
+
+        border-radius: 13px !important;
+    }
+
+    .grand-total span {
+        font-size: 11px !important;
+    }
+
+    .grand-total small {
+        margin-top: 2px !important;
+
+        font-size: 7px !important;
+    }
+
+    .grand-total strong {
+        font-size: 22px !important;
+    }
+
+
+    /* =========================
+       CONTINUE BUTTON
+       ========================= */
+
+    .place-order-btn {
+        width: calc(100% - 22px) !important;
+
+        min-height: 46px !important;
+        height: 46px !important;
+
+        margin: 0 11px !important;
+
+        padding: 0 12px !important;
+
+        border-radius: 13px !important;
+
+        font-size: 11px !important;
+    }
+
+    .place-order-btn span {
+        display: inline-flex !important;
+        align-items: center !important;
+
+        gap: 6px !important;
+    }
+
+    .place-order-btn > i {
+        font-size: 12px !important;
+    }
+
+
+    /* =========================
+       SECURITY
+       ========================= */
+
+    .secure-note {
+        width: 100% !important;
+
+        margin: 0 !important;
+
+        padding: 7px 11px 9px !important;
+
+        font-size: 8px !important;
+    }
+
+    .secure-note i {
+        font-size: 9px !important;
+    }
+
+
+    /* =========================
+       REMOVE DESKTOP STICKY
+       ========================= */
+
+    .order-summary-card {
+        top: auto !important;
+        bottom: auto !important;
+    }
+
+
+    /* =========================
+       BOTTOM NAV
+       ========================= */
+
+    .mobile-bottom-nav {
+        position: fixed !important;
+
+        left: 8px !important;
+        right: 8px !important;
+        bottom: 8px !important;
+
+        z-index: 9999 !important;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    body {
+        padding-top: 116px !important;
+        padding-bottom: 65px !important;
+    }
+
+    .checkout-page {
+        width: calc(100% - 14px) !important;
+        padding-top: 4px !important;
+    }
+
+    .checkout-header h1 {
+        font-size: 24px !important;
+    }
+
+    .checkout-layout {
+        gap: 8px !important;
+    }
+
+    .payment-option {
+        height: 55px !important;
+        min-height: 55px !important;
+    }
+
+    .checkout-info-box {
+        width: calc(100% - 10px) !important;
+        margin-left: 5px !important;
+        margin-right: 5px !important;
+    }
+}
+/* =====================================================
+   PAYMENT OPTIONS — CLEAN GAP FIX
+   ===================================================== */
+
+@media (max-width: 800px) {
+
+    .payment-options {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 9px !important;
+    }
+
+    .payment-option {
+        margin: 0 !important;
+        min-height: 55px !important;
+        height: 55px !important;
+    }
+
+    /* Continue button ko payment cards se alag rakho */
+    .place-order-btn {
+        margin-top: 10px !important;
+    }
+
+    .secure-note {
+        margin-top: 4px !important;
+    }
+}
+/* =========================================================
+   MOBILE — LOCAL DELIVERY AT ABSOLUTE BOTTOM
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    /* Main checkout layout ko single clean column */
+    .checkout-layout {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Left column ke andar ke elements ko flatten karo */
+    .checkout-left {
+        display: contents !important;
+    }
+
+    /* Customer + payment card first */
+    .checkout-left > .checkout-card {
+        order: 1 !important;
+    }
+
+    /* Order summary second */
+    .checkout-right {
+        order: 2 !important;
+
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Local Delivery absolutely last */
+    .checkout-left > .checkout-info-box {
+        order: 3 !important;
+
+        width: calc(100% - 12px) !important;
+
+        margin:
+            4px
+            6px
+            6px !important;
+
+        padding:
+            9px
+            10px !important;
+
+        min-height: 58px !important;
+
+        display: flex !important;
+        align-items: center !important;
+
+        gap: 9px !important;
+
+        border-radius: 14px !important;
+
+        box-sizing: border-box !important;
+    }
+
+    /* Delivery icon */
+    .checkout-info-icon {
+        width: 36px !important;
+        height: 36px !important;
+
+        min-width: 36px !important;
+        flex: 0 0 36px !important;
+
+        border-radius: 10px !important;
+
+        display: grid !important;
+        place-items: center !important;
+    }
+
+    /* Delivery text */
+    .checkout-info-content {
+        min-width: 0 !important;
+        flex: 1 !important;
+    }
+
+    .checkout-info-content strong {
+        display: block !important;
+
+        margin: 0 !important;
+
+        font-size: 11px !important;
+        line-height: 1.2 !important;
+    }
+
+    .checkout-info-content p {
+        margin:
+            3px
+            0
+            5px !important;
+
+        font-size: 8px !important;
+        line-height: 1.25 !important;
+    }
+
+    .checkout-info-meta {
+        display: flex !important;
+        align-items: center !important;
+
+        gap: 9px !important;
+
+        margin: 0 !important;
+    }
+
+    .checkout-info-meta span {
+        display: inline-flex !important;
+        align-items: center !important;
+
+        gap: 3px !important;
+
+        font-size: 8px !important;
+        line-height: 1 !important;
+    }
+
+
+    /* No unwanted space after delivery */
+    .checkout-page {
+        padding-bottom: 4px !important;
+    }
+
+    .checkout-layout {
+        padding-bottom: 0 !important;
+        margin-bottom: 0 !important;
+    }
+}
+/* =========================================
+   MOBILE - LOCAL DELIVERY AT VERY BOTTOM
+   ========================================= */
+
+@media (max-width: 800px) {
+
+    .checkout-layout {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+    }
+
+    .checkout-left {
+        display: contents !important;
+    }
+
+    .checkout-right {
+        display: flex !important;
+        flex-direction: column !important;
+
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* ORDER SUMMARY FIRST */
+    .order-summary-card {
+        order: 1 !important;
+
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    /* LOCAL DELIVERY LAST */
+    .checkout-delivery-note {
+        order: 2 !important;
+
+        width: calc(100% - 12px) !important;
+
+        margin:
+            8px
+            6px
+            4px !important;
+
+        padding:
+            10px
+            11px !important;
+
+        display: flex !important;
+        align-items: center !important;
+
+        gap: 9px !important;
+
+        min-height: 58px !important;
+
+        box-sizing: border-box !important;
+
+        border-radius: 14px !important;
+    }
+
+    .delivery-note-icon {
+        width: 36px !important;
+        height: 36px !important;
+
+        min-width: 36px !important;
+        flex: 0 0 36px !important;
+
+        display: grid !important;
+        place-items: center !important;
+
+        border-radius: 10px !important;
+    }
+
+    .checkout-delivery-note strong {
+        display: block !important;
+
+        margin: 0 !important;
+
+        font-size: 11px !important;
+        line-height: 1.2 !important;
+    }
+
+    .checkout-delivery-note p,
+    .checkout-delivery-note span {
+        display: block !important;
+
+        margin: 3px 0 0 !important;
+
+        font-size: 8px !important;
+        line-height: 1.3 !important;
+    }
+
+    /* REMOVE EXTRA SPACE */
+    .checkout-right,
+    .checkout-right > * {
+        min-height: 0 !important;
+    }
+}

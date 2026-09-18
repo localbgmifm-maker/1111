@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Order Confirmed | 11:11 Pizza Cafe</title>
+
+    <meta
+        name="description"
+        content="Your order has been confirmed by 11:11 Pizza Cafe."
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- COMMON NAVBAR CSS -->
+    <link rel="stylesheet" href="desktop.css">
+    <link rel="stylesheet" href="mobile.css">
+
+    <!-- ORDER SUCCESS CSS -->
+    <link rel="stylesheet" href="order-success.css">
+    <link rel="stylesheet" href="order-successmobile.css">
+</head>
+
+<body>
+
+    <!-- EXISTING SHARED NAVBAR -->
+    <div id="navbar"></div>
+
+
+    <main class="order-success-page">
+
+        <!-- =================================================
+             SUCCESS HEADER
+        ================================================== -->
+
+        <section class="success-header">
+
+            <div class="success-icon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+
+            <div class="success-badge">
+                <i class="fa-solid fa-circle-check"></i>
+                ORDER CONFIRMED
+            </div>
+
+            <h1>Thank You For Your Order!</h1>
+
+            <p>
+                Your order has been received successfully.
+                We're getting it ready for you.
+            </p>
+
+        </section>
+
+
+        <!-- =================================================
+             MAIN CONTENT
+        ================================================== -->
+
+        <section class="success-container">
+
+
+            <!-- =================================================
+                 LEFT SIDE
+            ================================================== -->
+
+            <section class="success-left">
+
+
+                <!-- ORDER CARD -->
+
+                <div class="success-card confirmation-card">
+
+                    <div class="card-heading">
+
+                        <div class="card-heading-icon">
+                            <i class="fa-solid fa-receipt"></i>
+                        </div>
+
+                        <div>
+                            <span>ORDER DETAILS</span>
+                            <h2>Your Order</h2>
+                        </div>
+
+                    </div>
+
+
+                    <!-- ORDER ID -->
+
+                    <div class="order-id-box">
+
+                        <div>
+                            <span>ORDER ID</span>
+                            <strong id="orderId">—</strong>
+                        </div>
+
+                        <button
+                            type="button"
+                            id="copyOrderId"
+                            class="copy-order-id"
+                            aria-label="Copy order ID"
+                        >
+                            <i class="fa-regular fa-copy"></i>
+                        </button>
+
+                    </div>
+
+
+                    <!-- ITEMS -->
+
+                    <div
+                        class="success-items"
+                        id="successItems"
+                    ></div>
+
+
+                    <!-- PRICE -->
+
+                    <div class="success-price-box">
+
+                        <div class="success-price-row">
+                            <span>Subtotal</span>
+                            <strong id="successSubtotal">
+                                ₹0
+                            </strong>
+                        </div>
+
+                        <div class="success-price-row">
+                            <span>Discount</span>
+                            <strong id="successDiscount">
+                                −₹0
+                            </strong>
+                        </div>
+
+                        <div class="success-price-row">
+                            <span>Delivery</span>
+                            <strong id="successDelivery">
+                                ₹0
+                            </strong>
+                        </div>
+
+                        <div
+                            class="success-price-row"
+                            id="successExtraFeeRow"
+                        >
+                            <span>Extra Fee</span>
+                            <strong id="successExtraFee">
+                                ₹0
+                            </strong>
+                        </div>
+
+                        <div class="success-total-row">
+                            <span>Total Paid</span>
+                            <strong id="successTotal">
+                                ₹0
+                            </strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     DELIVERY DETAILS
+                ================================================== -->
+
+                <div class="success-card delivery-card">
+
+                    <div class="card-heading">
+
+                        <div class="card-heading-icon delivery-heading-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+
+                        <div>
+                            <span>DELIVERY DETAILS</span>
+                            <h2>Delivering To</h2>
+                        </div>
+
+                    </div>
+
+
+                    <div class="delivery-details">
+
+
+                        <div class="delivery-detail-row">
+
+                            <div class="detail-icon">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+
+                            <div>
+                                <span>Name</span>
+                                <strong id="customerName">
+                                    —
+                                </strong>
+                            </div>
+
+                        </div>
+
+
+                        <div class="delivery-detail-row">
+
+                            <div class="detail-icon">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+
+                            <div>
+                                <span>Phone</span>
+                                <strong id="customerPhone">
+                                    —
+                                </strong>
+                            </div>
+
+                        </div>
+
+
+                        <div class="delivery-detail-row">
+
+                            <div class="detail-icon">
+                                <i class="fa-solid fa-house"></i>
+                            </div>
+
+                            <div>
+                                <span>Address</span>
+                                <strong id="deliveryAddress">
+                                    —
+                                </strong>
+                            </div>
+
+                        </div>
+
+
+                        <div class="delivery-detail-row">
+
+                            <div class="detail-icon">
+                                <i class="fa-solid fa-map-pin"></i>
+                            </div>
+
+                            <div>
+                                <span>Landmark</span>
+                                <strong id="deliveryLandmark">
+                                    —
+                                </strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 RIGHT SIDE
+            ================================================== -->
+
+            <aside class="success-right">
+
+
+                <!-- ORDER STATUS -->
+
+                <div class="success-card status-card">
+
+                    <div class="status-top">
+
+                        <div class="status-icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+
+                        <div>
+                            <span>ORDER STATUS</span>
+
+                            <h2 id="orderStatus">
+                                Order Confirmed
+                            </h2>
+                        </div>
+
+                    </div>
+
+
+                    <!-- DESKTOP TIMELINE -->
+
+                    <div class="status-timeline">
+
+                        <div class="status-step active">
+
+                            <div class="timeline-icon">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+
+                            <div class="timeline-content">
+                                <strong>
+                                    Order Confirmed
+                                </strong>
+
+                                <span>
+                                    Your order has been received.
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="timeline-line"></div>
+
+
+                        <div class="status-step">
+
+                            <div class="timeline-icon">
+                                <i class="fa-solid fa-kitchen-set"></i>
+                            </div>
+
+                            <div class="timeline-content">
+                                <strong>
+                                    Preparing
+                                </strong>
+
+                                <span>
+                                    Restaurant will start preparing.
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="timeline-line"></div>
+
+
+                        <div class="status-step">
+
+                            <div class="timeline-icon">
+                                <i class="fa-solid fa-motorcycle"></i>
+                            </div>
+
+                            <div class="timeline-content">
+                                <strong>
+                                    Out for Delivery
+                                </strong>
+
+                                <span>
+                                    Your order will be on its way.
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="timeline-line"></div>
+
+
+                        <div class="status-step">
+
+                            <div class="timeline-icon">
+                                <i class="fa-solid fa-house-circle-check"></i>
+                            </div>
+
+                            <div class="timeline-content">
+                                <strong>
+                                    Delivered
+                                </strong>
+
+                                <span>
+                                    Enjoy your meal!
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PAYMENT -->
+
+                <div class="success-card payment-status-card">
+
+                    <div class="payment-status-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+
+                    <div>
+
+                        <span>PAYMENT</span>
+
+                        <h3 id="paymentMethod">
+                            Payment Confirmed
+                        </h3>
+
+                        <p id="paymentStatusText">
+                            Your payment information has been recorded.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ESTIMATED DELIVERY -->
+
+                <div class="delivery-estimate-card">
+
+                    <div class="estimate-icon">
+                        <i class="fa-solid fa-motorcycle"></i>
+                    </div>
+
+                    <div class="estimate-content">
+
+                        <span>
+                            ESTIMATED DELIVERY
+                        </span>
+
+                        <strong>
+                            Within 40 Minutes
+                        </strong>
+
+                        <p>
+                            Fresh & hot delivery within our
+                            5 KM local delivery area.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ACTIONS -->
+
+                <div class="success-actions">
+
+                    <button
+                        type="button"
+                        class="track-order-btn"
+                        id="trackOrderButton"
+                    >
+                        <i class="fa-solid fa-location-arrow"></i>
+                        Track Your Order
+                    </button>
+
+                    <a
+                        href="index.html"
+                        class="home-btn"
+                    >
+                        <i class="fa-solid fa-house"></i>
+                        Back To Home
+                    </a>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+
+    <!-- PAGE JS -->
+    <script src="order-success.js"></script>
+
+</body>
+</html>

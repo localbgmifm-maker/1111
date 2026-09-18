@@ -1,0 +1,666 @@
+/* =========================================================
+   11:11 PIZZA CAFE
+   LOGIN / OTP - DESKTOP
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+.login-page {
+    min-height: calc(100vh - 100px);
+    padding: 20px 20px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at 15% 25%,
+            rgba(232, 75, 150, 0.14),
+            transparent 34%
+        ),
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(92, 65, 210, 0.15),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #faf6ff,
+            #f5f3ff 48%,
+            #fff8fb
+        );
+}
+/* =========================================================
+   LOGIN CARD
+   ========================================================= */
+
+.login-card {
+    width: 100%;
+    max-width: 685px;
+
+    padding: 52px 48px 34px;
+
+    position: relative;
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.92);
+    border-radius: 34px;
+
+    background: rgba(255, 255, 255, 0.72);
+
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+
+    box-shadow:
+        0 30px 80px rgba(49, 31, 74, 0.13),
+        inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+/* soft glass glow */
+
+.login-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    top: -145px;
+    right: -80px;
+
+    border-radius: 50%;
+
+    background: rgba(113, 67, 232, 0.14);
+
+    filter: blur(18px);
+
+    pointer-events: none;
+}
+
+.login-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    bottom: -120px;
+    left: -70px;
+
+    border-radius: 50%;
+
+    background: rgba(239, 65, 146, 0.10);
+
+    filter: blur(18px);
+
+    pointer-events: none;
+}
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.login-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+
+    margin-bottom: 48px;
+
+    position: relative;
+    z-index: 2;
+}
+
+.login-brand-icon {
+    width: 90px;
+    height: 90px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 26px;
+
+    color: #fff;
+
+    font-size: 38px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #7935df,
+            #d52d98
+        );
+
+    box-shadow:
+        0 18px 35px rgba(118, 46, 207, 0.28);
+}
+
+.login-brand-small {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 21px;
+    font-weight: 500;
+
+    color: #302b37;
+
+    letter-spacing: -0.3px;
+}
+
+.login-brand h1 {
+    margin: 0;
+
+    font-size: 40px;
+    line-height: 1.05;
+
+    font-weight: 850;
+
+    color: #191720;
+
+    letter-spacing: -1.2px;
+}
+
+/* =========================================================
+   STEPS
+   ========================================================= */
+
+.login-step {
+    position: relative;
+    z-index: 2;
+}
+
+.login-step.hidden {
+    display: none !important;
+}
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.login-heading {
+    text-align: center;
+}
+
+.login-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-bottom: 18px;
+
+    color: #6738bd;
+
+    font-size: 14px;
+    font-weight: 850;
+
+    letter-spacing: 2px;
+}
+
+.login-label i {
+    font-size: 14px;
+}
+
+.login-heading h2 {
+    margin: 0;
+
+    font-size: 32px;
+    line-height: 1.2;
+
+    color: #1d1a23;
+
+    font-weight: 850;
+
+    letter-spacing: -0.6px;
+}
+
+.login-heading p {
+    max-width: 470px;
+
+    margin: 14px auto 34px;
+
+    color: #746e7c;
+
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* =========================================================
+   PHONE FORM
+   ========================================================= */
+
+#phoneForm,
+#otpForm {
+    width: 100%;
+}
+
+#phoneForm > label,
+#otpForm > label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #302b36;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+/* =========================================================
+   PHONE INPUT
+   ========================================================= */
+
+.phone-input {
+    width: 100%;
+
+    display: flex;
+    align-items: stretch;
+
+    gap: 10px;
+}
+
+.country-code {
+    width: 92px;
+    height: 58px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(92, 79, 112, 0.17);
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    color: #3a3441;
+
+    font-size: 17px;
+    font-weight: 800;
+
+    box-shadow:
+        0 6px 20px rgba(48, 36, 65, 0.05);
+}
+
+.phone-input input {
+    width: 100%;
+    height: 58px;
+
+    min-width: 0;
+
+    padding: 0 18px;
+
+    border: 1px solid rgba(92, 79, 112, 0.17);
+    border-radius: 18px;
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    color: #211d27;
+
+    font-family: inherit;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    box-shadow:
+        0 6px 20px rgba(48, 36, 65, 0.05);
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.phone-input input::placeholder {
+    color: #aaa5ae;
+    font-weight: 500;
+}
+
+.phone-input input:focus {
+    background: #fff;
+
+    border-color: rgba(103, 56, 189, 0.55);
+
+    box-shadow:
+        0 0 0 4px rgba(103, 56, 189, 0.09),
+        0 8px 22px rgba(48, 36, 65, 0.07);
+}
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.login-error {
+    min-height: 20px;
+
+    margin-top: 8px;
+
+    color: #d23455;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* =========================================================
+   PRIMARY BUTTON
+   ========================================================= */
+
+.login-primary-btn {
+    width: 100%;
+    height: 58px;
+
+    margin-top: 5px;
+
+    border: 0;
+    border-radius: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    cursor: pointer;
+
+    color: #fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6527c8,
+            #a72bc5
+        );
+
+    font-family: inherit;
+
+    font-size: 16px;
+    font-weight: 800;
+
+    box-shadow:
+        0 14px 30px rgba(103, 45, 188, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.login-primary-btn i {
+    font-size: 15px;
+}
+
+.login-primary-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 18px 35px rgba(103, 45, 188, 0.31);
+}
+
+.login-primary-btn:active {
+    transform: translateY(0);
+}
+
+.login-primary-btn:disabled {
+    opacity: 0.55;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+/* =========================================================
+   LOGIN INFO
+   ========================================================= */
+
+.login-info {
+    margin-top: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    color: #696270;
+
+    font-size: 13px;
+    line-height: 1.5;
+
+    text-align: center;
+}
+
+.login-info i {
+    flex-shrink: 0;
+
+    color: #28232e;
+
+    font-size: 15px;
+}
+
+/* =========================================================
+   OTP
+   ========================================================= */
+
+.otp-inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 11px;
+
+    margin: 12px 0 5px;
+}
+
+.otp-input {
+    width: 55px;
+    height: 60px;
+
+    border: 1px solid rgba(92, 79, 112, 0.17);
+    border-radius: 16px;
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    color: #211d27;
+
+    text-align: center;
+
+    font-family: inherit;
+
+    font-size: 22px;
+    font-weight: 800;
+
+    box-shadow:
+        0 6px 18px rgba(48, 36, 65, 0.05);
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.otp-input:focus {
+    border-color: rgba(103, 56, 189, 0.58);
+
+    box-shadow:
+        0 0 0 4px rgba(103, 56, 189, 0.09);
+}
+
+/* =========================================================
+   OTP ACTIONS
+   ========================================================= */
+
+.otp-actions {
+    margin-top: 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+.text-btn {
+    padding: 7px 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #6738bd;
+
+    font-family: inherit;
+
+    font-size: 13px;
+    font-weight: 750;
+
+    cursor: pointer;
+}
+
+.text-btn i {
+    margin-right: 5px;
+}
+
+.text-btn:hover {
+    text-decoration: underline;
+}
+
+.text-btn:disabled {
+    color: #aaa4ae;
+
+    cursor: not-allowed;
+
+    text-decoration: none;
+}
+
+.resend-timer {
+    min-height: 20px;
+
+    margin-top: 5px;
+
+    text-align: right;
+
+    color: #827b88;
+
+    font-size: 12px;
+}
+
+/* =========================================================
+   SUCCESS
+   ========================================================= */
+
+#successStep {
+    text-align: center;
+}
+
+.success-icon {
+    width: 78px;
+    height: 78px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #16a765,
+            #2ac47d
+        );
+
+    color: #fff;
+
+    font-size: 30px;
+
+    box-shadow:
+        0 15px 30px rgba(22, 167, 101, 0.22);
+}
+
+#successStep .login-label {
+    margin-bottom: 10px;
+}
+
+#successStep h2 {
+    margin: 0;
+
+    font-size: 31px;
+    font-weight: 850;
+}
+
+#successStep p {
+    margin: 10px 0 25px;
+
+    color: #746e7c;
+
+    font-size: 15px;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.login-footer {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 27px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    color: #817a88;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.login-footer i {
+    color: #188c5b;
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (min-width: 701px) and (max-width: 1000px) {
+
+    .login-card {
+        max-width: 620px;
+
+        padding: 45px 38px 32px;
+    }
+
+    .login-brand-icon {
+        width: 80px;
+        height: 80px;
+    }
+
+    .login-brand h1 {
+        font-size: 35px;
+    }
+
+}

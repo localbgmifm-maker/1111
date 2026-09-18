@@ -1,0 +1,872 @@
+/* =========================================================
+   11:11 PIZZA CAFE
+   TRACK ORDER - MOBILE CSS
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    /* =====================================================
+       BODY / PAGE
+       ===================================================== */
+
+    html {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+
+        /*
+           Existing mobile navbar/search ke liye
+           space preserve.
+        */
+        padding-top: 132px;
+        padding-bottom: 76px;
+    }
+
+    .track-page {
+        width: calc(100% - 24px);
+
+        margin: 0 auto;
+
+        padding: 20px 0 20px;
+    }
+
+
+    /* =====================================================
+       HERO
+       ===================================================== */
+
+    .track-hero {
+        margin-bottom: 18px;
+
+        padding: 0 4px;
+    }
+
+    .track-hero-badge {
+        padding: 7px 11px;
+
+        font-size: 9px;
+        letter-spacing: 0.8px;
+    }
+
+    .track-hero h1 {
+        margin: 10px 0 5px;
+
+        font-size: 30px;
+        line-height: 1.08;
+        letter-spacing: -0.7px;
+    }
+
+    .track-hero p {
+        max-width: 320px;
+
+        margin: 0 auto;
+
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+
+    /* =====================================================
+       SEARCH CARD
+       ===================================================== */
+
+    .track-search-card {
+        padding: 16px;
+
+        margin-bottom: 16px;
+
+        border-radius: 19px;
+
+        box-shadow:
+            0 10px 28px rgba(25, 25, 25, 0.07);
+    }
+
+    .track-search-heading {
+        gap: 10px;
+
+        margin-bottom: 13px;
+    }
+
+    .track-search-icon {
+        flex: 0 0 42px;
+
+        width: 42px;
+        height: 42px;
+
+        border-radius: 13px;
+
+        font-size: 17px;
+    }
+
+    .track-search-heading span {
+        margin-bottom: 2px;
+
+        font-size: 8px;
+    }
+
+    .track-search-heading h2 {
+        font-size: 16px;
+    }
+
+    .track-search-heading p {
+        margin-top: 2px;
+
+        font-size: 10px;
+        line-height: 1.35;
+    }
+
+
+    /* =====================================================
+       SEARCH FORM
+       ===================================================== */
+
+    .track-search-form {
+        display: flex;
+        flex-direction: column;
+
+        gap: 9px;
+    }
+
+    .track-input-wrap input {
+        width: 100%;
+        height: 48px;
+
+        padding-left: 40px;
+
+        border-radius: 13px;
+
+        font-size: 12px;
+    }
+
+    .track-input-wrap > i {
+        left: 14px;
+
+        font-size: 13px;
+    }
+
+    .track-search-btn {
+        width: 100%;
+        height: 48px;
+
+        border-radius: 13px;
+
+        font-size: 12px;
+
+        box-shadow:
+            0 9px 20px rgba(255, 76, 20, 0.17);
+    }
+
+    .track-search-message {
+        min-height: 15px;
+
+        margin-top: 8px;
+
+        font-size: 10px;
+        line-height: 1.4;
+    }
+
+
+    /* =====================================================
+       ORDER TOP CARD
+       ===================================================== */
+
+    .track-order-top-card {
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 12px;
+
+        margin-bottom: 14px;
+        padding: 15px;
+
+        border-radius: 18px;
+
+        box-shadow:
+            0 9px 24px rgba(25, 25, 25, 0.06);
+    }
+
+    .track-order-main-info {
+        gap: 10px;
+    }
+
+    .track-order-icon {
+        flex: 0 0 42px;
+
+        width: 42px;
+        height: 42px;
+
+        border-radius: 12px;
+
+        font-size: 17px;
+    }
+
+    .track-small-label {
+        font-size: 8px;
+    }
+
+    .track-order-main-info h2 {
+        font-size: 16px;
+    }
+
+    .track-order-main-info p {
+        margin-top: 2px;
+
+        font-size: 9px;
+    }
+
+    .track-current-status {
+        width: 100%;
+        box-sizing: border-box;
+
+        justify-content: center;
+
+        padding: 9px 12px;
+
+        font-size: 10px;
+    }
+
+
+    /* =====================================================
+       MAIN GRID
+       ===================================================== */
+
+    .track-grid {
+        display: flex;
+        flex-direction: column;
+
+        gap: 14px;
+    }
+
+    .track-left-column,
+    .track-right-column {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 14px;
+    }
+
+
+    /* =====================================================
+       COMMON CARD
+       ===================================================== */
+
+    .track-card {
+        width: 100%;
+        box-sizing: border-box;
+
+        padding: 16px;
+
+        border-radius: 18px;
+
+        box-shadow:
+            0 9px 25px rgba(25, 25, 25, 0.055);
+    }
+
+    .track-card-heading {
+        gap: 9px;
+
+        margin-bottom: 15px;
+    }
+
+    .track-card-title-icon {
+        flex: 0 0 37px;
+
+        width: 37px;
+        height: 37px;
+
+        border-radius: 11px;
+
+        font-size: 14px;
+    }
+
+    .track-card-heading span {
+        font-size: 8px;
+        letter-spacing: 0.7px;
+    }
+
+    .track-card-heading h2 {
+        font-size: 15px;
+    }
+
+
+    /* =====================================================
+       TIMELINE
+       ===================================================== */
+
+    .order-timeline {
+        padding-top: 2px;
+    }
+
+    .order-timeline::before {
+        top: 21px;
+        bottom: 21px;
+        left: 18px;
+
+        width: 2px;
+    }
+
+    .timeline-step {
+        grid-template-columns: 37px minmax(0, 1fr);
+
+        gap: 11px;
+
+        min-height: 78px;
+
+        padding-bottom: 12px;
+    }
+
+    .timeline-step:last-child {
+        min-height: 0;
+    }
+
+    .timeline-icon {
+        width: 37px;
+        height: 37px;
+
+        border-width: 2px;
+
+        font-size: 12px;
+    }
+
+    .timeline-info {
+        padding-top: 1px;
+    }
+
+    .timeline-info h3 {
+        font-size: 12px;
+    }
+
+    .timeline-info p {
+        margin: 3px 0;
+
+        font-size: 10px;
+        line-height: 1.4;
+    }
+
+    .timeline-info time {
+        font-size: 8px;
+    }
+
+
+    /* =====================================================
+       ORDER ITEMS
+       ===================================================== */
+
+    .track-items {
+        gap: 8px;
+    }
+
+    .track-item {
+        grid-template-columns: 56px minmax(0, 1fr) auto;
+
+        gap: 9px;
+
+        padding: 8px;
+
+        border-radius: 13px;
+    }
+
+    .track-item-image {
+        width: 56px;
+        height: 56px;
+
+        border-radius: 11px;
+    }
+
+    .track-item-info h3 {
+        margin-bottom: 3px;
+
+        font-size: 11px;
+    }
+
+    .track-item-meta {
+        gap: 4px;
+
+        margin-bottom: 3px;
+    }
+
+    .track-item-meta span {
+        padding: 2px 5px;
+
+        border-radius: 5px;
+
+        font-size: 7px;
+    }
+
+    .track-item-addons {
+        gap: 3px;
+    }
+
+    .track-item-addons span {
+        font-size: 7px;
+    }
+
+    .track-item-price {
+        font-size: 11px;
+    }
+
+
+    /* =====================================================
+       DELIVERY ADDRESS
+       ===================================================== */
+
+    .delivery-address-box {
+        gap: 10px;
+
+        padding: 12px;
+
+        border-radius: 13px;
+    }
+
+    .address-icon {
+        flex: 0 0 35px;
+
+        width: 35px;
+        height: 35px;
+
+        border-radius: 10px;
+
+        font-size: 13px;
+    }
+
+    .delivery-address-box h3 {
+        margin-bottom: 3px;
+
+        font-size: 12px;
+    }
+
+    .delivery-address-box p {
+        font-size: 10px;
+        line-height: 1.45;
+    }
+
+    .delivery-address-box .track-landmark {
+        margin-top: 2px;
+    }
+
+    .delivery-address-box .track-phone {
+        margin-top: 4px;
+    }
+
+
+    /* =====================================================
+       LIVE STATUS
+       ===================================================== */
+
+    .live-status-content {
+        padding: 3px 3px 0;
+    }
+
+    .live-status-icon {
+        width: 58px;
+        height: 58px;
+
+        margin-bottom: 10px;
+
+        border-radius: 18px;
+
+        font-size: 22px;
+    }
+
+    .live-status-content h3 {
+        margin-bottom: 5px;
+
+        font-size: 14px;
+    }
+
+    .live-status-content p {
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
+
+    /* =====================================================
+       ESTIMATED DELIVERY
+       ===================================================== */
+
+    .estimated-delivery-box {
+        gap: 10px;
+
+        padding: 11px;
+
+        border-radius: 13px;
+    }
+
+    .estimated-icon {
+        flex: 0 0 40px;
+
+        width: 40px;
+        height: 40px;
+
+        border-radius: 11px;
+
+        font-size: 16px;
+    }
+
+    .estimated-delivery-box span {
+        margin-bottom: 2px;
+
+        font-size: 7px;
+    }
+
+    .estimated-delivery-box strong {
+        font-size: 16px;
+    }
+
+    .estimated-delivery-box p {
+        margin-top: 2px;
+
+        font-size: 8px;
+    }
+
+    .delivery-distance {
+        margin-top: 9px;
+        padding-top: 9px;
+    }
+
+    .delivery-distance div {
+        gap: 5px;
+
+        font-size: 9px;
+    }
+
+    .delivery-distance div i {
+        font-size: 10px;
+    }
+
+    .delivery-distance > strong {
+        font-size: 10px;
+    }
+
+
+    /* =====================================================
+       PAYMENT STATUS
+       ===================================================== */
+
+    .payment-status-box {
+        gap: 10px;
+
+        padding: 11px;
+
+        border-radius: 13px;
+    }
+
+    .payment-method-icon {
+        flex: 0 0 39px;
+
+        width: 39px;
+        height: 39px;
+
+        border-radius: 11px;
+
+        font-size: 15px;
+    }
+
+    .payment-status-box span {
+        margin-bottom: 2px;
+
+        font-size: 7px;
+    }
+
+    .payment-status-box strong {
+        font-size: 11px;
+    }
+
+    .payment-status-box p {
+        margin-top: 2px;
+
+        font-size: 8px;
+    }
+
+
+    /* =====================================================
+       PRICE SUMMARY
+       ===================================================== */
+
+    .track-price-list {
+        gap: 8px;
+    }
+
+    .track-price-list > div {
+        font-size: 10px;
+    }
+
+    .track-price-list > div strong {
+        font-size: 10px;
+    }
+
+    .track-total-row {
+        margin-top: 3px;
+        padding-top: 11px;
+    }
+
+    .track-total-row span {
+        font-size: 12px;
+    }
+
+    .track-total-row strong {
+        font-size: 18px !important;
+    }
+
+
+    /* =====================================================
+       ACTION BUTTONS
+       ===================================================== */
+
+    .track-actions {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        gap: 8px;
+    }
+
+    .track-menu-btn,
+    .track-home-btn {
+        min-height: 44px;
+
+        border-radius: 12px;
+
+        font-size: 10px;
+    }
+
+
+    /* =====================================================
+       REFRESH
+       ===================================================== */
+
+    .track-refresh-area {
+        gap: 6px;
+
+        padding-top: 15px;
+        padding-bottom: 0;
+    }
+
+    .refresh-track-btn {
+        min-height: 40px;
+
+        padding: 0 13px;
+
+        border-radius: 11px;
+
+        font-size: 9px;
+    }
+
+    .track-refresh-area p {
+        max-width: 280px;
+
+        font-size: 8px;
+        line-height: 1.4;
+    }
+
+
+    /* =====================================================
+       EMPTY STATE
+       ===================================================== */
+
+    .track-empty-state {
+        width: 100%;
+        box-sizing: border-box;
+
+        margin: 18px auto 0;
+
+        padding: 30px 18px;
+
+        border-radius: 19px;
+    }
+
+    .empty-track-icon {
+        width: 58px;
+        height: 58px;
+
+        margin-bottom: 12px;
+
+        border-radius: 18px;
+
+        font-size: 22px;
+    }
+
+    .track-empty-state h2 {
+        margin-bottom: 5px;
+
+        font-size: 17px;
+    }
+
+    .track-empty-state p {
+        margin-bottom: 15px;
+
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
+    .try-again-btn {
+        min-height: 40px;
+
+        padding: 0 14px;
+
+        border-radius: 11px;
+
+        font-size: 10px;
+    }
+
+
+    /* =====================================================
+       EMPTY CART
+       ===================================================== */
+
+    .empty-checkout {
+        padding: 25px 10px;
+    }
+
+    .empty-checkout i {
+        margin-bottom: 8px;
+
+        font-size: 25px;
+    }
+
+    .empty-checkout p {
+        margin-bottom: 9px;
+
+        font-size: 11px;
+    }
+
+    .empty-checkout a {
+        font-size: 10px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .track-page {
+        width: calc(100% - 20px);
+
+        padding-top: 17px;
+    }
+
+    .track-hero h1 {
+        font-size: 27px;
+    }
+
+    .track-hero p {
+        font-size: 11px;
+    }
+
+    .track-search-card,
+    .track-card {
+        padding: 14px;
+    }
+
+    .track-item {
+        grid-template-columns: 52px minmax(0, 1fr) auto;
+
+        gap: 7px;
+    }
+
+    .track-item-image {
+        width: 52px;
+        height: 52px;
+    }
+
+    .track-item-info h3 {
+        font-size: 10px;
+    }
+
+    .track-item-price {
+        font-size: 10px;
+    }
+
+    .timeline-step {
+        grid-template-columns: 35px minmax(0, 1fr);
+
+        gap: 9px;
+    }
+
+    .timeline-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .order-timeline::before {
+        left: 17px;
+    }
+
+}
+
+
+/* =========================================================
+   LANDSCAPE MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) and (orientation: landscape) {
+
+    .track-page {
+        padding-top: 15px;
+    }
+
+    .track-hero {
+        margin-bottom: 14px;
+    }
+
+    .track-hero h1 {
+        font-size: 27px;
+    }
+
+    .track-grid {
+        gap: 12px;
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .track-search-btn:focus-visible,
+    .refresh-track-btn:focus-visible,
+    .try-again-btn:focus-visible,
+    .track-menu-btn:focus-visible,
+    .track-home-btn:focus-visible,
+    .track-input-wrap input:focus-visible {
+        outline: 2px solid rgba(255, 90, 31, 0.25);
+        outline-offset: 2px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .status-dot {
+        animation: none !important;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+
+}
