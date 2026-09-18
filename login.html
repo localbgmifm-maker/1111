@@ -2,146 +2,91 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="description"
-        content="Login to 11:11 Pizza Cafe"
-    >
+    <meta name="description" content="Login to 11:11 Pizza Cafe">
 
     <title>Login | 11:11 Pizza Cafe</title>
 
-
-    <!-- =========================================
-         FONT AWESOME
-    ========================================== -->
-
+    <!-- Font Awesome -->
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     >
 
-
-    <!-- =========================================
-         COMMON CSS
-    ========================================== -->
-
+    <!-- Common CSS -->
     <link rel="stylesheet" href="desktop.css">
     <link rel="stylesheet" href="mobile.css">
 
-
-    <!-- =========================================
-         LOGIN CSS
-    ========================================== -->
-
+    <!-- Login CSS -->
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="loginmobile.css">
-
 </head>
-
 
 <body>
 
-
-    <!-- =========================================
-         COMMON NAVBAR
-    ========================================== -->
-
+    <!-- Common Navbar -->
     <div id="navbar"></div>
 
-
-
-    <!-- =========================================
-         LOGIN PAGE
-    ========================================== -->
-
+    <!-- Login Page -->
     <main class="login-page">
 
         <section class="login-card">
 
-
-            <!-- =====================================
-                 BRAND
-            ====================================== -->
-
+            <!-- Brand -->
             <div class="login-brand">
 
                 <div class="login-brand-icon">
-
                     <i class="fa-solid fa-pizza-slice"></i>
-
                 </div>
 
                 <div>
-
                     <span class="login-brand-small">
                         WELCOME TO
                     </span>
 
-                    <h1>
-                        11:11 Pizza Cafe
-                    </h1>
-
+                    <h1>11:11 Pizza Cafe</h1>
                 </div>
 
             </div>
 
 
-
-            <!-- =====================================
+            <!-- =========================
                  PHONE STEP
-            ====================================== -->
+            ========================== -->
 
-            <div
-                class="login-step"
-                id="phoneStep"
-            >
+            <div class="login-step" id="phoneStep">
 
                 <div class="login-heading">
 
                     <span class="login-label">
-
                         <i class="fa-solid fa-shield-halved"></i>
-
                         SECURE LOGIN
-
                     </span>
 
-
-                    <h2>
-                        Login with OTP
-                    </h2>
-
+                    <h2>Login with OTP</h2>
 
                     <p>
-                        Enter your mobile number and we'll
-                        send you a secure verification code.
+                        Enter your mobile number and we'll send you
+                        a secure verification code.
                     </p>
 
                 </div>
 
 
-
                 <form id="phoneForm">
-
 
                     <label for="phoneNumber">
                         Mobile Number
                     </label>
-
 
                     <div class="phone-input">
 
                         <span class="country-code">
                             +91
                         </span>
-
 
                         <input
                             type="tel"
@@ -157,21 +102,14 @@
                     </div>
 
 
-
                     <div
                         id="phoneError"
                         class="login-error"
                     ></div>
 
 
-                    <!-- =================================
-                         FIREBASE reCAPTCHA
-                    ================================== -->
-
-                    <div
-                        id="recaptcha-container"
-                    ></div>
-
+                    <!-- Firebase reCAPTCHA -->
+                    <div id="recaptcha-container"></div>
 
 
                     <button
@@ -179,17 +117,11 @@
                         class="login-primary-btn"
                         id="sendOtpButton"
                     >
-
-                        <span>
-                            Send OTP
-                        </span>
-
+                        <span>Send OTP</span>
                         <i class="fa-solid fa-arrow-right"></i>
-
                     </button>
 
                 </form>
-
 
 
                 <div class="login-info">
@@ -197,8 +129,8 @@
                     <i class="fa-solid fa-lock"></i>
 
                     <span>
-                        Your mobile number is used only
-                        for secure account verification.
+                        Your mobile number is used only for secure
+                        account verification.
                     </span>
 
                 </div>
@@ -206,10 +138,9 @@
             </div>
 
 
-
-            <!-- =====================================
+            <!-- =========================
                  OTP STEP
-            ====================================== -->
+            ========================== -->
 
             <div
                 class="login-step hidden"
@@ -219,42 +150,28 @@
                 <div class="login-heading">
 
                     <span class="login-label">
-
                         <i class="fa-solid fa-message"></i>
-
                         VERIFICATION
-
                     </span>
 
-
-                    <h2>
-                        Enter OTP
-                    </h2>
-
+                    <h2>Enter OTP</h2>
 
                     <p>
-
                         We've sent a verification code to
-
                         <strong id="maskedPhone"></strong>
-
                     </p>
 
                 </div>
 
 
-
                 <form id="otpForm">
-
 
                     <label>
                         6-Digit OTP
                     </label>
 
 
-
                     <div class="otp-inputs">
-
 
                         <input
                             type="text"
@@ -264,6 +181,12 @@
                             autocomplete="one-time-code"
                         >
 
+                        <input
+                            type="text"
+                            inputmode="numeric"
+                            maxlength="1"
+                            class="otp-input"
+                        >
 
                         <input
                             type="text"
@@ -272,7 +195,6 @@
                             class="otp-input"
                         >
 
-
                         <input
                             type="text"
                             inputmode="numeric"
@@ -280,22 +202,12 @@
                             class="otp-input"
                         >
 
-
                         <input
                             type="text"
                             inputmode="numeric"
                             maxlength="1"
                             class="otp-input"
                         >
-
-
-                        <input
-                            type="text"
-                            inputmode="numeric"
-                            maxlength="1"
-                            class="otp-input"
-                        >
-
 
                         <input
                             type="text"
@@ -307,12 +219,10 @@
                     </div>
 
 
-
                     <div
                         id="otpError"
                         class="login-error"
                     ></div>
-
 
 
                     <button
@@ -321,34 +231,23 @@
                         id="verifyOtpButton"
                         disabled
                     >
-
-                        <span>
-                            Verify &amp; Login
-                        </span>
-
+                        <span>Verify &amp; Login</span>
                         <i class="fa-solid fa-check"></i>
-
                     </button>
 
                 </form>
 
 
-
                 <div class="otp-actions">
-
 
                     <button
                         type="button"
                         id="changeNumberButton"
                         class="text-btn"
                     >
-
                         <i class="fa-solid fa-pen"></i>
-
                         Change Number
-
                     </button>
-
 
 
                     <button
@@ -357,20 +256,16 @@
                         class="text-btn"
                         disabled
                     >
-
                         Resend OTP
-
                     </button>
 
                 </div>
-
 
 
                 <div
                     id="resendTimer"
                     class="resend-timer"
                 ></div>
-
 
 
                 <div class="login-info">
@@ -386,21 +281,17 @@
             </div>
 
 
-
-            <!-- =====================================
+            <!-- =========================
                  SUCCESS STEP
-            ====================================== -->
+            ========================== -->
 
             <div
                 class="login-step hidden"
                 id="successStep"
             >
 
-
                 <div class="success-icon">
-
                     <i class="fa-solid fa-check"></i>
-
                 </div>
 
 
@@ -424,22 +315,14 @@
                     id="continueButton"
                     class="login-primary-btn"
                 >
-
-                    <span>
-                        Continue
-                    </span>
-
+                    <span>Continue</span>
                     <i class="fa-solid fa-arrow-right"></i>
-
                 </button>
 
             </div>
 
 
-
-            <!-- =====================================
-                 LOGIN FOOTER
-            ====================================== -->
+            <!-- Footer -->
 
             <div class="login-footer">
 
@@ -451,35 +334,28 @@
 
             </div>
 
-
         </section>
 
     </main>
 
 
-
-    <!-- =========================================
+    <!-- =================================
          FIREBASE
          LOAD ONLY ONCE
-    ========================================== -->
+    ================================== -->
 
     <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
 
     <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
 
 
-    <!-- =========================================
-         AUTH JS
-         LOAD ONLY ONCE
-    ========================================== -->
-
+    <!-- Auth JS -->
     <script src="auth.js"></script>
 
 
-
-    <!-- =========================================
-         COMMON NAVBAR LOADER
-    ========================================== -->
+    <!-- =================================
+         COMMON NAVBAR
+    ================================== -->
 
     <script>
 
@@ -487,43 +363,28 @@
 
             try {
 
-                const response =
-                    await fetch("navbar.html");
-
+                const response = await fetch("navbar.html");
 
                 if (!response.ok) {
-
-                    throw new Error(
-                        "Navbar file not found"
-                    );
-
+                    throw new Error("Navbar file not found");
                 }
 
-
-                const navbarHTML =
-                    await response.text();
-
+                const navbarHTML = await response.text();
 
                 const navbarContainer =
                     document.getElementById("navbar");
 
-
                 if (!navbarContainer) {
-
                     throw new Error(
                         "Navbar container not found"
                     );
-
                 }
 
-
-                navbarContainer.innerHTML =
-                    navbarHTML;
-
+                navbarContainer.innerHTML = navbarHTML;
 
 
                 /*
-                 * navbar.js ko sirf ek baar load karo
+                 * Load navbar.js only once
                  */
 
                 if (
@@ -535,10 +396,7 @@
                     const script =
                         document.createElement("script");
 
-
-                    script.src =
-                        "navbar.js";
-
+                    script.src = "navbar.js";
 
                     script.onload = function () {
 
@@ -553,7 +411,6 @@
 
                     };
 
-
                     script.onerror = function () {
 
                         console.error(
@@ -562,11 +419,9 @@
 
                     };
 
-
                     document.body.appendChild(script);
 
                 }
-
 
             } catch (error) {
 
@@ -583,7 +438,6 @@
         loadNavbar();
 
     </script>
-
 
 </body>
 
