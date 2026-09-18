@@ -1,7 +1,11 @@
 /* =========================================================
    11:11 PIZZA CAFE
-   Firebase Phone OTP Login
+   FIREBASE PHONE OTP LOGIN
    ========================================================= */
+
+/* =========================
+   FIREBASE CONFIG
+========================= */
 
 const firebaseConfig = {
     apiKey: "AIzaSyDVxaKGhY3q8TVFaxqMrMtAf5vDobVYIKA",
@@ -13,9 +17,10 @@ const firebaseConfig = {
     measurementId: "G-ZSZ0CGLGME"
 };
 
-/* ---------------------------------------------------------
-   Firebase Initialize
-   --------------------------------------------------------- */
+
+/* =========================
+   FIREBASE INITIALIZE
+========================= */
 
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
@@ -23,14 +28,20 @@ if (!firebase.apps.length) {
 
 const auth = firebase.auth();
 
+
+/* =========================
+   VARIABLES
+========================= */
+
 let confirmationResult = null;
 let recaptchaVerifier = null;
+let recaptchaWidgetId = null;
 let resendInterval = null;
 
 
-/* ---------------------------------------------------------
-   DOM
-   --------------------------------------------------------- */
+/* =========================
+   DOM ELEMENTS
+========================= */
 
 const phoneStep = document.getElementById("phoneStep");
 const otpStep = document.getElementById("otpStep");
@@ -47,376 +58,449 @@ const otpError = document.getElementById("otpError");
 const verifyOtpButton = document.getElementById("verifyOtpButton");
 
 const maskedPhone = document.getElementById("maskedPhone");
-const changeNumberButton = document.getElementById("changeNumberButton");
-const resendOtpButton = document.getElementById("resendOtpButton");
-const resendTimer = document.getElementById("resendTimer");
 
-const continueButton = document.getElementById("continueButton");
+const changeNumberButton =
+    document.getElementById("changeNumberButton");
 
+const resendOtpButton =
+    document.getElementById("resendOtpButton");
 
-/* ---------------------------------------------------------
-   Firebase Auth Persistence
-   User stays logged in after browser close/reopen
-   --------------------------------------------------------- */
+const resendTimer =
+    document.getElementById("resendTimer");
 
-auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL)
-    .catch((error) => {
-        console.error("Firebase persistence error:", error);
-    });
+const continueButton =
+    document.getElementById("continueButton");
 
 
-/* ---------------------------------------------------------
-   Utility
-   --------------------------------------------------------- */
+/* =========================
+   PERSISTENCE
+========================= */
+
+auth.setPersistence(
+    firebase.auth.Auth.Persistence.LOCAL
+).catch(function (error) {
+
+    console.error(
+        "Firebase persistence error:",
+        error
+    );
+
+});
+
+
+/* =========================
+   HELPERS
+========================= */
 
 function showElement(element) {
+
     if (element) {
+        element.classList.remove("hidden");
         element.style.display = "";
     }
+
 }
+
 
 function hideElement(element) {
+
     if (element) {
+        element.classList.add("hidden");
         element.style.display = "none";
     }
+
 }
+
 
 function clearError(element) {
-    if (element) {
-        element.textContent = "";
-        element.style.display = "none";
+
+    if (!element) {
+        return;
     }
+
+    element.textContent = "";
+    element.style.display = "none";
+
 }
+
 
 function showError(element, message) {
-    if (element) {
-        element.textContent = message;
-        element.style.display = "block";
+
+    if (!element) {
+        return;
     }
+
+    element.textContent = message;
+    element.style.display = "block";
+
 }
 
-
-/* ---------------------------------------------------------
-   Phone Validation
-   --------------------------------------------------------- */
 
 function cleanPhoneNumber(value) {
-    return value.replace(/\D/g, "");
+
+    return String(value || "")
+        .replace(/\D/g, "")
+        .slice(0, 10);
+
 }
+
 
 function isValidIndianMobile(phone) {
+
     return /^[6-9]\d{9}$/.test(phone);
+
 }
 
 
-/* ---------------------------------------------------------
-   reCAPTCHA
-   --------------------------------------------------------- */
+/* =========================
+   RESET RECAPTCHA
+========================= */
+
+function resetRecaptcha() {
+
+    try {
+
+        if (
+            typeof grecaptcha !== "undefined" &&
+            recaptchaWidgetId !== null
+        ) {
+
+            grecaptcha.reset(
+                recaptchaWidgetId
+            );
+
+        }
+
+    } catch (error) {
+
+        console.warn(
+            "reCAPTCHA reset:",
+            error
+        );
+
+    }
+
+}
+
+
+/* =========================
+   CREATE RECAPTCHA
+========================= */
 
 function createRecaptcha() {
 
     if (recaptchaVerifier) {
-        return;
+        return Promise.resolve();
     }
 
-    try {
+    const container =
+        document.getElementById(
+            "recaptcha-container"
+        );
 
-        recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
+    if (!container) {
+
+        return Promise.reject(
+            new Error(
+                "reCAPTCHA container missing."
+            )
+        );
+
+    }
+
+    recaptchaVerifier =
+        new firebase.auth.RecaptchaVerifier(
             "recaptcha-container",
             {
                 size: "invisible",
 
                 callback: function () {
-                    console.log("reCAPTCHA completed.");
+
+                    console.log(
+                        "reCAPTCHA completed."
+                    );
+
                 },
 
                 "expired-callback": function () {
-                    console.log("reCAPTCHA expired.");
+
+                    console.log(
+                        "reCAPTCHA expired."
+                    );
+
                 }
             }
         );
 
-        recaptchaVerifier.render()
-            .then(function (widgetId) {
-                window.recaptchaWidgetId = widgetId;
-            })
-            .catch(function (error) {
-                console.error("reCAPTCHA render error:", error);
-            });
+    return recaptchaVerifier
+        .render()
+        .then(function (widgetId) {
 
-    } catch (error) {
-
-        console.error("reCAPTCHA initialization error:", error);
-
-    }
-}
-
-
-/* ---------------------------------------------------------
-   Reset reCAPTCHA
-   --------------------------------------------------------- */
-
-function resetRecaptcha() {
-
-    if (
-        typeof grecaptcha !== "undefined" &&
-        window.recaptchaWidgetId !== undefined
-    ) {
-        try {
-            grecaptcha.reset(window.recaptchaWidgetId);
-        } catch (error) {
-            console.warn("reCAPTCHA reset warning:", error);
-        }
-    }
-}
-
-
-/* ---------------------------------------------------------
-   SEND OTP
-   --------------------------------------------------------- */
-
-if (phoneForm) {
-
-    phoneForm.addEventListener("submit", async function (event) {
-
-        event.preventDefault();
-
-        clearError(phoneError);
-
-        const phone = cleanPhoneNumber(phoneNumberInput.value);
-
-        phoneNumberInput.value = phone;
-
-        if (!isValidIndianMobile(phone)) {
-
-            showError(
-                phoneError,
-                "Please enter a valid 10-digit Indian mobile number."
-            );
-
-            phoneNumberInput.focus();
-
-            return;
-        }
-
-        sendOtpButton.disabled = true;
-
-        const originalButtonHTML = sendOtpButton.innerHTML;
-
-        sendOtpButton.innerHTML =
-            '<i class="fa-solid fa-spinner fa-spin"></i> Sending OTP...';
-
-        try {
-
-            createRecaptcha();
-
-            if (!recaptchaVerifier) {
-                throw new Error("reCAPTCHA could not be initialized.");
-            }
-
-            const fullPhoneNumber = "+91" + phone;
+            recaptchaWidgetId =
+                widgetId;
 
             console.log(
-                "Sending Firebase OTP to:",
-                fullPhoneNumber
+                "reCAPTCHA ready."
             );
-
-            confirmationResult =
-                await auth.signInWithPhoneNumber(
-                    fullPhoneNumber,
-                    recaptchaVerifier
-                );
-
-            console.log("OTP sent successfully.");
-
-            /* Save phone temporarily */
-            sessionStorage.setItem(
-                "1111_login_phone",
-                phone
-            );
-
-            /* Mask phone */
-            const masked =
-                phone.substring(0, 2) +
-                "******" +
-                phone.substring(8);
-
-            if (maskedPhone) {
-                maskedPhone.textContent = "+91 " + masked;
-            }
-
-            /* Show OTP screen */
-            hideElement(phoneStep);
-            showElement(otpStep);
-            hideElement(successStep);
-
-            clearOtpInputs();
-
-            if (otpInputs.length > 0) {
-                otpInputs[0].focus();
-            }
-
-            startResendTimer();
-
-        } catch (error) {
-
-            console.error("Firebase OTP Error:", error);
-
-            resetRecaptcha();
-
-            let message =
-                "OTP send nahi ho paya. Please try again.";
-
-            if (error && error.code) {
-
-                switch (error.code) {
-
-                    case "auth/invalid-phone-number":
-                        message =
-                            "Phone number invalid hai.";
-                        break;
-
-                    case "auth/too-many-requests":
-                        message =
-                            "Too many attempts. Please try again later.";
-                        break;
-
-                    case "auth/quota-exceeded":
-                        message =
-                            "Firebase SMS daily quota exceed ho gaya hai.";
-                        break;
-
-                    case "auth/operation-not-allowed":
-                        message =
-                            "Firebase Phone Authentication enabled nahi hai.";
-                        break;
-
-                    case "auth/captcha-check-failed":
-                        message =
-                            "reCAPTCHA verification failed. Please try again.";
-                        break;
-
-                    case "auth/unauthorized-domain":
-                        message =
-                            "Ye website domain Firebase Authorized Domains mein added nahi hai.";
-                        break;
-
-                    case "auth/api-key-not-valid":
-                        message =
-                            "Firebase API key invalid hai. Firebase config check karo.";
-                        break;
-
-                    default:
-                        message =
-                            error.message ||
-                            message;
-                }
-            }
-
-            showError(phoneError, message);
-
-        } finally {
-
-            sendOtpButton.disabled = false;
-            sendOtpButton.innerHTML = originalButtonHTML;
-
-        }
-
-    });
-
-}
-
-
-/* ---------------------------------------------------------
-   OTP INPUT
-   --------------------------------------------------------- */
-
-function clearOtpInputs() {
-
-    otpInputs.forEach(function (input) {
-        input.value = "";
-        input.classList.remove("error");
-    });
-
-    clearError(otpError);
-}
-
-
-otpInputs.forEach(function (input, index) {
-
-    input.addEventListener("input", function () {
-
-        input.value =
-            input.value.replace(/\D/g, "").slice(0, 1);
-
-        input.classList.remove("error");
-
-        if (input.value && index < otpInputs.length - 1) {
-            otpInputs[index + 1].focus();
-        }
-
-        updateVerifyButton();
-    });
-
-
-    input.addEventListener("keydown", function (event) {
-
-        if (
-            event.key === "Backspace" &&
-            !input.value &&
-            index > 0
-        ) {
-            otpInputs[index - 1].focus();
-        }
-
-    });
-
-
-    input.addEventListener("paste", function (event) {
-
-        event.preventDefault();
-
-        const pasted =
-            (
-                event.clipboardData ||
-                window.clipboardData
-            )
-                .getData("text")
-                .replace(/\D/g, "")
-                .slice(0, otpInputs.length);
-
-        pasted.split("").forEach(function (digit, i) {
-
-            if (otpInputs[i]) {
-                otpInputs[i].value = digit;
-            }
 
         });
 
-        const nextEmpty =
-            Array.from(otpInputs).find(function (el) {
-                return !el.value;
-            });
+}
 
-        if (nextEmpty) {
-            nextEmpty.focus();
-        } else if (otpInputs.length > 0) {
-            otpInputs[otpInputs.length - 1].focus();
+
+/* =========================
+   OTP ERROR MESSAGE
+========================= */
+
+function getFirebaseErrorMessage(error) {
+
+    if (!error) {
+        return "OTP send nahi ho paya.";
+    }
+
+
+    switch (error.code) {
+
+        case "auth/invalid-phone-number":
+
+            return "Mobile number invalid hai.";
+
+
+        case "auth/operation-not-allowed":
+
+            return "Firebase Phone Authentication enabled nahi hai.";
+
+
+        case "auth/billing-not-enabled":
+
+            return "Real SMS OTP ke liye Firebase billing required hai. Test phone number use karo.";
+
+
+        case "auth/quota-exceeded":
+
+            return "Firebase SMS quota exceed ho gaya hai.";
+
+
+        case "auth/too-many-requests":
+
+            return "Too many attempts. Please try again later.";
+
+
+        case "auth/unauthorized-domain":
+
+            return "Website domain Firebase Authorized Domains mein added nahi hai.";
+
+
+        case "auth/captcha-check-failed":
+
+            return "reCAPTCHA verification failed. Please try again.";
+
+
+        case "auth/network-request-failed":
+
+            return "Internet connection check karo aur dobara try karo.";
+
+
+        case "auth/api-key-not-valid":
+
+            return "Firebase API key invalid hai.";
+
+
+        default:
+
+            return error.message ||
+                "OTP send nahi ho paya.";
+
+    }
+
+}
+
+
+/* =========================
+   SEND OTP
+========================= */
+
+if (phoneForm) {
+
+    phoneForm.addEventListener(
+        "submit",
+        async function (event) {
+
+            event.preventDefault();
+
+            clearError(phoneError);
+
+            const phone =
+                cleanPhoneNumber(
+                    phoneNumberInput.value
+                );
+
+            phoneNumberInput.value =
+                phone;
+
+
+            if (
+                !isValidIndianMobile(phone)
+            ) {
+
+                showError(
+                    phoneError,
+                    "Please enter a valid 10-digit Indian mobile number."
+                );
+
+                phoneNumberInput.focus();
+
+                return;
+
+            }
+
+
+            sendOtpButton.disabled = true;
+
+            const oldButton =
+                sendOtpButton.innerHTML;
+
+            sendOtpButton.innerHTML =
+                '<i class="fa-solid fa-spinner fa-spin"></i> Sending OTP...';
+
+
+            try {
+
+                await createRecaptcha();
+
+                resetRecaptcha();
+
+
+                const fullPhone =
+                    "+91" + phone;
+
+
+                console.log(
+                    "Firebase OTP request:",
+                    fullPhone
+                );
+
+
+                confirmationResult =
+                    await auth.signInWithPhoneNumber(
+                        fullPhone,
+                        recaptchaVerifier
+                    );
+
+
+                console.log(
+                    "OTP request successful."
+                );
+
+
+                sessionStorage.setItem(
+                    "1111_login_phone",
+                    phone
+                );
+
+
+                const masked =
+                    phone.substring(0, 2) +
+                    "******" +
+                    phone.substring(8);
+
+
+                if (maskedPhone) {
+
+                    maskedPhone.textContent =
+                        "+91 " + masked;
+
+                }
+
+
+                hideElement(phoneStep);
+                showElement(otpStep);
+                hideElement(successStep);
+
+
+                clearOtpInputs();
+
+
+                if (otpInputs.length) {
+
+                    otpInputs[0].focus();
+
+                }
+
+
+                startResendTimer();
+
+            }
+
+            catch (error) {
+
+                console.error(
+                    "Firebase OTP Error:",
+                    error
+                );
+
+
+                resetRecaptcha();
+
+
+                showError(
+                    phoneError,
+                    getFirebaseErrorMessage(
+                        error
+                    )
+                );
+
+            }
+
+            finally {
+
+                sendOtpButton.disabled =
+                    false;
+
+                sendOtpButton.innerHTML =
+                    oldButton;
+
+            }
+
         }
+    );
 
-        updateVerifyButton();
+}
 
-    });
 
-});
+/* =========================
+   OTP INPUTS
+========================= */
+
+function clearOtpInputs() {
+
+    otpInputs.forEach(
+        function (input) {
+
+            input.value = "";
+
+            input.classList.remove(
+                "error"
+            );
+
+        }
+    );
+
+    clearError(otpError);
+
+}
 
 
 function getOtpCode() {
 
-    return Array.from(otpInputs)
-        .map(function (input) {
-            return input.value;
-        })
+    return Array.from(
+        otpInputs
+    )
+        .map(
+            function (input) {
+                return input.value;
+            }
+        )
         .join("");
 
 }
@@ -428,182 +512,350 @@ function updateVerifyButton() {
         return;
     }
 
-    const code = getOtpCode();
-
     verifyOtpButton.disabled =
-        code.length !== otpInputs.length;
+        getOtpCode().length !== 6;
 
 }
 
 
-/* ---------------------------------------------------------
-   VERIFY OTP
-   --------------------------------------------------------- */
+otpInputs.forEach(
+    function (input, index) {
 
-if (otpForm) {
 
-    otpForm.addEventListener("submit", async function (event) {
+        input.addEventListener(
+            "input",
+            function () {
 
-        event.preventDefault();
+                input.value =
+                    input.value
+                        .replace(/\D/g, "")
+                        .slice(0, 1);
 
-        clearError(otpError);
 
-        const code = getOtpCode();
-
-        if (code.length !== 6) {
-
-            showError(
-                otpError,
-                "Please enter the complete 6-digit OTP."
-            );
-
-            return;
-        }
-
-        if (!confirmationResult) {
-
-            showError(
-                otpError,
-                "OTP session expired. Please request a new OTP."
-            );
-
-            return;
-        }
-
-        verifyOtpButton.disabled = true;
-
-        const originalButtonHTML =
-            verifyOtpButton.innerHTML;
-
-        verifyOtpButton.innerHTML =
-            '<i class="fa-solid fa-spinner fa-spin"></i> Verifying...';
-
-        try {
-
-            const result =
-                await confirmationResult.confirm(code);
-
-            const user = result.user;
-
-            console.log(
-                "Phone login successful:",
-                user.uid
-            );
-
-            /* ---------------------------------------------
-               Save login information
-               --------------------------------------------- */
-
-            const loginPhone =
-                sessionStorage.getItem(
-                    "1111_login_phone"
+                input.classList.remove(
+                    "error"
                 );
 
-            const userData = {
 
-                uid: user.uid,
+                if (
+                    input.value &&
+                    index <
+                    otpInputs.length - 1
+                ) {
 
-                phone:
-                    user.phoneNumber ||
-                    (loginPhone
-                        ? "+91" + loginPhone
-                        : ""),
+                    otpInputs[
+                        index + 1
+                    ].focus();
 
-                phoneNumber:
-                    user.phoneNumber ||
-                    (loginPhone
-                        ? "+91" + loginPhone
-                        : ""),
+                }
 
-                loggedIn: true,
 
-                loginTime:
-                    new Date().toISOString()
+                updateVerifyButton();
 
-            };
+            }
+        );
 
-            localStorage.setItem(
-                "1111_user",
-                JSON.stringify(userData)
-            );
 
-            /* ---------------------------------------------
-               Show success
-               --------------------------------------------- */
+        input.addEventListener(
+            "keydown",
+            function (event) {
 
-            hideElement(phoneStep);
-            hideElement(otpStep);
-            showElement(successStep);
+                if (
+                    event.key === "Backspace" &&
+                    !input.value &&
+                    index > 0
+                ) {
 
-            clearInterval(resendInterval);
+                    otpInputs[
+                        index - 1
+                    ].focus();
 
-        } catch (error) {
-
-            console.error(
-                "OTP verification error:",
-                error
-            );
-
-            let message =
-                "Invalid OTP. Please check the OTP and try again.";
-
-            if (error && error.code) {
-
-                switch (error.code) {
-
-                    case "auth/invalid-verification-code":
-                        message =
-                            "OTP galat hai. Please check and enter the correct OTP.";
-                        break;
-
-                    case "auth/code-expired":
-                        message =
-                            "OTP expire ho gaya hai. Please resend OTP.";
-                        break;
-
-                    case "auth/session-expired":
-                        message =
-                            "OTP session expire ho gaya hai. Please resend OTP.";
-                        break;
-
-                    case "auth/too-many-requests":
-                        message =
-                            "Too many attempts. Please try again later.";
-                        break;
-
-                    default:
-                        message =
-                            error.message ||
-                            message;
                 }
 
             }
+        );
 
-            showError(otpError, message);
 
-            otpInputs.forEach(function (input) {
-                input.classList.add("error");
-            });
+        input.addEventListener(
+            "paste",
+            function (event) {
 
-        } finally {
+                event.preventDefault();
 
-            verifyOtpButton.disabled = false;
+
+                const pasted =
+                    (
+                        event.clipboardData ||
+                        window.clipboardData
+                    )
+                        .getData("text")
+                        .replace(/\D/g, "")
+                        .slice(
+                            0,
+                            otpInputs.length
+                        );
+
+
+                pasted
+                    .split("")
+                    .forEach(
+                        function (
+                            digit,
+                            i
+                        ) {
+
+                            if (
+                                otpInputs[i]
+                            ) {
+
+                                otpInputs[i]
+                                    .value =
+                                    digit;
+
+                            }
+
+                        }
+                    );
+
+
+                const nextEmpty =
+                    Array.from(
+                        otpInputs
+                    ).find(
+                        function (input) {
+                            return !input.value;
+                        }
+                    );
+
+
+                if (nextEmpty) {
+
+                    nextEmpty.focus();
+
+                }
+
+
+                updateVerifyButton();
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================
+   VERIFY OTP
+========================= */
+
+if (otpForm) {
+
+    otpForm.addEventListener(
+        "submit",
+        async function (event) {
+
+            event.preventDefault();
+
+            clearError(otpError);
+
+            const code =
+                getOtpCode();
+
+
+            if (code.length !== 6) {
+
+                showError(
+                    otpError,
+                    "Please enter the complete 6-digit OTP."
+                );
+
+                return;
+
+            }
+
+
+            if (!confirmationResult) {
+
+                showError(
+                    otpError,
+                    "OTP session expired. Please request a new OTP."
+                );
+
+                return;
+
+            }
+
+
+            verifyOtpButton.disabled =
+                true;
+
+
+            const oldButton =
+                verifyOtpButton.innerHTML;
+
 
             verifyOtpButton.innerHTML =
-                originalButtonHTML;
+                '<i class="fa-solid fa-spinner fa-spin"></i> Verifying...';
 
-            updateVerifyButton();
+
+            try {
+
+                const result =
+                    await confirmationResult
+                        .confirm(code);
+
+
+                const user =
+                    result.user;
+
+
+                console.log(
+                    "Login successful:",
+                    user.uid
+                );
+
+
+                const phone =
+                    user.phoneNumber ||
+                    (
+                        "+91" +
+                        (
+                            sessionStorage.getItem(
+                                "1111_login_phone"
+                            ) || ""
+                        )
+                    );
+
+
+                const userData = {
+
+                    uid: user.uid,
+
+                    phone: phone,
+
+                    phoneNumber: phone,
+
+                    loggedIn: true,
+
+                    loginTime:
+                        new Date()
+                            .toISOString()
+
+                };
+
+
+                localStorage.setItem(
+                    "1111_user",
+                    JSON.stringify(
+                        userData
+                    )
+                );
+
+
+                hideElement(phoneStep);
+                hideElement(otpStep);
+                showElement(successStep);
+
+
+                clearInterval(
+                    resendInterval
+                );
+
+            }
+
+            catch (error) {
+
+                console.error(
+                    "OTP verification error:",
+                    error
+                );
+
+
+                let message =
+                    "Invalid OTP. Please check the OTP.";
+
+
+                switch (
+                    error.code
+                ) {
+
+                    case "auth/invalid-verification-code":
+
+                        message =
+                            "OTP galat hai. Please check the code.";
+
+                        break;
+
+
+                    case "auth/code-expired":
+
+                        message =
+                            "OTP expire ho gaya hai. Resend OTP karo.";
+
+                        break;
+
+
+                    case "auth/session-expired":
+
+                        message =
+                            "OTP session expire ho gaya hai. Resend OTP karo.";
+
+                        break;
+
+
+                    case "auth/too-many-requests":
+
+                        message =
+                            "Too many attempts. Please try again later.";
+
+                        break;
+
+
+                    default:
+
+                        message =
+                            error.message ||
+                            message;
+
+                }
+
+
+                showError(
+                    otpError,
+                    message
+                );
+
+
+                otpInputs.forEach(
+                    function (input) {
+
+                        input.classList.add(
+                            "error"
+                        );
+
+                    }
+                );
+
+            }
+
+            finally {
+
+                verifyOtpButton.innerHTML =
+                    oldButton;
+
+                updateVerifyButton();
+
+            }
 
         }
-
-    });
+    );
 
 }
 
 
-/* ---------------------------------------------------------
-   CHANGE PHONE NUMBER
-   --------------------------------------------------------- */
+/* =========================
+   CHANGE NUMBER
+========================= */
 
 if (changeNumberButton) {
 
@@ -613,20 +865,26 @@ if (changeNumberButton) {
 
             event.preventDefault();
 
-            clearInterval(resendInterval);
+            clearInterval(
+                resendInterval
+            );
 
-            confirmationResult = null;
+            confirmationResult =
+                null;
+
 
             clearOtpInputs();
+
 
             hideElement(otpStep);
             hideElement(successStep);
             showElement(phoneStep);
 
-            resetRecaptcha();
 
             if (phoneNumberInput) {
+
                 phoneNumberInput.focus();
+
             }
 
         }
@@ -635,9 +893,9 @@ if (changeNumberButton) {
 }
 
 
-/* ---------------------------------------------------------
+/* =========================
    RESEND OTP
-   --------------------------------------------------------- */
+========================= */
 
 if (resendOtpButton) {
 
@@ -647,105 +905,87 @@ if (resendOtpButton) {
 
             event.preventDefault();
 
-            if (resendOtpButton.disabled) {
+
+            if (
+                resendOtpButton.disabled
+            ) {
                 return;
             }
+
 
             const phone =
                 sessionStorage.getItem(
                     "1111_login_phone"
                 );
 
+
             if (!phone) {
 
                 showError(
                     otpError,
-                    "Please enter your phone number again."
+                    "Phone number missing. Please enter it again."
                 );
 
                 return;
+
             }
 
-            resendOtpButton.disabled = true;
+
+            resendOtpButton.disabled =
+                true;
+
 
             clearError(otpError);
+
 
             try {
 
                 resetRecaptcha();
 
-                createRecaptcha();
 
-                const fullPhoneNumber =
+                const fullPhone =
                     "+91" + phone;
+
 
                 confirmationResult =
                     await auth.signInWithPhoneNumber(
-                        fullPhoneNumber,
+                        fullPhone,
                         recaptchaVerifier
                     );
 
-                console.log(
-                    "OTP resent successfully."
-                );
 
                 clearOtpInputs();
 
-                if (otpInputs.length > 0) {
+
+                if (otpInputs.length) {
+
                     otpInputs[0].focus();
+
                 }
+
 
                 startResendTimer();
 
-            } catch (error) {
+            }
+
+            catch (error) {
 
                 console.error(
                     "Resend OTP error:",
                     error
                 );
 
-                let message =
-                    "OTP resend nahi ho paya.";
-
-                if (error && error.code) {
-
-                    if (
-                        error.code ===
-                        "auth/too-many-requests"
-                    ) {
-                        message =
-                            "Too many attempts. Please try again later.";
-                    }
-
-                    if (
-                        error.code ===
-                        "auth/quota-exceeded"
-                    ) {
-                        message =
-                            "Firebase SMS daily quota exceed ho gaya hai.";
-                    }
-
-                    if (
-                        error.code ===
-                        "auth/unauthorized-domain"
-                    ) {
-                        message =
-                            "Website domain Firebase Authorized Domains mein added nahi hai.";
-                    }
-
-                    if (error.message) {
-                        console.error(
-                            error.message
-                        );
-                    }
-                }
 
                 showError(
                     otpError,
-                    message
+                    getFirebaseErrorMessage(
+                        error
+                    )
                 );
 
-                resendOtpButton.disabled = false;
+
+                resendOtpButton.disabled =
+                    false;
 
             }
 
@@ -755,70 +995,100 @@ if (resendOtpButton) {
 }
 
 
-/* ---------------------------------------------------------
+/* =========================
    RESEND TIMER
-   --------------------------------------------------------- */
+========================= */
 
 function startResendTimer() {
 
-    clearInterval(resendInterval);
+    clearInterval(
+        resendInterval
+    );
+
 
     let seconds = 30;
 
+
     if (resendOtpButton) {
-        resendOtpButton.disabled = true;
+
+        resendOtpButton.disabled =
+            true;
+
     }
 
-    updateResendTimer(seconds);
 
-    resendInterval = setInterval(function () {
+    updateResendTimer(
+        seconds
+    );
 
-        seconds--;
 
-        updateResendTimer(seconds);
+    resendInterval =
+        setInterval(
+            function () {
 
-        if (seconds <= 0) {
+                seconds--;
 
-            clearInterval(resendInterval);
+                updateResendTimer(
+                    seconds
+                );
 
-            if (resendOtpButton) {
-                resendOtpButton.disabled = false;
-            }
 
-            if (resendTimer) {
-                resendTimer.textContent = "";
-            }
+                if (seconds <= 0) {
 
-        }
+                    clearInterval(
+                        resendInterval
+                    );
 
-    }, 1000);
+
+                    if (
+                        resendOtpButton
+                    ) {
+
+                        resendOtpButton.disabled =
+                            false;
+
+                    }
+
+                }
+
+            },
+            1000
+        );
 
 }
 
 
-function updateResendTimer(seconds) {
+function updateResendTimer(
+    seconds
+) {
 
     if (!resendTimer) {
         return;
     }
 
+
     if (seconds > 0) {
 
         resendTimer.textContent =
-            "Resend OTP in " + seconds + "s";
+            "Resend OTP in " +
+            seconds +
+            "s";
 
-    } else {
+    }
 
-        resendTimer.textContent = "";
+    else {
+
+        resendTimer.textContent =
+            "";
 
     }
 
 }
 
 
-/* ---------------------------------------------------------
-   CONTINUE BUTTON
-   --------------------------------------------------------- */
+/* =========================
+   CONTINUE
+========================= */
 
 if (continueButton) {
 
@@ -827,12 +1097,33 @@ if (continueButton) {
         function () {
 
             /*
-             * Login successful.
-             * Change this destination later if you have
-             * an account page.
+             * If user came from checkout,
+             * return there.
              */
 
-            window.location.href = "index.html";
+            const returnPage =
+                sessionStorage.getItem(
+                    "1111_login_return"
+                );
+
+
+            if (returnPage) {
+
+                sessionStorage.removeItem(
+                    "1111_login_return"
+                );
+
+                window.location.href =
+                    returnPage;
+
+            }
+
+            else {
+
+                window.location.href =
+                    "index.html";
+
+            }
 
         }
     );
@@ -840,82 +1131,68 @@ if (continueButton) {
 }
 
 
-/* ---------------------------------------------------------
-   Firebase Auth State
-   --------------------------------------------------------- */
+/* =========================
+   AUTH STATE
+========================= */
 
-auth.onAuthStateChanged(function (user) {
+auth.onAuthStateChanged(
+    function (user) {
 
-    if (user) {
+        if (user) {
 
-        console.log(
-            "Firebase user is logged in:",
-            user.uid
-        );
-
-        const existingUser =
-            localStorage.getItem("1111_user");
-
-        if (!existingUser) {
-
-            const userData = {
-
-                uid: user.uid,
-
-                phone:
-                    user.phoneNumber || "",
-
-                phoneNumber:
-                    user.phoneNumber || "",
-
-                loggedIn: true,
-
-                loginTime:
-                    new Date().toISOString()
-
-            };
-
-            localStorage.setItem(
-                "1111_user",
-                JSON.stringify(userData)
+            console.log(
+                "Firebase authenticated:",
+                user.uid
             );
 
         }
 
-    } else {
+        else {
 
-        console.log(
-            "No Firebase user currently logged in."
-        );
+            console.log(
+                "No Firebase authenticated user."
+            );
+
+        }
 
     }
+);
 
-});
 
-
-/* ---------------------------------------------------------
-   INITIALIZE
-   --------------------------------------------------------- */
+/* =========================
+   PAGE INITIALIZE
+========================= */
 
 document.addEventListener(
     "DOMContentLoaded",
-    function () {
+    async function () {
 
         updateVerifyButton();
 
-        /*
-         * Create reCAPTCHA after page loads.
-         * Login page must contain:
-         *
-         * <div id="recaptcha-container"></div>
-         */
 
-        if (
+        const recaptchaContainer =
             document.getElementById(
                 "recaptcha-container"
-            )
-        ) {
-            createRecaptcha();
+            );
+
+
+        if (recaptchaContainer) {
+
+            try {
+
+                await createRecaptcha();
+
+            }
+
+            catch (error) {
+
+                console.error(
+                    "reCAPTCHA setup error:",
+                    error
+                );
+
+            }
+
         }
 
     }
